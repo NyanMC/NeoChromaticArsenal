@@ -8,6 +8,7 @@ import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -45,6 +46,8 @@ public class GlassShieldAccessory extends ChromaAccessory {
 
     @SubscribeEvent
     public static void livingIncomingDamage(LivingIncomingDamageEvent event) {
+        if (event.getAmount() == 0 || event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)) return;
+
         LivingEntity entity = event.getEntity();
         ItemStack stack = ChromaAccessoryHelper.tryGetFirstEquipped(entity, CAItems.GLASS_SHIELD.get());
         if (stack == null) return;
