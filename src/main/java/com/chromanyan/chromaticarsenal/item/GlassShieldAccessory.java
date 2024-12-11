@@ -1,6 +1,5 @@
 package com.chromanyan.chromaticarsenal.item;
 
-import com.chromanyan.chromaticarsenal.ChromaticArsenal;
 import com.chromanyan.chromaticarsenal.init.CAItems;
 import com.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import com.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;

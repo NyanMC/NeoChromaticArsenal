@@ -1,6 +1,5 @@
 package com.chromanyan.chromaticarsenal.util;
 
-import com.chromanyan.chromaticarsenal.init.CAItems;
 import io.wispforest.accessories.api.AccessoriesCapability;
 import io.wispforest.accessories.api.slot.SlotEntryReference;
 import net.minecraft.world.entity.LivingEntity;

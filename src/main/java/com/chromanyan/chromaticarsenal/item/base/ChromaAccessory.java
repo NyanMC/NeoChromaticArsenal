@@ -1,6 +1,5 @@
 package com.chromanyan.chromaticarsenal.item.base;
 
-import io.wispforest.accessories.api.AccessoriesAPI;
 import io.wispforest.accessories.api.AccessoriesCapability;
 import io.wispforest.accessories.api.AccessoryItem;
 import io.wispforest.accessories.api.SoundEventData;
