@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticarsenal.item;
 
+import com.chromanyan.chromaticarsenal.Config;
 import com.chromanyan.chromaticarsenal.init.CAItems;
 import com.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import com.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
@@ -52,7 +53,7 @@ public class GlassShieldAccessory extends ChromaAccessory {
         if (player.getCooldowns().isOnCooldown(CAItems.GLASS_SHIELD.get())) return;
 
         player.getCommandSenderWorld().playSound(null, player.blockPosition(), SoundEvents.GLASS_BREAK, SoundSource.PLAYERS, 0.5F, 1.0F);
-        player.getCooldowns().addCooldown(CAItems.GLASS_SHIELD.get(), 400);
+        player.getCooldowns().addCooldown(CAItems.GLASS_SHIELD.get(), Config.glassShieldCooldown);
 
         //TODO this is where we would handle statistics...if they were implemented
 

@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticarsenal.item;
 
+import com.chromanyan.chromaticarsenal.Config;
 import com.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import io.wispforest.accessories.api.events.extra.PiglinNeutralInducer;
 import io.wispforest.accessories.api.slot.SlotReference;
@@ -19,15 +20,15 @@ public class GoldenHeartAccessory extends ChromaAccessory implements PiglinNeutr
     @Override
     public void onEquip(ItemStack stack, SlotReference reference) {
         if (!reference.entity().getCommandSenderWorld().isClientSide()) {
-            reference.entity().addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 1, true, false), reference.entity());
+            reference.entity().addEffect(new MobEffectInstance(MobEffects.ABSORPTION, Config.goldenHeartDuration, Config.goldenHeartAmplifier, true, false), reference.entity());
         }
     }
 
     @Override
     public void tick(ItemStack stack, SlotReference reference) {
         LivingEntity living = reference.entity();
-        if (!reference.entity().getCommandSenderWorld().isClientSide() && living.tickCount % 400 == 0) {
-            reference.entity().addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 1, true, false), reference.entity());
+        if (!reference.entity().getCommandSenderWorld().isClientSide() && living.tickCount % Config.goldenHeartDuration == 0) {
+            reference.entity().addEffect(new MobEffectInstance(MobEffects.ABSORPTION, Config.goldenHeartDuration, Config.goldenHeartAmplifier, true, false), reference.entity());
         }
     }
 
