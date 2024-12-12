@@ -4,7 +4,8 @@ import io.wispforest.owo.config.Option;
 import io.wispforest.owo.config.annotation.*;
 
 @SuppressWarnings("unused")
-@Config(name = "chromaticarsenal", wrapperName = "CAConfig")
+@Config(name = ChromaticArsenal.MODID, wrapperName = "CAConfig")
+@Modmenu(modId = ChromaticArsenal.MODID)
 public class CAConfigModel {
 
     @Nest
@@ -16,13 +17,10 @@ public class CAConfigModel {
     public ClientOptions CLIENT = new ClientOptions();
 
     public static class CommonOptions {
-        @RangeConstraint(min = 1, max = Integer.MAX_VALUE)
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public int goldenHeartDuration = 400;
-        @RangeConstraint(min = 1, max = 255)
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public int goldenHeartAmplifier = 1;
-        @RangeConstraint(min = 1, max = Integer.MAX_VALUE)
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public int glassShieldCooldown = 400;
     }
