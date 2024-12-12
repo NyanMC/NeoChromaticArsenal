@@ -1,6 +1,7 @@
 package com.chromanyan.chromaticarsenal;
 
 import com.chromanyan.chromaticarsenal.data.CAModels;
+import com.chromanyan.chromaticarsenal.init.CACreativeTabs;
 import com.chromanyan.chromaticarsenal.init.CAItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.HolderLookup;
@@ -36,6 +37,7 @@ public class ChromaticArsenal {
         NeoForge.EVENT_BUS.register(this);
 
         CAItems.ITEMS.register(modEventBus);
+        CACreativeTabs.CREATIVE_TABS.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
