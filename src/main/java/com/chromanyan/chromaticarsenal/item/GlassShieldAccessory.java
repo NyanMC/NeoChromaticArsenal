@@ -41,7 +41,7 @@ public class GlassShieldAccessory extends ChromaAccessory {
         super.appendHoverText(stack, context, list, tooltipFlag);
         if (!Screen.hasShiftDown()) return;
         TooltipHelper.itemTooltipLine(stack, 1, list);
-        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.ticksToSecondsTooltip(ChromaticArsenal.CONFIG.glassShieldCooldown()));
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.ticksToSecondsTooltip(ChromaticArsenal.CONFIG.COMMON.glassShieldCooldown()));
     }
 
     @Override
@@ -73,7 +73,7 @@ public class GlassShieldAccessory extends ChromaAccessory {
         if (player.getCooldowns().isOnCooldown(CAItems.GLASS_SHIELD.get())) return;
 
         player.getCommandSenderWorld().playSound(null, player.blockPosition(), SoundEvents.GLASS_BREAK, SoundSource.PLAYERS, 0.5F, 1.0F);
-        player.getCooldowns().addCooldown(CAItems.GLASS_SHIELD.get(), ChromaticArsenal.CONFIG.glassShieldCooldown());
+        player.getCooldowns().addCooldown(CAItems.GLASS_SHIELD.get(), ChromaticArsenal.CONFIG.COMMON.glassShieldCooldown());
 
         //TODO this is where we would handle statistics...if they were implemented
 

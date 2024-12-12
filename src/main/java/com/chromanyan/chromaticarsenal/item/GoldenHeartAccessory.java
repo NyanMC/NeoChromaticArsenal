@@ -29,7 +29,7 @@ public class GoldenHeartAccessory extends ChromaAccessory implements PiglinNeutr
     @Override
     public void onEquip(ItemStack stack, SlotReference reference) {
         if (!reference.entity().getCommandSenderWorld().isClientSide()) {
-            reference.entity().addEffect(new MobEffectInstance(MobEffects.ABSORPTION, ChromaticArsenal.CONFIG.goldenHeartDuration(), ChromaticArsenal.CONFIG.goldenHeartAmplifier(), true, false), reference.entity());
+            reference.entity().addEffect(new MobEffectInstance(MobEffects.ABSORPTION, ChromaticArsenal.CONFIG.COMMON.goldenHeartDuration(), ChromaticArsenal.CONFIG.COMMON.goldenHeartAmplifier(), true, false), reference.entity());
         }
     }
 
@@ -39,15 +39,15 @@ public class GoldenHeartAccessory extends ChromaAccessory implements PiglinNeutr
         super.appendHoverText(stack, context, list, tooltipFlag);
         if (!Screen.hasShiftDown()) return;
         TooltipHelper.itemTooltipLine(stack, 3, list);
-        TooltipHelper.itemTooltipLine(stack, 1, list, TooltipHelper.potionAmplifierTooltip(ChromaticArsenal.CONFIG.goldenHeartAmplifier()));
-        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.ticksToSecondsTooltip(ChromaticArsenal.CONFIG.goldenHeartDuration()));
+        TooltipHelper.itemTooltipLine(stack, 1, list, TooltipHelper.potionAmplifierTooltip(ChromaticArsenal.CONFIG.COMMON.goldenHeartAmplifier()));
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.ticksToSecondsTooltip(ChromaticArsenal.CONFIG.COMMON.goldenHeartDuration()));
     }
 
     @Override
     public void tick(ItemStack stack, SlotReference reference) {
         LivingEntity living = reference.entity();
-        if (!reference.entity().getCommandSenderWorld().isClientSide() && living.tickCount % ChromaticArsenal.CONFIG.goldenHeartDuration() == 0) {
-            reference.entity().addEffect(new MobEffectInstance(MobEffects.ABSORPTION, ChromaticArsenal.CONFIG.goldenHeartDuration(), ChromaticArsenal.CONFIG.goldenHeartAmplifier(), true, false), reference.entity());
+        if (!reference.entity().getCommandSenderWorld().isClientSide() && living.tickCount % ChromaticArsenal.CONFIG.COMMON.goldenHeartDuration() == 0) {
+            reference.entity().addEffect(new MobEffectInstance(MobEffects.ABSORPTION, ChromaticArsenal.CONFIG.COMMON.goldenHeartDuration(), ChromaticArsenal.CONFIG.COMMON.goldenHeartAmplifier(), true, false), reference.entity());
         }
     }
 

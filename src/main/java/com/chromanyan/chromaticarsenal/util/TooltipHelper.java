@@ -36,7 +36,7 @@ public class TooltipHelper {
     }
 
     public static String ticksToSecondsTooltip(int ticks) {
-        if (ticks / 20 >= ChromaticArsenal.CONFIG.tooltipDecimalThreshold())
+        if (ticks / 20 >= ChromaticArsenal.CONFIG.CLIENT.tooltipDecimalThreshold())
             return valueTooltip(ticks / 20);
         else // add the decimal places to the value as they might be needed (e.g. lunar crystal)
             return valueTooltip((float) ticks / 20F);
