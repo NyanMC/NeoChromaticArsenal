@@ -11,5 +11,14 @@
   "tooltip.chromaticarsenal.glass_shield.2": "§6The shield takes %1$s§6 second(s) to repair itself",
   "stat.chromaticarsenal.glass_shield_total_block": "Damage Blocked by Glass Shield",
 
-  "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details"
+  "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
+
+  "itemGroup.chromaticarsenal": "Chromatic Arsenal",
+  "text.config.chromaticarsenal.title": "Chromatic Arsenal Config",
+  "text.config.chromaticarsenal.category.COMMON": "Common Settings",
+  "text.config.chromaticarsenal.category.COMMON.goldenHeartDuration": "Golden Heart Duration",
+  "text.config.chromaticarsenal.category.COMMON.goldenHeartAmplifier": "Golden Heart Amplifier",
+  "text.config.chromaticarsenal.category.COMMON.glassShieldCooldown": "Glass Shield Cooldown",
+  "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
+  "text.config.chromaticarsenal.category.CLIENT.tooltipDecimalThreshold": "Tooltip Decimal Threshold"
 }
