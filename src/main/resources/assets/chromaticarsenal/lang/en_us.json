@@ -2,5 +2,14 @@
   "item.chromaticarsenal.chroma_shard": "Chroma Shard",
 
   "item.chromaticarsenal.golden_heart": "Golden Heart",
-  "item.chromaticarsenal.glass_shield": "Glass Shield"
+  "tooltip.chromaticarsenal.golden_heart.3": "§2Functions as gold armor for Piglins",
+  "tooltip.chromaticarsenal.golden_heart.3.cursed": "§2§mFunctions as gold armor for Piglins",
+  "tooltip.chromaticarsenal.golden_heart.1": "§6Grants the Absorption effect at level %1$s",
+  "tooltip.chromaticarsenal.golden_heart.2": "§6This effect is re-applied every %1$s§6 second(s)",
+  "item.chromaticarsenal.glass_shield": "Glass Shield",
+  "tooltip.chromaticarsenal.glass_shield.1": "§6Fully absorbs the damage of one attack, and then shatters",
+  "tooltip.chromaticarsenal.glass_shield.2": "§6The shield takes %1$s§6 second(s) to repair itself",
+  "stat.chromaticarsenal.glass_shield_total_block": "Damage Blocked by Glass Shield",
+
+  "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details"
 }

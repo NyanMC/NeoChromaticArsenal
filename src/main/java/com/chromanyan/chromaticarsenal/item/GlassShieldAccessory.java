@@ -1,11 +1,14 @@
 package com.chromanyan.chromaticarsenal.item;
 
-import com.chromanyan.chromaticarsenal.Config;
+import com.chromanyan.chromaticarsenal.ChromaticArsenal;
 import com.chromanyan.chromaticarsenal.init.CAItems;
 import com.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import com.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
+import com.chromanyan.chromaticarsenal.util.TooltipHelper;
 import io.wispforest.accessories.api.slot.SlotReference;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.Holder;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
@@ -15,16 +18,30 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemCooldowns;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 @EventBusSubscriber
 public class GlassShieldAccessory extends ChromaAccessory {
 
     public GlassShieldAccessory() {
         super(Holder.direct(SoundEvents.GLASS_PLACE));
+    }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
+        super.appendHoverText(stack, context, list, tooltipFlag);
+        if (!Screen.hasShiftDown()) return;
+        TooltipHelper.itemTooltipLine(stack, 1, list);
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.ticksToSecondsTooltip(ChromaticArsenal.CONFIG.glassShieldCooldown()));
     }
 
     @Override
@@ -56,7 +73,7 @@ public class GlassShieldAccessory extends ChromaAccessory {
         if (player.getCooldowns().isOnCooldown(CAItems.GLASS_SHIELD.get())) return;
 
         player.getCommandSenderWorld().playSound(null, player.blockPosition(), SoundEvents.GLASS_BREAK, SoundSource.PLAYERS, 0.5F, 1.0F);
-        player.getCooldowns().addCooldown(CAItems.GLASS_SHIELD.get(), Config.glassShieldCooldown);
+        player.getCooldowns().addCooldown(CAItems.GLASS_SHIELD.get(), ChromaticArsenal.CONFIG.glassShieldCooldown());
 
         //TODO this is where we would handle statistics...if they were implemented
 
