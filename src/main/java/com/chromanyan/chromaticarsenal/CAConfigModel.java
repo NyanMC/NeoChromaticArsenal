@@ -23,6 +23,10 @@ public class CAConfigModel {
         public int goldenHeartAmplifier = 1;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public int glassShieldCooldown = 400;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public double wardCrystalIncomingMultiplier = 0.25;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public double wardCrystalOutgoingMultiplier = 0.25;
     }
 
     public static class ClientOptions {

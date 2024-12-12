@@ -6,23 +6,32 @@
   "tooltip.chromaticarsenal.golden_heart.3.cursed": "§2§mFunctions as gold armor for Piglins",
   "tooltip.chromaticarsenal.golden_heart.1": "§6Grants the Absorption effect at level %1$s",
   "tooltip.chromaticarsenal.golden_heart.2": "§6This effect is re-applied every %1$s§6 second(s)",
+
   "item.chromaticarsenal.glass_shield": "Glass Shield",
   "tooltip.chromaticarsenal.glass_shield.1": "§6Fully absorbs the damage of one attack, and then shatters",
   "tooltip.chromaticarsenal.glass_shield.2": "§6The shield takes %1$s§6 second(s) to repair itself",
   "stat.chromaticarsenal.glass_shield_total_block": "Damage Blocked by Glass Shield",
+
+  "item.chromaticarsenal.ward_crystal": "Ward Crystal",
+  "tooltip.chromaticarsenal.ward_crystal.1": "§aReduces magic damage taken by %1$s§b%%",
+  "tooltip.chromaticarsenal.ward_crystal.2": "§cReduces magic damage dealt by %1$s§b%%",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
 
   "itemGroup.chromaticarsenal": "Chromatic Arsenal",
   "text.config.chromaticarsenal.title": "Chromatic Arsenal Config",
   "text.config.chromaticarsenal.category.COMMON": "Common Settings",
-  "text.config.chromaticarsenal.category.COMMON.goldenHeartDuration": "Golden Heart Duration",
-  "text.config.chromaticarsenal.category.COMMON.goldenHeartDuration.tooltip": "The duration of the Golden Heart's Absorption effect, in ticks. The effect is refreshed after this many ticks pass.",
-  "text.config.chromaticarsenal.category.COMMON.goldenHeartAmplifier": "Golden Heart Amplifier",
-  "text.config.chromaticarsenal.category.COMMON.goldenHeartAmplifier.tooltip": "The amplifier of the Golden Heart's Absorption effect.",
-  "text.config.chromaticarsenal.category.COMMON.glassShieldCooldown": "Glass Shield Cooldown",
-  "text.config.chromaticarsenal.category.COMMON.glassShieldCooldown.tooltip": "After blocking a hit, it will take the Glass Shield this many ticks to recover.",
+  "text.config.chromaticarsenal.option.COMMON.goldenHeartDuration": "Golden Heart Duration",
+  "text.config.chromaticarsenal.option.COMMON.goldenHeartDuration.tooltip": "The duration of the Golden Heart's Absorption effect, in ticks. The effect is refreshed after this many ticks pass.",
+  "text.config.chromaticarsenal.option.COMMON.goldenHeartAmplifier": "Golden Heart Amplifier",
+  "text.config.chromaticarsenal.option.COMMON.goldenHeartAmplifier.tooltip": "The amplifier of the Golden Heart's Absorption effect.",
+  "text.config.chromaticarsenal.option.COMMON.glassShieldCooldown": "Glass Shield Cooldown",
+  "text.config.chromaticarsenal.option.COMMON.glassShieldCooldown.tooltip": "After blocking a hit, it will take the Glass Shield this many ticks to recover.",
+  "text.config.chromaticarsenal.option.COMMON.wardCrystalIncomingMultiplier": "Ward Crystal Incoming Multiplier",
+  "text.config.chromaticarsenal.option.COMMON.wardCrystalIncomingMultiplier.tooltip": "Magic damage received while wearing a Ward Crystal is multiplied by this value.",
+  "text.config.chromaticarsenal.option.COMMON.wardCrystalOutgoingMultiplier": "Ward Crystal Outgoing Multiplier",
+  "text.config.chromaticarsenal.option.COMMON.wardCrystalOutgoingMultiplier.tooltip": "Magic damage dealt while wearing a Ward Crystal is multiplied by this value.",
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
-  "text.config.chromaticarsenal.category.CLIENT.tooltipDecimalThreshold": "Tooltip Decimal Threshold",
-  "text.config.chromaticarsenal.category.CLIENT.tooltipDecimalThreshold.tooltip": "Whenever ticks are converted to seconds in a tooltip, the decimal is kept if the resulting amount of seconds is under this value."
+  "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold": "Tooltip Decimal Threshold",
+  "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold.tooltip": "Whenever ticks are converted to seconds in a tooltip, the decimal is kept if the resulting amount of seconds is under this value."
 }

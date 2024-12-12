@@ -33,7 +33,7 @@ public class CAModels extends ItemModelProvider {
         // regular chromatic curios
         basicModel("golden_heart");
         basicModel("glass_shield"); //TODO super
-        //basicModelWithSuper("ward_crystal");
+        basicModel("ward_crystal"); //TODO super
         //basicModelWithSuper("shadow_treads");
         //basicModel("duality_rings");
         //basicModelWithSuper("friendly_fire_flower");
