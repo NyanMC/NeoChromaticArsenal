@@ -7,12 +7,14 @@ import io.wispforest.accessories.api.SoundEventData;
 import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.CustomData;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
@@ -22,12 +24,23 @@ import java.util.List;
 
 public class ChromaAccessory extends AccessoryItem {
 
-    private final @Nullable Holder<SoundEvent> equipSound;
+    private @Nullable Holder<SoundEvent> equipSound;
+    private boolean needsDummyUpdater = false;
 
-    public ChromaAccessory(Rarity rarity, @Nullable Holder<SoundEvent> equipSound) {
+    public ChromaAccessory(Rarity rarity) {
         super(new Item.Properties()
                 .stacksTo(1)
                 .rarity(rarity));
+    }
+    public ChromaAccessory() {
+        this(Rarity.RARE);
+    }
+
+    protected void enableJankAttributeFix() {
+        this.needsDummyUpdater = true;
+    }
+
+    protected void setEquipSound(@Nullable Holder<SoundEvent> equipSound) {
         this.equipSound = equipSound;
     }
 
@@ -37,14 +50,6 @@ public class ChromaAccessory extends AccessoryItem {
         if (!Screen.hasShiftDown()) {
             TooltipHelper.itemTooltipLine("shift", tooltipComponents);
         }
-    }
-
-    public ChromaAccessory(@Nullable Holder<SoundEvent> equipSound) {
-        this(Rarity.RARE, equipSound);
-    }
-
-    public ChromaAccessory() {
-        this(null);
     }
 
     @Override
@@ -60,5 +65,12 @@ public class ChromaAccessory extends AccessoryItem {
         if (equipSound == null) return null;
 
         return new SoundEventData(equipSound, 0.5f, 1);
+    }
+
+    @Override
+    public void tick(ItemStack stack, SlotReference reference) {
+        if (!needsDummyUpdater) return;
+        // this sucks. i hate doing this. if you know of a better way to do this please feel free to PR
+        CustomData.update(DataComponents.CUSTOM_DATA, stack, (tag) -> tag.putDouble("dummy", Math.random()));
     }
 }

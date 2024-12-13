@@ -16,6 +16,11 @@
   "tooltip.chromaticarsenal.ward_crystal.1": "§aReduces magic damage taken by %1$s§b%%",
   "tooltip.chromaticarsenal.ward_crystal.2": "§cReduces magic damage dealt by %1$s§b%%",
 
+  "item.chromaticarsenal.shadow_treads": "Shadow Treads",
+  "tooltip.chromaticarsenal.shadow_treads.1": "§2Grants immunity to Slowness",
+  "tooltip.chromaticarsenal.shadow_treads.2": "§6Increases movement speed by %1$s§b%%§6 when in a light level of %2$s§6 or less",
+  "tooltip.chromaticarsenal.shadow_treads.3": "§6Prevents activation of Sculk Sensors from walking or falling short distances",
+
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
 
   "itemGroup.chromaticarsenal": "Chromatic Arsenal",
@@ -31,6 +36,10 @@
   "text.config.chromaticarsenal.option.COMMON.wardCrystalIncomingMultiplier.tooltip": "Magic damage received while wearing a Ward Crystal is multiplied by this value.",
   "text.config.chromaticarsenal.option.COMMON.wardCrystalOutgoingMultiplier": "Ward Crystal Outgoing Multiplier",
   "text.config.chromaticarsenal.option.COMMON.wardCrystalOutgoingMultiplier.tooltip": "Magic damage dealt while wearing a Ward Crystal is multiplied by this value.",
+  "text.config.chromaticarsenal.option.COMMON.shadowTreadsMaxLightLevel": "Shadow Treads Max Light Level",
+  "text.config.chromaticarsenal.option.COMMON.shadowTreadsMaxLightLevel.tooltip": "The highest possible light level in which the Shadow Treads' effect will activate. Note that very low values may not function as expected.",
+  "text.config.chromaticarsenal.option.COMMON.shadowTreadsSpeedModifier": "Shadow Treads Speed Modifier",
+  "text.config.chromaticarsenal.option.COMMON.shadowTreadsSpeedModifier.tooltip": "The speed increase caused by the Shadow Treads' effect. 0.2 is equal to +20%%.",
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
   "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold": "Tooltip Decimal Threshold",
   "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold.tooltip": "Whenever ticks are converted to seconds in a tooltip, the decimal is kept if the resulting amount of seconds is under this value."

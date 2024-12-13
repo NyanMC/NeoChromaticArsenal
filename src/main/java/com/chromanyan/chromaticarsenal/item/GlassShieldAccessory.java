@@ -32,7 +32,7 @@ import java.util.List;
 public class GlassShieldAccessory extends ChromaAccessory {
 
     public GlassShieldAccessory() {
-        super(Holder.direct(SoundEvents.GLASS_PLACE));
+        setEquipSound(Holder.direct(SoundEvents.GLASS_PLACE));
     }
 
     @Override
@@ -66,8 +66,8 @@ public class GlassShieldAccessory extends ChromaAccessory {
         if (event.getAmount() == 0 || event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)) return;
 
         LivingEntity entity = event.getEntity();
-        ItemStack stack = ChromaAccessoryHelper.tryGetFirstEquipped(entity, CAItems.GLASS_SHIELD.get());
-        if (stack == null) return;
+
+        if (!ChromaAccessoryHelper.isAccessoryEquipped(entity, CAItems.GLASS_SHIELD.get())) return;
 
         if (!(entity instanceof Player player)) return;
         if (player.getCooldowns().isOnCooldown(CAItems.GLASS_SHIELD.get())) return;

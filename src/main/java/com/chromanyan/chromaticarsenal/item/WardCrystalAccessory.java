@@ -25,7 +25,7 @@ import java.util.List;
 public class WardCrystalAccessory extends ChromaAccessory {
 
     public WardCrystalAccessory() {
-        super(Holder.direct(SoundEvents.AMETHYST_BLOCK_PLACE));
+        setEquipSound(Holder.direct(SoundEvents.AMETHYST_BLOCK_PLACE));
     }
 
     @Override
@@ -41,16 +41,12 @@ public class WardCrystalAccessory extends ChromaAccessory {
         if (event.getSource().is(CATags.DamageTypes.IMMUNE_TO_WARD_CRYSTAL)) return;
         if (event.getNewDamage() == 0 || event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)) return;
 
-        ItemStack stack = ChromaAccessoryHelper.tryGetFirstEquipped(event.getEntity(), CAItems.WARD_CRYSTAL.get());
-
-        if (stack != null) {
+        if (ChromaAccessoryHelper.isAccessoryEquipped(event.getEntity(), CAItems.WARD_CRYSTAL.get())) {
             event.setNewDamage(event.getNewDamage() * (float) ChromaticArsenal.CONFIG.COMMON.wardCrystalIncomingMultiplier());
         }
 
         if (!(event.getSource().getEntity() instanceof LivingEntity livingEntity)) return;
-
-        ItemStack attackerStack = ChromaAccessoryHelper.tryGetFirstEquipped(livingEntity, CAItems.WARD_CRYSTAL.get());
-        if (attackerStack == null) return;
+        if (!ChromaAccessoryHelper.isAccessoryEquipped(livingEntity, CAItems.WARD_CRYSTAL.get())) return;
 
         event.setNewDamage(event.getNewDamage() * (float) ChromaticArsenal.CONFIG.COMMON.wardCrystalOutgoingMultiplier());
     }

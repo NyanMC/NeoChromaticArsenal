@@ -27,6 +27,11 @@ public class CAConfigModel {
         public double wardCrystalIncomingMultiplier = 0.25;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public double wardCrystalOutgoingMultiplier = 0.25;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        @RangeConstraint(min = 0, max = 15)
+        public int shadowTreadsMaxLightLevel = 7;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public double shadowTreadsSpeedModifier = 0.2;
     }
 
     public static class ClientOptions {

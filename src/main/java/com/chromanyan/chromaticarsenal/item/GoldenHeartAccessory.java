@@ -23,7 +23,7 @@ import java.util.List;
 public class GoldenHeartAccessory extends ChromaAccessory implements PiglinNeutralInducer {
 
     public GoldenHeartAccessory() {
-        super(SoundEvents.ARMOR_EQUIP_GOLD);
+        setEquipSound(SoundEvents.ARMOR_EQUIP_GOLD);
     }
 
     @Override

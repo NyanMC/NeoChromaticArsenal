@@ -11,13 +11,13 @@ import net.minecraft.world.item.Item;
 public class CATags {
     public static class Items {
         private static TagKey<Item> forgeTag(String name) {
-            return ItemTags.create(ResourceLocation.parse("forge:" + name));
+            return ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", name));
         }
 
         public static final TagKey<Item> GEMS_CHROMA = forgeTag("gems/chroma");
     }
 
     public static class DamageTypes {
-        public static final TagKey<DamageType> IMMUNE_TO_WARD_CRYSTAL = TagKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse(ChromaticArsenal.MODID + ":immune_to_ward_crystal"));
+        public static final TagKey<DamageType> IMMUNE_TO_WARD_CRYSTAL = TagKey.create(Registries.DAMAGE_TYPE, ChromaticArsenal.of("immune_to_ward_crystal"));
     }
 }

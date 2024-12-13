@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticarsenal.util;
 
+import com.chromanyan.chromaticarsenal.init.CAItems;
 import io.wispforest.accessories.api.AccessoriesCapability;
 import io.wispforest.accessories.api.slot.SlotEntryReference;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,4 +22,8 @@ public class ChromaAccessoryHelper {
         return ref.stack();
     }
 
+    public static boolean isAccessoryEquipped(LivingEntity entity, Item item) {
+        ItemStack stack = ChromaAccessoryHelper.tryGetFirstEquipped(entity, item);
+        return stack != null;
+    }
 }

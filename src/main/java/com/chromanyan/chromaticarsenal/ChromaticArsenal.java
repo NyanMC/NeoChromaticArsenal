@@ -3,10 +3,12 @@ package com.chromanyan.chromaticarsenal;
 import com.chromanyan.chromaticarsenal.data.CAModels;
 import com.chromanyan.chromaticarsenal.init.CACreativeTabs;
 import com.chromanyan.chromaticarsenal.init.CAItems;
+import com.chromanyan.chromaticarsenal.item.ShadowTreadsAccessory;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -64,7 +66,11 @@ public class ChromaticArsenal {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            ShadowTreadsAccessory.clientInit();
         }
+    }
+
+    public static ResourceLocation of(String path) {
+        return ResourceLocation.fromNamespaceAndPath(MODID, path);
     }
 }
