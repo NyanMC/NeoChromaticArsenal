@@ -21,6 +21,13 @@
   "tooltip.chromaticarsenal.shadow_treads.2": "§6Increases movement speed by %1$s§b%%§6 when in a light level of %2$s§6 or less",
   "tooltip.chromaticarsenal.shadow_treads.3": "§6Prevents activation of Sculk Sensors from walking or falling short distances",
 
+  "item.chromaticarsenal.duality_rings": "Duality Rings",
+  "tooltip.chromaticarsenal.duality_rings.1": "§dIncreases the effectiveness of Magic Garlic Bread",
+  "tooltip.chromaticarsenal.duality_rings.2": "§aIncreases the damage of projectiles by %1$s§b%%",
+  "tooltip.chromaticarsenal.duality_rings.twisted": "§cChromatic Twisting:§5 Magic Garlic Bread also grants Saturation for %1$s§5 second(s), however not having this effect inflicts Hunger at level %2$s",
+
+  "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
+
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
 
   "itemGroup.chromaticarsenal": "Chromatic Arsenal",
@@ -40,6 +47,16 @@
   "text.config.chromaticarsenal.option.COMMON.shadowTreadsMaxLightLevel.tooltip": "The highest possible light level in which the Shadow Treads' effect will activate. Note that very low values may not function as expected.",
   "text.config.chromaticarsenal.option.COMMON.shadowTreadsSpeedModifier": "Shadow Treads Speed Modifier",
   "text.config.chromaticarsenal.option.COMMON.shadowTreadsSpeedModifier.tooltip": "The speed increase caused by the Shadow Treads' effect. 0.2 is equal to +20%%.",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsDamageMultiplier": "Duality Rings Damage Multiplier",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsDamageMultiplier.tooltip": "The multiplier given to projectile attacks when the attacker is wearing Duality Rings.",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsStrengthDuration": "Duality Rings Strength Duration",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsStrengthDuration.tooltip": "The duration of the Duality Rings' Strength effect, in ticks. This is applied when consuming Magic Garlic Bread.",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsStrengthAmplifier": "Duality Rings Strength Amplifier",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsStrengthAmplifier.tooltip": "The amplifier of the Duality Rings' Strength effect.",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostDuration": "Duality Rings Health Boost Duration",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostDuration.tooltip": "The duration of the Duality Rings' Health Boost effect, in ticks. This is applied when consuming Magic Garlic Bread.",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostAmplifier": "Duality Rings Health Boost Amplifier",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostAmplifier.tooltip": "The amplifier of the Duality Rings' Health Boost effect.",
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
   "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold": "Tooltip Decimal Threshold",
   "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold.tooltip": "Whenever ticks are converted to seconds in a tooltip, the decimal is kept if the resulting amount of seconds is under this value."

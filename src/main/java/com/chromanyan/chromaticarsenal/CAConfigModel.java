@@ -32,6 +32,12 @@ public class CAConfigModel {
         public int shadowTreadsMaxLightLevel = 7;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public double shadowTreadsSpeedModifier = 0.2;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public double dualityRingsDamageMultiplier = 1.25;
+        public int dualityRingsStrengthDuration = 2400;
+        public int dualityRingsStrengthAmplifier = 0;
+        public int dualityRingsHealthBoostDuration = 2400;
+        public int dualityRingsHealthBoostAmplifier = 2;
     }
 
     public static class ClientOptions {

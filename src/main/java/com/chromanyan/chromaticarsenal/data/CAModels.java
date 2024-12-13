@@ -35,7 +35,7 @@ public class CAModels extends ItemModelProvider {
         basicModel("glass_shield");     //TODO super
         basicModel("ward_crystal");     //TODO super
         basicModel("shadow_treads");    //TODO super
-        //basicModel("duality_rings");
+        basicModel("duality_rings");
         //basicModelWithSuper("friendly_fire_flower");
         //basicModelWithSuper("lunar_crystal");
         //basicModel("cryo_ring");
@@ -66,7 +66,7 @@ public class CAModels extends ItemModelProvider {
         //basicModel("omni_ring");
 
         // other stuff
-        //basicModel("magic_garlic_bread");
+        basicModel("magic_garlic_bread");
         //basicModel("cosmicola");
         //basicModel("chroma_salvager");
         //basicModel("viewer_item");
