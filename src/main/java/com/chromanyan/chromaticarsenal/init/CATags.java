@@ -10,11 +10,11 @@ import net.minecraft.world.item.Item;
 
 public class CATags {
     public static class Items {
-        private static TagKey<Item> forgeTag(String name) {
-            return ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", name));
+        private static TagKey<Item> commonTag(String name) {
+            return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
         }
 
-        public static final TagKey<Item> GEMS_CHROMA = forgeTag("gems/chroma");
+        public static final TagKey<Item> GEMS_CHROMA = commonTag("gems/chroma");
     }
 
     public static class DamageTypes {
