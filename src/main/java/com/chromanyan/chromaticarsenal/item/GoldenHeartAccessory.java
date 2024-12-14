@@ -46,8 +46,8 @@ public class GoldenHeartAccessory extends ChromaAccessory implements PiglinNeutr
     @Override
     public void tick(ItemStack stack, SlotReference reference) {
         LivingEntity living = reference.entity();
-        if (!reference.entity().getCommandSenderWorld().isClientSide() && living.tickCount % ChromaticArsenal.CONFIG.COMMON.goldenHeartDuration() == 0) {
-            reference.entity().addEffect(new MobEffectInstance(MobEffects.ABSORPTION, ChromaticArsenal.CONFIG.COMMON.goldenHeartDuration(), ChromaticArsenal.CONFIG.COMMON.goldenHeartAmplifier(), true, false), reference.entity());
+        if (!living.getCommandSenderWorld().isClientSide() && living.tickCount % ChromaticArsenal.CONFIG.COMMON.goldenHeartDuration() == 0) {
+            living.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, ChromaticArsenal.CONFIG.COMMON.goldenHeartDuration(), ChromaticArsenal.CONFIG.COMMON.goldenHeartAmplifier(), true, false), reference.entity());
         }
     }
 

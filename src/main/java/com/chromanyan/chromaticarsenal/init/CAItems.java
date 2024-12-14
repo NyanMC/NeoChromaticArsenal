@@ -19,4 +19,5 @@ public class CAItems {
     public static final DeferredItem<WardCrystalAccessory> WARD_CRYSTAL = ITEMS.register("ward_crystal", WardCrystalAccessory::new);
     public static final DeferredItem<ShadowTreadsAccessory> SHADOW_TREADS = ITEMS.register("shadow_treads", ShadowTreadsAccessory::new);
     public static final DeferredItem<DualityRingsAccessory> DUALITY_RINGS = ITEMS.register("duality_rings", DualityRingsAccessory::new);
+    public static final DeferredItem<FriendlyFireFlowerAccessory> FRIENDLY_FIRE_FLOWER = ITEMS.register("friendly_fire_flower", FriendlyFireFlowerAccessory::new);
 }

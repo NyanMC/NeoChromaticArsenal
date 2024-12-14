@@ -27,8 +27,12 @@ public class ChromaAccessory extends AccessoryItem {
     private @Nullable Holder<SoundEvent> equipSound;
     private boolean needsDummyUpdater = false;
 
+    public ChromaAccessory(Item.Properties properties) {
+        super(properties);
+    }
+
     public ChromaAccessory(Rarity rarity) {
-        super(new Item.Properties()
+        this(new Item.Properties()
                 .stacksTo(1)
                 .rarity(rarity));
     }

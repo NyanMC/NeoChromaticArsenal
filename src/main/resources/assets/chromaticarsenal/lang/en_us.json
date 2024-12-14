@@ -24,7 +24,11 @@
   "item.chromaticarsenal.duality_rings": "Duality Rings",
   "tooltip.chromaticarsenal.duality_rings.1": "§dIncreases the effectiveness of Magic Garlic Bread",
   "tooltip.chromaticarsenal.duality_rings.2": "§aIncreases the damage of projectiles by %1$s§b%%",
-  "tooltip.chromaticarsenal.duality_rings.twisted": "§cChromatic Twisting:§5 Magic Garlic Bread also grants Saturation for %1$s§5 second(s), however not having this effect inflicts Hunger at level %2$s",
+
+  "item.chromaticarsenal.friendly_fire_flower": "Friendly Fire Flower",
+  "tooltip.chromaticarsenal.friendly_fire_flower.1": "§2Nullifies thorns or self-inflicted damage",
+  "tooltip.chromaticarsenal.friendly_fire_flower.2": "§6Absorbs fire damage at the cost of durability, and recovers durability over time",
+  "tooltip.chromaticarsenal.friendly_fire_flower.3": "§6Upon running out of durability, takes %1$s§6 seconds to begin restoring durability again",
 
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
@@ -57,6 +61,10 @@
   "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostDuration.tooltip": "The duration of the Duality Rings' Health Boost effect, in ticks. This is applied when consuming Magic Garlic Bread.",
   "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostAmplifier": "Duality Rings Health Boost Amplifier",
   "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostAmplifier.tooltip": "The amplifier of the Duality Rings' Health Boost effect.",
+  "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerRecoveryTime": "Friendly Fire Flower Recovery Time",
+  "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerRecoveryTime.tooltip": "The duration, in ticks, that it takes for the Friendly Fire Flower to recover one point of durability. This can be halved by standing in powder snow.",
+  "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerOverheatCooldown": "Friendly Fire Flower Overheat Cooldown",
+  "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerOverheatCooldown.tooltip": "The duration, in ticks, that it takes for the Friendly Fire Flower to begin recovering durability after taking too much fire damage.",
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
   "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold": "Tooltip Decimal Threshold",
   "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold.tooltip": "Whenever ticks are converted to seconds in a tooltip, the decimal is kept if the resulting amount of seconds is under this value."

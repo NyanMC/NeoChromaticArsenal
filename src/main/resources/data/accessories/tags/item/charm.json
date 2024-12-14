@@ -1,6 +1,7 @@
 {
     "replace": false,
     "values": [
-      "chromaticarsenal:ward_crystal"
+      "chromaticarsenal:ward_crystal",
+      "chromaticarsenal:friendly_fire_flower"
     ]
   }

@@ -38,6 +38,8 @@ public class CAConfigModel {
         public int dualityRingsStrengthAmplifier = 0;
         public int dualityRingsHealthBoostDuration = 2400;
         public int dualityRingsHealthBoostAmplifier = 2;
+        public int friendlyFireFlowerRecoveryTime = 60;
+        public int friendlyFireFlowerOverheatCooldown = 100;
     }
 
     public static class ClientOptions {
