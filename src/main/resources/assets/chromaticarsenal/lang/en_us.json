@@ -1,4 +1,7 @@
 {
+  "_comment.chromaticarsenal.main": "Any lang key that begins with _comment does not appear in-game. They serve to explain references and other things.",
+  "_comment.chromaticarsenal.main2": "You may translate these, but there is no point.",
+
   "item.chromaticarsenal.chroma_shard": "Chroma Shard",
 
   "item.chromaticarsenal.golden_heart": "Golden Heart",
@@ -25,10 +28,17 @@
   "tooltip.chromaticarsenal.duality_rings.1": "§dIncreases the effectiveness of Magic Garlic Bread",
   "tooltip.chromaticarsenal.duality_rings.2": "§aIncreases the damage of projectiles by %1$s§b%%",
 
+  "_comment.chromaticarsenal.friendly_fire_flower": "A play on the term \"friendly fire\", as the flower resists both self-damage and fire damage.",
   "item.chromaticarsenal.friendly_fire_flower": "Friendly Fire Flower",
   "tooltip.chromaticarsenal.friendly_fire_flower.1": "§2Nullifies thorns or self-inflicted damage",
   "tooltip.chromaticarsenal.friendly_fire_flower.2": "§6Absorbs fire damage at the cost of durability, and recovers durability over time",
   "tooltip.chromaticarsenal.friendly_fire_flower.3": "§6Upon running out of durability, takes %1$s§6 seconds to begin restoring durability again",
+
+  "item.chromaticarsenal.lunar_crystal": "Lunar Crystal",
+  "_comment.item.chromaticarsenal.lunar_crystal.luna": "In the below line, \"Luna\" is a name. If you bother to translate it, translate it as such.",
+  "item.chromaticarsenal.lunar_crystal.luna": "Luna's Crystal",
+  "tooltip.chromaticarsenal.lunar_crystal.1": "§2Grants immunity to Levitation",
+  "tooltip.chromaticarsenal.lunar_crystal.2": "§6Upon striking an enemy, has a 1 in %1$s§6 chance to inflict Levitation at level %2$s§6 for %3$s§6 seconds",
 
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
@@ -37,20 +47,25 @@
   "itemGroup.chromaticarsenal": "Chromatic Arsenal",
   "text.config.chromaticarsenal.title": "Chromatic Arsenal Config",
   "text.config.chromaticarsenal.category.COMMON": "Common Settings",
+
   "text.config.chromaticarsenal.option.COMMON.goldenHeartDuration": "Golden Heart Duration",
   "text.config.chromaticarsenal.option.COMMON.goldenHeartDuration.tooltip": "The duration of the Golden Heart's Absorption effect, in ticks. The effect is refreshed after this many ticks pass.",
   "text.config.chromaticarsenal.option.COMMON.goldenHeartAmplifier": "Golden Heart Amplifier",
   "text.config.chromaticarsenal.option.COMMON.goldenHeartAmplifier.tooltip": "The amplifier of the Golden Heart's Absorption effect.",
+
   "text.config.chromaticarsenal.option.COMMON.glassShieldCooldown": "Glass Shield Cooldown",
   "text.config.chromaticarsenal.option.COMMON.glassShieldCooldown.tooltip": "After blocking a hit, it will take the Glass Shield this many ticks to recover.",
+
   "text.config.chromaticarsenal.option.COMMON.wardCrystalIncomingMultiplier": "Ward Crystal Incoming Multiplier",
   "text.config.chromaticarsenal.option.COMMON.wardCrystalIncomingMultiplier.tooltip": "Magic damage received while wearing a Ward Crystal is multiplied by this value.",
   "text.config.chromaticarsenal.option.COMMON.wardCrystalOutgoingMultiplier": "Ward Crystal Outgoing Multiplier",
   "text.config.chromaticarsenal.option.COMMON.wardCrystalOutgoingMultiplier.tooltip": "Magic damage dealt while wearing a Ward Crystal is multiplied by this value.",
+
   "text.config.chromaticarsenal.option.COMMON.shadowTreadsMaxLightLevel": "Shadow Treads Max Light Level",
   "text.config.chromaticarsenal.option.COMMON.shadowTreadsMaxLightLevel.tooltip": "The highest possible light level in which the Shadow Treads' effect will activate. Note that very low values may not function as expected.",
   "text.config.chromaticarsenal.option.COMMON.shadowTreadsSpeedModifier": "Shadow Treads Speed Modifier",
   "text.config.chromaticarsenal.option.COMMON.shadowTreadsSpeedModifier.tooltip": "The speed increase caused by the Shadow Treads' effect. 0.2 is equal to +20%%.",
+
   "text.config.chromaticarsenal.option.COMMON.dualityRingsDamageMultiplier": "Duality Rings Damage Multiplier",
   "text.config.chromaticarsenal.option.COMMON.dualityRingsDamageMultiplier.tooltip": "The multiplier given to projectile attacks when the attacker is wearing Duality Rings.",
   "text.config.chromaticarsenal.option.COMMON.dualityRingsStrengthDuration": "Duality Rings Strength Duration",
@@ -61,11 +76,25 @@
   "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostDuration.tooltip": "The duration of the Duality Rings' Health Boost effect, in ticks. This is applied when consuming Magic Garlic Bread.",
   "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostAmplifier": "Duality Rings Health Boost Amplifier",
   "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostAmplifier.tooltip": "The amplifier of the Duality Rings' Health Boost effect.",
+
   "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerRecoveryTime": "Friendly Fire Flower Recovery Time",
   "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerRecoveryTime.tooltip": "The duration, in ticks, that it takes for the Friendly Fire Flower to recover one point of durability. This can be halved by standing in powder snow.",
   "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerOverheatCooldown": "Friendly Fire Flower Overheat Cooldown",
   "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerOverheatCooldown.tooltip": "The duration, in ticks, that it takes for the Friendly Fire Flower to begin recovering durability after taking too much fire damage.",
+
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalGravityModifier": "Lunar Crystal Gravity Modifier",
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalGravityModifier.tooltip": "The Lunar Crystal's gravity modifier. This is a \"multiply total\" attribute, -0.25 is equal to -25%%. You shouldn't set this to -1 or below.",
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalSafeFallDistanceModifier": "Lunar Crystal Safe Fall Distance Modifier",
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalSafeFallDistanceModifier.tooltip": "The number of additional blocks the wearer of a Lunar Crystal is able to fall without taking damage.",
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationChance": "Lunar Crystal Levitation Chance",
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationChance.tooltip": "A 1 in X chance for any attack from an entity wearing a Lunar Crystal to inflict Levitation.",
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationDuration": "Lunar Crystal Levitation Duration",
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationDuration.tooltip": "The duration, in ticks, of the Lunar Crystal's Levitation effect.",
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationAmplifier": "Lunar Crystal Levitation Amplifier",
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationAmplifier.tooltip": "The amplifier of the Lunar Crystal's Levitation effect.",
+
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
+
   "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold": "Tooltip Decimal Threshold",
   "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold.tooltip": "Whenever ticks are converted to seconds in a tooltip, the decimal is kept if the resulting amount of seconds is under this value."
 }

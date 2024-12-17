@@ -21,8 +21,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Random;
 
 public class ChromaAccessory extends AccessoryItem {
+
+    protected static final Random rand = new Random();
 
     private @Nullable Holder<SoundEvent> equipSound;
     private boolean needsDummyUpdater = false;
