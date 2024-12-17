@@ -58,6 +58,13 @@ public class CAConfigModel {
         public int lunarCrystalLevitationDuration = 60;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public int lunarCrystalLevitationAmplifier = 2;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int cryoRingSnowballDamage = 2;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int cryoRingVulnerableSnowballDamage = 5;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int cryoRingFreezeTicks = 100;
     }
 
     public static class ClientOptions {

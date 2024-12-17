@@ -1,6 +1,8 @@
 package com.chromanyan.chromaticarsenal;
 
 import com.chromanyan.chromaticarsenal.data.CAModels;
+import com.chromanyan.chromaticarsenal.data.tags.CABlockTags;
+import com.chromanyan.chromaticarsenal.data.tags.CAItemTags;
 import com.chromanyan.chromaticarsenal.init.CACreativeTabs;
 import com.chromanyan.chromaticarsenal.init.CAItems;
 import com.chromanyan.chromaticarsenal.item.ShadowTreadsAccessory;
@@ -58,6 +60,11 @@ public class ChromaticArsenal {
         PackOutput output = gen.getPackOutput();
         if (event.includeClient()) {
             gen.addProvider(true, new CAModels(output, efh));
+        }
+        if (event.includeServer()) {
+            CABlockTags blockTags = new CABlockTags(output, lookupProvider, efh);
+            gen.addProvider(true, blockTags);
+            gen.addProvider(true, new CAItemTags(output, lookupProvider, blockTags.contentsGetter(), efh));
         }
     }
 

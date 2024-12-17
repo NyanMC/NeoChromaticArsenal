@@ -40,6 +40,11 @@
   "tooltip.chromaticarsenal.lunar_crystal.1": "§2Grants immunity to Levitation",
   "tooltip.chromaticarsenal.lunar_crystal.2": "§6Upon striking an enemy, has a 1 in %1$s§6 chance to inflict Levitation at level %2$s§6 for %3$s§6 seconds",
 
+  "item.chromaticarsenal.cryo_ring": "Cryo Ring",
+  "tooltip.chromaticarsenal.cryo_ring.1": "§2Grants immunity to freezing",
+  "tooltip.chromaticarsenal.cryo_ring.2": "§6Causes thrown snowballs to deal damage and freeze entities",
+  "tooltip.chromaticarsenal.cryo_ring.3": "§6Snow Golems built while wearing this inherit these effects",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
@@ -92,6 +97,13 @@
   "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationDuration.tooltip": "The duration, in ticks, of the Lunar Crystal's Levitation effect.",
   "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationAmplifier": "Lunar Crystal Levitation Amplifier",
   "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationAmplifier.tooltip": "The amplifier of the Lunar Crystal's Levitation effect.",
+
+  "text.config.chromaticarsenal.option.COMMON.cryoRingSnowballDamage": "Cryo Ring Snowball Damage",
+  "text.config.chromaticarsenal.option.COMMON.cryoRingSnowballDamage.tooltip": "The amount of additional damage snowballs deal when hitting an entity.",
+  "text.config.chromaticarsenal.option.COMMON.cryoRingVulnerableSnowballDamage": "Cryo Ring Vulnerable Snowball Damage",
+  "text.config.chromaticarsenal.option.COMMON.cryoRingVulnerableSnowballDamage.tooltip": "The amount of additional damage snowballs deal when hitting an entity vulnerable to freezing. This does not stack with Cryo Ring Snowball Damage.",
+  "text.config.chromaticarsenal.option.COMMON.cryoRingFreezeTicks": "Cryo Ring Freeze Ticks",
+  "text.config.chromaticarsenal.option.COMMON.cryoRingFreezeTicks.tooltip": "The amount of ticks added to the freeze timer when an entity is hit by a snowball.",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 
