@@ -7,7 +7,6 @@ import com.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import com.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import com.chromanyan.chromaticarsenal.util.TooltipHelper;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
@@ -25,7 +24,7 @@ import java.util.List;
 public class WardCrystalAccessory extends ChromaAccessory {
 
     public WardCrystalAccessory() {
-        setEquipSound(Holder.direct(SoundEvents.AMETHYST_BLOCK_PLACE));
+        setEquipSound(SoundEvents.AMETHYST_BLOCK_PLACE);
     }
 
     @Override

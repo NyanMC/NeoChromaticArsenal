@@ -51,6 +51,10 @@ public class ChromaAccessory extends AccessoryItem {
         this.equipSound = equipSound;
     }
 
+    protected void setEquipSound(SoundEvent equipSound) {
+        this.setEquipSound(Holder.direct(equipSound));
+    }
+
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {

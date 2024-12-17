@@ -7,7 +7,6 @@ import com.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import com.chromanyan.chromaticarsenal.util.TooltipHelper;
 import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -40,7 +39,7 @@ public class FriendlyFireFlowerAccessory extends ChromaAccessory {
                 .durability(25)
                 .setNoRepair()
                 .fireResistant());
-        setEquipSound(Holder.direct(SoundEvents.FIRECHARGE_USE));
+        setEquipSound(SoundEvents.FIRECHARGE_USE);
     }
 
     @Override

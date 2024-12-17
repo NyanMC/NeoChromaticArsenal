@@ -9,7 +9,6 @@ import com.mojang.authlib.properties.PropertyMap;
 import io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder;
 import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -39,7 +38,7 @@ import java.util.Optional;
 public class LunarCrystalAccessory extends ChromaAccessory {
 
     public LunarCrystalAccessory() {
-        setEquipSound(Holder.direct(SoundEvents.END_PORTAL_FRAME_FILL));
+        setEquipSound(SoundEvents.END_PORTAL_FRAME_FILL);
     }
 
     @Override

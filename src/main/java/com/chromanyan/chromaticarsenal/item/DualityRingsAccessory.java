@@ -6,7 +6,6 @@ import com.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import com.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import com.chromanyan.chromaticarsenal.util.TooltipHelper;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
@@ -24,7 +23,7 @@ import java.util.List;
 public class DualityRingsAccessory extends ChromaAccessory {
 
     public DualityRingsAccessory() {
-        setEquipSound(Holder.direct(SoundEvents.ARROW_HIT));
+        setEquipSound(SoundEvents.ARROW_HIT);
     }
 
     @Override

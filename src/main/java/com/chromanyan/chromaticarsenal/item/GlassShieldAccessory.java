@@ -7,7 +7,6 @@ import com.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import com.chromanyan.chromaticarsenal.util.TooltipHelper;
 import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -32,7 +31,7 @@ import java.util.List;
 public class GlassShieldAccessory extends ChromaAccessory {
 
     public GlassShieldAccessory() {
-        setEquipSound(Holder.direct(SoundEvents.GLASS_PLACE));
+        setEquipSound(SoundEvents.GLASS_PLACE);
     }
 
     @Override
