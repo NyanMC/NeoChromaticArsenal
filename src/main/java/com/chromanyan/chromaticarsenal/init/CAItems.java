@@ -22,4 +22,5 @@ public class CAItems {
     public static final DeferredItem<FriendlyFireFlowerAccessory> FRIENDLY_FIRE_FLOWER = ITEMS.register("friendly_fire_flower", FriendlyFireFlowerAccessory::new);
     public static final DeferredItem<LunarCrystalAccessory> LUNAR_CRYSTAL = ITEMS.register("lunar_crystal", LunarCrystalAccessory::new);
     public static final DeferredItem<CryoRingAccessory> CRYO_RING = ITEMS.register("cryo_ring", CryoRingAccessory::new);
+    public static final DeferredItem<BubbleAmuletAccessory> BUBBLE_AMULET = ITEMS.register("bubble_amulet", BubbleAmuletAccessory::new);
 }

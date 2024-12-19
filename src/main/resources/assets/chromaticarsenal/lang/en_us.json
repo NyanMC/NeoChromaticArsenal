@@ -45,9 +45,17 @@
   "tooltip.chromaticarsenal.cryo_ring.2": "§6Causes thrown snowballs to deal damage and freeze entities",
   "tooltip.chromaticarsenal.cryo_ring.3": "§6Snow Golems built while wearing this inherit these effects",
 
+  "item.chromaticarsenal.bubble_amulet": "Bubble Amulet",
+  "tooltip.chromaticarsenal.bubble_amulet.1": "§6Provides the wearer with additional air before drowning",
+  "tooltip.chromaticarsenal.bubble_amulet.2": "§6While drowning, allows the wearer to swim even faster",
+  "tooltip.chromaticarsenal.bubble_amulet.3": "§6Refills over time while outside of water",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
+
+  "effect.chromaticarsenal.bubble_panic": "Bubble Panic!",
+  "effect.chromaticarsenal.bubble_panic.description": "Increases swimming speed by 30%",
 
   "itemGroup.chromaticarsenal": "Chromatic Arsenal",
   "text.config.chromaticarsenal.title": "Chromatic Arsenal Config",
@@ -104,6 +112,9 @@
   "text.config.chromaticarsenal.option.COMMON.cryoRingVulnerableSnowballDamage.tooltip": "The amount of additional damage snowballs deal when hitting an entity vulnerable to freezing. This does not stack with Cryo Ring Snowball Damage.",
   "text.config.chromaticarsenal.option.COMMON.cryoRingFreezeTicks": "Cryo Ring Freeze Ticks",
   "text.config.chromaticarsenal.option.COMMON.cryoRingFreezeTicks.tooltip": "The amount of ticks added to the freeze timer when an entity is hit by a snowball.",
+
+  "text.config.chromaticarsenal.option.COMMON.bubbleAmuletSwimSpeedModifier": "Bubble Amulet Swim Speed Modifier",
+  "text.config.chromaticarsenal.option.COMMON.bubbleAmuletSwimSpeedModifier.tooltip": "The multiply total modifier given to swim speed when wearing the Bubble Amulet.",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 

@@ -65,6 +65,9 @@ public class CAConfigModel {
         public int cryoRingVulnerableSnowballDamage = 5;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public int cryoRingFreezeTicks = 100;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public double bubbleAmuletSwimSpeedModifier = 0.3;
     }
 
     public static class ClientOptions {
