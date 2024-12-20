@@ -11,14 +11,18 @@ import io.wispforest.accessories.api.slot.SlotEntryReference;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(LivingEntity.class)
-public class LivingEntityMixin {
+public abstract class LivingEntityMixin {
 
     @Unique
     private static final float BLUE_ICE_FRICTION = 0.989F; // the most slippery block in vanilla
+
+    @Shadow
+    protected abstract float getBlockSpeedFactor();
 
     @ModifyReturnValue(method = "canFreeze", at = @At("RETURN"))
     private boolean canFreeze(boolean original) {
@@ -45,7 +49,7 @@ public class LivingEntityMixin {
 
         // don't even try if the momentum stone isn't equipped
         if (!ChromaAccessoryHelper.isAccessoryEquipped(trueThis, CAItems.MOMENTUM_STONE.get())) return original;
-        if (trueThis.getBlockSpeedFactor() > 1 && !ChromaticArsenal.CONFIG.COMMON.momentumStoneExtremelyUnbalancedMode()) return original; // high block speed factors are buggy
+        if (getBlockSpeedFactor() > 1 && !ChromaticArsenal.CONFIG.COMMON.momentumStoneExtremelyUnbalancedMode()) return original; // high block speed factors are buggy
 
         float newFriction = (float) (original + ChromaticArsenal.CONFIG.COMMON.momentumStoneFrictionAddition());
 
