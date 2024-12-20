@@ -50,6 +50,11 @@
   "tooltip.chromaticarsenal.bubble_amulet.2": "§6While drowning, allows the wearer to swim even faster",
   "tooltip.chromaticarsenal.bubble_amulet.3": "§6Refills over time while outside of water",
 
+  "item.chromaticarsenal.momentum_stone": "Momentum Stone",
+  "tooltip.chromaticarsenal.momentum_stone.1": "§6Allows sprinting to continue on an empty stomach",
+  "tooltip.chromaticarsenal.momentum_stone.2": "§6Allows for landing knockback attacks in rapid succession",
+  "tooltip.chromaticarsenal.momentum_stone.3": "§cMakes the ground harder to walk on",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
@@ -115,6 +120,11 @@
 
   "text.config.chromaticarsenal.option.COMMON.bubbleAmuletSwimSpeedModifier": "Bubble Amulet Swim Speed Modifier",
   "text.config.chromaticarsenal.option.COMMON.bubbleAmuletSwimSpeedModifier.tooltip": "The multiply total modifier given to swim speed when wearing the Bubble Amulet.",
+
+  "text.config.chromaticarsenal.option.COMMON.momentumStoneFrictionAddition": "Momentum Stone Friction Addition",
+  "text.config.chromaticarsenal.option.COMMON.momentumStoneFrictionAddition.tooltip": "The amount added to the player's friction while the Momentum Stone is equipped. Base friction is 0.6. Capped at 0.989 unless Extremely Unbalanced Mode is enabled.",
+  "text.config.chromaticarsenal.option.COMMON.momentumStoneExtremelyUnbalancedMode": "Momentum Stone Extremely Unbalanced Mode",
+  "text.config.chromaticarsenal.option.COMMON.momentumStoneExtremelyUnbalancedMode.tooltip": "Disables certain limits that prevent weird interactions caused by the Momentum Stone adding friction. Do not enable this unless you know what you are doing.",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 

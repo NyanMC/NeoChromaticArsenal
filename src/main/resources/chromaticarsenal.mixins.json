@@ -5,9 +5,11 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "chromaticarsenal.refmap.json",
   "mixins": [
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "PlayerMixin"
   ],
   "client": [
+    "LocalPlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

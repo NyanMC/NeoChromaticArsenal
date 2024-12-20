@@ -68,6 +68,12 @@ public class CAConfigModel {
 
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public double bubbleAmuletSwimSpeedModifier = 0.3;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        @RangeConstraint(min = 0, max = 1)
+        public double momentumStoneFrictionAddition = 0.3;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public boolean momentumStoneExtremelyUnbalancedMode = false;
     }
 
     public static class ClientOptions {
