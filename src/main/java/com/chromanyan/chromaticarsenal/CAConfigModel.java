@@ -3,6 +3,9 @@ package com.chromanyan.chromaticarsenal;
 import io.wispforest.owo.config.Option;
 import io.wispforest.owo.config.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SuppressWarnings("unused")
 @Config(name = ChromaticArsenal.MODID, wrapperName = "CAConfig")
 @Modmenu(modId = ChromaticArsenal.MODID)
@@ -74,6 +77,11 @@ public class CAConfigModel {
         public double momentumStoneFrictionAddition = 0.3;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public boolean momentumStoneExtremelyUnbalancedMode = false;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int advancingHeartHealthModifier = 20;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public List<String> advancingHeartAdvancementBlacklist = new ArrayList<>(List.of("cosmic_scroll"));
     }
 
     public static class ClientOptions {

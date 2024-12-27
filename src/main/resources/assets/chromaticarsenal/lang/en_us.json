@@ -55,6 +55,11 @@
   "tooltip.chromaticarsenal.momentum_stone.2": "§6Allows for landing knockback attacks in rapid succession",
   "tooltip.chromaticarsenal.momentum_stone.3": "§cMakes the ground harder to walk on",
 
+  "item.chromaticarsenal.advancing_heart": "Advancing Heart",
+  "tooltip.chromaticarsenal.advancing_heart.1": "§6This curio's power is scaled by how many advancements have been earned",
+  "tooltip.chromaticarsenal.advancing_heart.progresstracker": "§eCurrently, you have completed %1$s§e of %2$s§e advancements",
+  "tooltip.chromaticarsenal.advancing_heart.progresstracker.equipfirst": "§eAdvancement count only updates while equipped",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
@@ -125,6 +130,11 @@
   "text.config.chromaticarsenal.option.COMMON.momentumStoneFrictionAddition.tooltip": "The amount added to the player's friction while the Momentum Stone is equipped. Base friction is 0.6. Capped at 0.989 unless Extremely Unbalanced Mode is enabled.",
   "text.config.chromaticarsenal.option.COMMON.momentumStoneExtremelyUnbalancedMode": "Momentum Stone Extremely Unbalanced Mode",
   "text.config.chromaticarsenal.option.COMMON.momentumStoneExtremelyUnbalancedMode.tooltip": "Disables certain limits that prevent weird interactions caused by the Momentum Stone adding friction. Do not enable this unless you know what you are doing.",
+
+  "text.config.chromaticarsenal.option.COMMON.advancingHeartHealthModifier": "Advancing Heart Health Modifier",
+  "text.config.chromaticarsenal.option.COMMON.advancingHeartHealthModifier.tooltip": "The Advancing Heart gives additional max health corresponding to the %% of advancements completed, times this number, floored to the nearest even number.",
+  "text.config.chromaticarsenal.option.COMMON.advancingHeartAdvancementBlacklist": "Advancing Heart Advancement Blacklist",
+  "text.config.chromaticarsenal.option.COMMON.advancingHeartAdvancementBlacklist.tooltip": "The Advancing Heart will ignore advancements which contain any of these keywords in their name. By default, ignores an impossible advancement from Enigmatic Legacy.",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 

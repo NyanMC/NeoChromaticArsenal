@@ -41,7 +41,7 @@ public class CAModels extends ItemModelProvider {
         basicModel("cryo_ring");
         basicModel("bubble_amulet");
         basicModel("momentum_stone");
-        //basicModel("advancing_heart");
+        basicModel("advancing_heart");
         //basicModel("thunderguard");
 
         // super curios
