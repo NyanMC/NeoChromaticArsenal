@@ -25,4 +25,5 @@ public class CAItems {
     public static final DeferredItem<BubbleAmuletAccessory> BUBBLE_AMULET = ITEMS.register("bubble_amulet", BubbleAmuletAccessory::new);
     public static final DeferredItem<MomentumStoneAccessory> MOMENTUM_STONE = ITEMS.register("momentum_stone", MomentumStoneAccessory::new);
     public static final DeferredItem<AdvancingHeartAccessory> ADVANCING_HEART = ITEMS.register("advancing_heart", AdvancingHeartAccessory::new);
+    public static final DeferredItem<ThunderguardAccessory> THUNDERGUARD = ITEMS.register("thunderguard", ThunderguardAccessory::new);
 }

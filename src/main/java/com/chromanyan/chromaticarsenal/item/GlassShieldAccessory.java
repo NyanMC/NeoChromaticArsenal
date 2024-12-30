@@ -12,6 +12,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -45,7 +46,9 @@ public class GlassShieldAccessory extends ChromaAccessory {
 
     @Override
     public void onDestroyed(@NotNull ItemEntity itemEntity, @NotNull DamageSource damageSource) {
-        //TODO Thunderguard transform
+        if (!damageSource.is(DamageTypes.LIGHTNING_BOLT) || !ChromaticArsenal.CONFIG.COMMON.thunderguardDefaultRecipe()) return; //TODO config option
+        ItemEntity newEntity = new ItemEntity(itemEntity.getCommandSenderWorld(), itemEntity.getX(), itemEntity.getY(), itemEntity.getZ(), new ItemStack(CAItems.THUNDERGUARD.get()));
+        itemEntity.getCommandSenderWorld().addFreshEntity(newEntity);
     }
 
     @Override

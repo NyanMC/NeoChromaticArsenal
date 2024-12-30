@@ -60,29 +60,34 @@
   "tooltip.chromaticarsenal.advancing_heart.progresstracker": "§eCurrently, you have completed %1$s§e of %2$s§e advancements",
   "tooltip.chromaticarsenal.advancing_heart.progresstracker.equipfirst": "§eAdvancement count only updates while equipped",
 
+  "item.chromaticarsenal.thunderguard": "Thunderguard",
+  "tooltip.chromaticarsenal.thunderguard.1": "§2Grants immunity to Lightning damage and converts it into a movement buff",
+  "tooltip.chromaticarsenal.thunderguard.2": "§6Deals %1$s§6 lightning damage to direct attackers",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
 
   "effect.chromaticarsenal.bubble_panic": "Bubble Panic!",
-  "effect.chromaticarsenal.bubble_panic.description": "Increases swimming speed by 30%",
+  "effect.chromaticarsenal.bubble_panic.description": "Increases swimming speed",
+  "effect.chromaticarsenal.thundercharged": "Thundercharged",
+  "effect.chromaticarsenal.thundercharged.description": "Increases movement and attack speed",
 
   "itemGroup.chromaticarsenal": "Chromatic Arsenal",
   "text.config.chromaticarsenal.title": "Chromatic Arsenal Config",
   "text.config.chromaticarsenal.category.COMMON": "Common Settings",
 
   "text.config.chromaticarsenal.option.COMMON.goldenHeartDuration": "Golden Heart Duration",
-  "text.config.chromaticarsenal.option.COMMON.goldenHeartDuration.tooltip": "The duration of the Golden Heart's Absorption effect, in ticks. The effect is refreshed after this many ticks pass.",
+  "text.config.chromaticarsenal.option.COMMON.goldenHeartDuration.tooltip": "The duration of the Absorption effect, in ticks. The effect is refreshed after this many ticks pass.",
   "text.config.chromaticarsenal.option.COMMON.goldenHeartAmplifier": "Golden Heart Amplifier",
-  "text.config.chromaticarsenal.option.COMMON.goldenHeartAmplifier.tooltip": "The amplifier of the Golden Heart's Absorption effect.",
 
   "text.config.chromaticarsenal.option.COMMON.glassShieldCooldown": "Glass Shield Cooldown",
-  "text.config.chromaticarsenal.option.COMMON.glassShieldCooldown.tooltip": "After blocking a hit, it will take the Glass Shield this many ticks to recover.",
+  "text.config.chromaticarsenal.option.COMMON.glassShieldCooldown.tooltip": "After blocking a hit, it will take this many ticks to be able to block another.",
 
   "text.config.chromaticarsenal.option.COMMON.wardCrystalIncomingMultiplier": "Ward Crystal Incoming Multiplier",
-  "text.config.chromaticarsenal.option.COMMON.wardCrystalIncomingMultiplier.tooltip": "Magic damage received while wearing a Ward Crystal is multiplied by this value.",
+  "text.config.chromaticarsenal.option.COMMON.wardCrystalIncomingMultiplier.tooltip": "Magic damage received is multiplied by this value.",
   "text.config.chromaticarsenal.option.COMMON.wardCrystalOutgoingMultiplier": "Ward Crystal Outgoing Multiplier",
-  "text.config.chromaticarsenal.option.COMMON.wardCrystalOutgoingMultiplier.tooltip": "Magic damage dealt while wearing a Ward Crystal is multiplied by this value.",
+  "text.config.chromaticarsenal.option.COMMON.wardCrystalOutgoingMultiplier.tooltip": "Magic damage dealt is multiplied by this value.",
 
   "text.config.chromaticarsenal.option.COMMON.shadowTreadsMaxLightLevel": "Shadow Treads Max Light Level",
   "text.config.chromaticarsenal.option.COMMON.shadowTreadsMaxLightLevel.tooltip": "The highest possible light level in which the Shadow Treads' effect will activate. Note that very low values may not function as expected.",
@@ -90,31 +95,27 @@
   "text.config.chromaticarsenal.option.COMMON.shadowTreadsSpeedModifier.tooltip": "The speed increase caused by the Shadow Treads' effect. 0.2 is equal to +20%%.",
 
   "text.config.chromaticarsenal.option.COMMON.dualityRingsDamageMultiplier": "Duality Rings Damage Multiplier",
-  "text.config.chromaticarsenal.option.COMMON.dualityRingsDamageMultiplier.tooltip": "The multiplier given to projectile attacks when the attacker is wearing Duality Rings.",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsDamageMultiplier.tooltip": "The multiplier given to projectile attacks.",
   "text.config.chromaticarsenal.option.COMMON.dualityRingsStrengthDuration": "Duality Rings Strength Duration",
-  "text.config.chromaticarsenal.option.COMMON.dualityRingsStrengthDuration.tooltip": "The duration of the Duality Rings' Strength effect, in ticks. This is applied when consuming Magic Garlic Bread.",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsStrengthDuration.tooltip": "The duration of the Strength effect, in ticks. This is applied when consuming Magic Garlic Bread.",
   "text.config.chromaticarsenal.option.COMMON.dualityRingsStrengthAmplifier": "Duality Rings Strength Amplifier",
-  "text.config.chromaticarsenal.option.COMMON.dualityRingsStrengthAmplifier.tooltip": "The amplifier of the Duality Rings' Strength effect.",
   "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostDuration": "Duality Rings Health Boost Duration",
-  "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostDuration.tooltip": "The duration of the Duality Rings' Health Boost effect, in ticks. This is applied when consuming Magic Garlic Bread.",
+  "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostDuration.tooltip": "The duration of the Health Boost effect, in ticks. This is applied when consuming Magic Garlic Bread.",
   "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostAmplifier": "Duality Rings Health Boost Amplifier",
-  "text.config.chromaticarsenal.option.COMMON.dualityRingsHealthBoostAmplifier.tooltip": "The amplifier of the Duality Rings' Health Boost effect.",
 
   "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerRecoveryTime": "Friendly Fire Flower Recovery Time",
-  "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerRecoveryTime.tooltip": "The duration, in ticks, that it takes for the Friendly Fire Flower to recover one point of durability. This can be halved by standing in powder snow.",
+  "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerRecoveryTime.tooltip": "The duration, in ticks, that it takes to recover one point of durability. This can be halved by standing in powder snow.",
   "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerOverheatCooldown": "Friendly Fire Flower Overheat Cooldown",
-  "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerOverheatCooldown.tooltip": "The duration, in ticks, that it takes for the Friendly Fire Flower to begin recovering durability after taking too much fire damage.",
+  "text.config.chromaticarsenal.option.COMMON.friendlyFireFlowerOverheatCooldown.tooltip": "The duration, in ticks, that it takes to begin recovering durability after taking too much fire damage.",
 
   "text.config.chromaticarsenal.option.COMMON.lunarCrystalGravityModifier": "Lunar Crystal Gravity Modifier",
-  "text.config.chromaticarsenal.option.COMMON.lunarCrystalGravityModifier.tooltip": "The Lunar Crystal's gravity modifier. This is a \"multiply total\" attribute, -0.25 is equal to -25%%. You shouldn't set this to -1 or below.",
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalGravityModifier.tooltip": "This is a \"multiply total\" attribute, -0.25 is equal to -25%%. You shouldn't set this to -1 or below.",
   "text.config.chromaticarsenal.option.COMMON.lunarCrystalSafeFallDistanceModifier": "Lunar Crystal Safe Fall Distance Modifier",
-  "text.config.chromaticarsenal.option.COMMON.lunarCrystalSafeFallDistanceModifier.tooltip": "The number of additional blocks the wearer of a Lunar Crystal is able to fall without taking damage.",
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalSafeFallDistanceModifier.tooltip": "The number of additional blocks the wearer is able to fall without taking damage.",
   "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationChance": "Lunar Crystal Levitation Chance",
-  "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationChance.tooltip": "A 1 in X chance for any attack from an entity wearing a Lunar Crystal to inflict Levitation.",
+  "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationChance.tooltip": "A 1 in X chance for any attack from the wearer to inflict Levitation.",
   "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationDuration": "Lunar Crystal Levitation Duration",
-  "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationDuration.tooltip": "The duration, in ticks, of the Lunar Crystal's Levitation effect.",
   "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationAmplifier": "Lunar Crystal Levitation Amplifier",
-  "text.config.chromaticarsenal.option.COMMON.lunarCrystalLevitationAmplifier.tooltip": "The amplifier of the Lunar Crystal's Levitation effect.",
 
   "text.config.chromaticarsenal.option.COMMON.cryoRingSnowballDamage": "Cryo Ring Snowball Damage",
   "text.config.chromaticarsenal.option.COMMON.cryoRingSnowballDamage.tooltip": "The amount of additional damage snowballs deal when hitting an entity.",
@@ -124,17 +125,24 @@
   "text.config.chromaticarsenal.option.COMMON.cryoRingFreezeTicks.tooltip": "The amount of ticks added to the freeze timer when an entity is hit by a snowball.",
 
   "text.config.chromaticarsenal.option.COMMON.bubbleAmuletSwimSpeedModifier": "Bubble Amulet Swim Speed Modifier",
-  "text.config.chromaticarsenal.option.COMMON.bubbleAmuletSwimSpeedModifier.tooltip": "The multiply total modifier given to swim speed when wearing the Bubble Amulet.",
+  "text.config.chromaticarsenal.option.COMMON.bubbleAmuletSwimSpeedModifier.tooltip": "This is a \"multiply total\" attribute, 0.3 is equal to 30%%.",
 
   "text.config.chromaticarsenal.option.COMMON.momentumStoneFrictionAddition": "Momentum Stone Friction Addition",
-  "text.config.chromaticarsenal.option.COMMON.momentumStoneFrictionAddition.tooltip": "The amount added to the player's friction while the Momentum Stone is equipped. Base friction is 0.6. Capped at 0.989 unless Extremely Unbalanced Mode is enabled.",
+  "text.config.chromaticarsenal.option.COMMON.momentumStoneFrictionAddition.tooltip": "The amount added to the player's friction. Base friction is 0.6. Capped at 0.989 unless Extremely Unbalanced Mode is enabled.",
   "text.config.chromaticarsenal.option.COMMON.momentumStoneExtremelyUnbalancedMode": "Momentum Stone Extremely Unbalanced Mode",
-  "text.config.chromaticarsenal.option.COMMON.momentumStoneExtremelyUnbalancedMode.tooltip": "Disables certain limits that prevent weird interactions caused by the Momentum Stone adding friction. Do not enable this unless you know what you are doing.",
+  "text.config.chromaticarsenal.option.COMMON.momentumStoneExtremelyUnbalancedMode.tooltip": "Disables certain limits that prevent weird interactions caused by adding friction. Do not enable this unless you know what you are doing.",
 
   "text.config.chromaticarsenal.option.COMMON.advancingHeartHealthModifier": "Advancing Heart Health Modifier",
-  "text.config.chromaticarsenal.option.COMMON.advancingHeartHealthModifier.tooltip": "The Advancing Heart gives additional max health corresponding to the %% of advancements completed, times this number, floored to the nearest even number.",
+  "text.config.chromaticarsenal.option.COMMON.advancingHeartHealthModifier.tooltip": "Gives additional max health corresponding to the %% of advancements completed, times this number, floored to the nearest even number.",
   "text.config.chromaticarsenal.option.COMMON.advancingHeartAdvancementBlacklist": "Advancing Heart Advancement Blacklist",
-  "text.config.chromaticarsenal.option.COMMON.advancingHeartAdvancementBlacklist.tooltip": "The Advancing Heart will ignore advancements which contain any of these keywords in their name. By default, ignores an impossible advancement from Enigmatic Legacy.",
+  "text.config.chromaticarsenal.option.COMMON.advancingHeartAdvancementBlacklist.tooltip": "Advancements which contain any of these keywords in their name are ignored. By default, ignores an impossible advancement from Enigmatic Legacy.",
+
+  "text.config.chromaticarsenal.option.COMMON.thunderchargedDuration": "Thundercharged Duration",
+  "text.config.chromaticarsenal.option.COMMON.thunderchargedDuration.tooltip": "The duration of the positive effect given after sustaining lightning damage.",
+  "text.config.chromaticarsenal.option.COMMON.thunderguardZapDamage": "Thunderguard Zap Damage",
+  "text.config.chromaticarsenal.option.COMMON.thunderguardZapDamage.tooltip": "The amount of damage dealt to direct attackers.",
+  "text.config.chromaticarsenal.option.COMMON.thunderguardDefaultRecipe": "Thunderguard Default Recipe",
+  "text.config.chromaticarsenal.option.COMMON.thunderguardDefaultRecipe.tooltip": "When enabled, striking a Glass Shield with lightning creates a Thunderguard. Disable if you wish to create your own recipe.",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 

@@ -82,6 +82,13 @@ public class CAConfigModel {
         public int advancingHeartHealthModifier = 20;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public List<String> advancingHeartAdvancementBlacklist = new ArrayList<>(List.of("cosmic_scroll"));
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int thunderchargedDuration = 60;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public double thunderguardZapDamage = 3;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public boolean thunderguardDefaultRecipe = true;
     }
 
     public static class ClientOptions {
