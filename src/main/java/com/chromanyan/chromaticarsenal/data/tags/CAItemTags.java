@@ -33,7 +33,7 @@ public class CAItemTags extends ItemTagsProvider {
 
         tag(ItemTags.FREEZE_IMMUNE_WEARABLES).add(CAItems.CRYO_RING.get());
 
-        //tag(CATags.Items.DUSTS_ASCENSION).add(CAItems.ASCENSION_ESSENCE.get());
-        //tag(Tags.Items.DUSTS).add(CAItems.ASCENSION_ESSENCE.get());
+        tag(CATags.Items.DUSTS_ASCENSION).add(CAItems.ASCENSION_ESSENCE.get());
+        tag(Tags.Items.DUSTS).add(CAItems.ASCENSION_ESSENCE.get());
     }
 }

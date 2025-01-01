@@ -89,6 +89,11 @@ public class CAConfigModel {
         public double thunderguardZapDamage = 3;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public boolean thunderguardDefaultRecipe = true;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int diamondHeartFracturedAmplifier = 2;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int diamondHeartCooldownMinutes = 5;
     }
 
     public static class ClientOptions {

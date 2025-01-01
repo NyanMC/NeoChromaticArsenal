@@ -26,12 +26,12 @@ public class CAModels extends ItemModelProvider {
     public void registerModels() {
         // crafting materials
         basicModel("chroma_shard");
-        //basicModel("ascension_essence");
+        basicModel("ascension_essence");
         //basicModel("champion_catalyst");
         //basicModel("chromatic_upgrade_smithing_template");
 
         // regular chromatic curios
-        basicModel("golden_heart");
+        basicModelWithSuper("golden_heart");
         basicModel("glass_shield");         //TODO super
         basicModel("ward_crystal");         //TODO super
         basicModel("shadow_treads");        //TODO super

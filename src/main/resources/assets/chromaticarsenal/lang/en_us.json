@@ -3,6 +3,7 @@
   "_comment.chromaticarsenal.main2": "You may translate these, but there is no point.",
 
   "item.chromaticarsenal.chroma_shard": "Chroma Shard",
+  "item.chromaticarsenal.ascension_essence": "Essence of Ascension",
 
   "item.chromaticarsenal.golden_heart": "Golden Heart",
   "tooltip.chromaticarsenal.golden_heart.3": "§2Functions as gold armor for Piglins",
@@ -64,14 +65,25 @@
   "tooltip.chromaticarsenal.thunderguard.1": "§2Grants immunity to Lightning damage and converts it into a movement buff",
   "tooltip.chromaticarsenal.thunderguard.2": "§6Deals %1$s§6 lightning damage to direct attackers",
 
+  "item.chromaticarsenal.super_golden_heart": "Diamond Heart",
+  "tooltip.chromaticarsenal.super_golden_heart.1": "§6Allows for cheating death",
+  "tooltip.chromaticarsenal.super_golden_heart.2": "§6This revival reduces max health by %1$s§b%%§6 for %2$s§6 seconds",
+  "tooltip.chromaticarsenal.super_golden_heart.3": "§6After reviving, goes on cooldown for %1$s§6 seconds",
+  "message.chromaticarsenal.revival_cooldown_finished": "§6The Diamond Heart revival cooldown has finished.",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
+  "tooltip.chromaticarsenal.incompatibilities": "Cannot be equipped with: %1$s",
+  "accessories.slot.chromaticarsenal.super_accessory": "Super Accessory",
+  "chromaticarsenal:super_accessory": "Super Accessory",
 
   "effect.chromaticarsenal.bubble_panic": "Bubble Panic!",
   "effect.chromaticarsenal.bubble_panic.description": "Increases swimming speed",
   "effect.chromaticarsenal.thundercharged": "Thundercharged",
   "effect.chromaticarsenal.thundercharged.description": "Increases movement and attack speed",
+  "effect.chromaticarsenal.fractured": "Fractured",
+  "effect.chromaticarsenal.fractured.description": "Max health is reduced by 10% per level",
 
   "itemGroup.chromaticarsenal": "Chromatic Arsenal",
   "text.config.chromaticarsenal.title": "Chromatic Arsenal Config",
@@ -143,6 +155,10 @@
   "text.config.chromaticarsenal.option.COMMON.thunderguardZapDamage.tooltip": "The amount of damage dealt to direct attackers.",
   "text.config.chromaticarsenal.option.COMMON.thunderguardDefaultRecipe": "Thunderguard Default Recipe",
   "text.config.chromaticarsenal.option.COMMON.thunderguardDefaultRecipe.tooltip": "When enabled, striking a Glass Shield with lightning creates a Thunderguard. Disable if you wish to create your own recipe.",
+
+  "text.config.chromaticarsenal.option.COMMON.diamondHeartFracturedAmplifier": "Diamond Heart Fractured Amplifier",
+  "text.config.chromaticarsenal.option.COMMON.diamondHeartCooldownMinutes": "Diamond Heart Cooldown Minutes",
+  "text.config.chromaticarsenal.option.COMMON.diamondHeartCooldownMinutes.tooltip": "The time, in minutes, for the Diamond Heart to be able to revive again. Also affects the Fractured duration.",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 

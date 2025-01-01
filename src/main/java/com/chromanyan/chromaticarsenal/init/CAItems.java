@@ -3,6 +3,7 @@ package com.chromanyan.chromaticarsenal.init;
 import com.chromanyan.chromaticarsenal.ChromaticArsenal;
 import com.chromanyan.chromaticarsenal.item.*;
 import com.chromanyan.chromaticarsenal.item.food.MagicGarlicBreadItem;
+import com.chromanyan.chromaticarsenal.item.superaccessories.DiamondHeartAccessory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -12,6 +13,7 @@ public class CAItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ChromaticArsenal.MODID);
 
     public static final DeferredItem<Item> CHROMA_SHARD = ITEMS.registerSimpleItem("chroma_shard", new Item.Properties().rarity(Rarity.UNCOMMON));
+    public static final DeferredItem<Item> ASCENSION_ESSENCE = ITEMS.registerSimpleItem("ascension_essence", new Item.Properties().rarity(Rarity.RARE));
     public static final DeferredItem<MagicGarlicBreadItem> MAGIC_GARLIC_BREAD = ITEMS.register("magic_garlic_bread", MagicGarlicBreadItem::new);
 
     public static final DeferredItem<GoldenHeartAccessory> GOLDEN_HEART = ITEMS.register("golden_heart", GoldenHeartAccessory::new);
@@ -26,4 +28,6 @@ public class CAItems {
     public static final DeferredItem<MomentumStoneAccessory> MOMENTUM_STONE = ITEMS.register("momentum_stone", MomentumStoneAccessory::new);
     public static final DeferredItem<AdvancingHeartAccessory> ADVANCING_HEART = ITEMS.register("advancing_heart", AdvancingHeartAccessory::new);
     public static final DeferredItem<ThunderguardAccessory> THUNDERGUARD = ITEMS.register("thunderguard", ThunderguardAccessory::new);
+
+    public static final DeferredItem<DiamondHeartAccessory> DIAMOND_HEART = ITEMS.register("super_golden_heart", DiamondHeartAccessory::new);
 }

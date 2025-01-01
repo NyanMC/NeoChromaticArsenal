@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "order": 120,
+  "slots": [
+    "chromaticarsenal:super_accessory"
+  ],
+  "icon": "accessories:gui/group/misc"
+}

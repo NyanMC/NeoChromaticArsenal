@@ -15,6 +15,7 @@ public class CATags {
         }
 
         public static final TagKey<Item> GEMS_CHROMA = commonTag("gems/chroma");
+        public static final TagKey<Item> DUSTS_ASCENSION = commonTag("dusts/ascension");
     }
 
     public static class DamageTypes {
