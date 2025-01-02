@@ -94,6 +94,9 @@ public class CAConfigModel {
         public int diamondHeartFracturedAmplifier = 2;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public int diamondHeartCooldownMinutes = 5;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int undyingShieldDeathClockTicks = 200;
     }
 
     public static class ClientOptions {
