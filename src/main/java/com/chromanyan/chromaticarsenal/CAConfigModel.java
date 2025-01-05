@@ -97,6 +97,16 @@ public class CAConfigModel {
 
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public int undyingShieldDeathClockTicks = 200;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public double dispellingCrystalDurationMultiplier = 0.2;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public List<String> dispellingCrystalEffectBlacklist = new ArrayList<>(List.of("minecraft:night_vision"));
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public double celestialCharmSpeedMultiplier = 0.3;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public double celestialCharmDamageMultiplier = 0.3;
     }
 
     public static class ClientOptions {

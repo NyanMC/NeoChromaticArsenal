@@ -56,6 +56,7 @@ public class SuperAccessory extends ChromaAccessory {
 
     @Override
     public void tick(ItemStack stack, SlotReference reference) {
+        super.tick(stack, reference);
         LivingEntity livingEntity = reference.entity();
         if (livingEntity.getCommandSenderWorld().isClientSide) return;
 
@@ -68,5 +69,6 @@ public class SuperAccessory extends ChromaAccessory {
                 possiblestack.setCount(0);
             }
         }
+
     }
 }

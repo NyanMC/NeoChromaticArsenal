@@ -33,8 +33,8 @@ public class CAModels extends ItemModelProvider {
         // regular chromatic curios
         basicModelWithSuper("golden_heart");
         basicModelWithSuper("glass_shield");
-        basicModel("ward_crystal");         //TODO super
-        basicModel("shadow_treads");        //TODO super
+        basicModelWithSuper("ward_crystal");
+        basicModelWithSuper("shadow_treads");
         basicModel("duality_rings");
         basicModel("friendly_fire_flower"); //TODO super
         basicModel("lunar_crystal");        //TODO super
@@ -43,9 +43,6 @@ public class CAModels extends ItemModelProvider {
         basicModel("momentum_stone");
         basicModel("advancing_heart");
         basicModel("thunderguard");
-
-        // super curios
-        //basicModel("super_golden_heart"); // can't datagen the regular golden heart because it does special stuff
 
         // challenge curios
         //basicModel("ascended_star");
@@ -72,7 +69,6 @@ public class CAModels extends ItemModelProvider {
         //basicModel("viewer_item");
 
         // miscellaneous
-        //basicModel("golden_heart_nyans");
         //basicModel("super_glow_ring_active");
         //basicModel("ca_book");
         //basicModel("lore_book");

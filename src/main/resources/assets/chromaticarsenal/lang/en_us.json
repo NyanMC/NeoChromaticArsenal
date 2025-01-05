@@ -77,6 +77,12 @@
   "death.attack.death_clock": "%1$s discovered the true power of \"Determination\"",
   "death.attack.death_clock.player": "%1$s ran out of time while fighting %2$s",
 
+  "item.chromaticarsenal.super_ward_crystal": "Dispelling Crystal",
+  "tooltip.chromaticarsenal.super_ward_crystal.1": "§6Reduces both positive and negative potion effect durations by %1$s§b%%",
+
+  "item.chromaticarsenal.super_shadow_treads": "Celestial Charm",
+  "tooltip.chromaticarsenal.super_shadow_treads.1": "§6Grants varying damage and speed bonuses depending on the time of day",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
@@ -168,6 +174,16 @@
 
   "text.config.chromaticarsenal.option.COMMON.undyingShieldDeathClockTicks": "Shield of Undying Death Clock Duration",
   "text.config.chromaticarsenal.option.COMMON.undyingShieldDeathClockTicks.tooltip": "The duration, in ticks, in which the wearer's death will be delayed.",
+
+  "text.config.chromaticarsenal.option.COMMON.dispellingCrystalDurationMultiplier": "Dispelling Crystal Duration Multiplier",
+  "text.config.chromaticarsenal.option.COMMON.dispellingCrystalDurationMultiplier.tooltip": "The multiplier to the duration of effects received.",
+  "text.config.chromaticarsenal.option.COMMON.dispellingCrystalEffectBlacklist": "Dispelling Crystal Effect Blacklist",
+  "text.config.chromaticarsenal.option.COMMON.dispellingCrystalEffectBlacklist.tooltip": "A list of effects which will not have their duration affected when received.",
+
+  "text.config.chromaticarsenal.option.COMMON.celestialCharmSpeedMultiplier": "Celestial Charm Speed Modifier",
+  "text.config.chromaticarsenal.option.COMMON.celestialCharmSpeedMultiplier.tooltip": "The maximum speed boost given at exactly midnight.",
+  "text.config.chromaticarsenal.option.COMMON.celestialCharmDamageMultiplier": "Celestial Charm Damage Modifier",
+  "text.config.chromaticarsenal.option.COMMON.celestialCharmDamageMultiplier.tooltip": "The maximum damage boost given at exactly noon.",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 

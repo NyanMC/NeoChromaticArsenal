@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticarsenal.item.base;
 
+import com.chromanyan.chromaticarsenal.ChromaticArsenal;
 import com.chromanyan.chromaticarsenal.util.TooltipHelper;
 import io.wispforest.accessories.api.AccessoriesCapability;
 import io.wispforest.accessories.api.AccessoryItem;
@@ -82,6 +83,7 @@ public class ChromaAccessory extends AccessoryItem {
     public void tick(ItemStack stack, SlotReference reference) {
         if (!needsDummyUpdater) return;
         // this sucks. i hate doing this. if you know of a better way to do this please feel free to PR
+        ChromaticArsenal.LOGGER.info("ticking");
         CustomData.update(DataComponents.CUSTOM_DATA, stack, (tag) -> tag.putDouble("dummy", Math.random()));
     }
 }
