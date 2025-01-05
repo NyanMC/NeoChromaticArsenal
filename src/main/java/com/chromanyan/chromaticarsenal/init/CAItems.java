@@ -3,10 +3,7 @@ package com.chromanyan.chromaticarsenal.init;
 import com.chromanyan.chromaticarsenal.ChromaticArsenal;
 import com.chromanyan.chromaticarsenal.item.*;
 import com.chromanyan.chromaticarsenal.item.food.MagicGarlicBreadItem;
-import com.chromanyan.chromaticarsenal.item.superaccessories.CelestialCharmAccessory;
-import com.chromanyan.chromaticarsenal.item.superaccessories.DiamondHeartAccessory;
-import com.chromanyan.chromaticarsenal.item.superaccessories.DispellingCrystalAccessory;
-import com.chromanyan.chromaticarsenal.item.superaccessories.UndyingShieldAccessory;
+import com.chromanyan.chromaticarsenal.item.superaccessories.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -36,4 +33,5 @@ public class CAItems {
     public static final DeferredItem<UndyingShieldAccessory> UNDYING_SHIELD = ITEMS.register("super_glass_shield", UndyingShieldAccessory::new);
     public static final DeferredItem<DispellingCrystalAccessory> DISPELLING_CRYSTAL = ITEMS.register("super_ward_crystal", DispellingCrystalAccessory::new);
     public static final DeferredItem<CelestialCharmAccessory> CELESTIAL_CHARM = ITEMS.register("super_shadow_treads", CelestialCharmAccessory::new);
+    public static final DeferredItem<InfernoFlowerAccessory> INFERNO_FLOWER = ITEMS.register("super_friendly_fire_flower", InfernoFlowerAccessory::new);
 }

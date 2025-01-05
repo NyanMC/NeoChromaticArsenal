@@ -107,6 +107,11 @@ public class CAConfigModel {
         public double celestialCharmSpeedMultiplier = 0.3;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public double celestialCharmDamageMultiplier = 0.3;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int infernoFlowerDuration = 100;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public float infernoFlowerDamageMultiplier = 1.1f;
     }
 
     public static class ClientOptions {

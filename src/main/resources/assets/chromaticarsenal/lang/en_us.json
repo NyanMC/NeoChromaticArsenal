@@ -83,6 +83,11 @@
   "item.chromaticarsenal.super_shadow_treads": "Celestial Charm",
   "tooltip.chromaticarsenal.super_shadow_treads.1": "§6Grants varying damage and speed bonuses depending on the time of day",
 
+  "item.chromaticarsenal.super_friendly_fire_flower": "Vicious Inferno Flower",
+  "tooltip.chromaticarsenal.super_friendly_fire_flower.1": "§2Grants permanent Fire Resistance",
+  "tooltip.chromaticarsenal.super_friendly_fire_flower.2": "§6Melee attacks engulf the target in flames which cannot be extinguished",
+  "tooltip.chromaticarsenal.super_friendly_fire_flower.3": "§6Damage dealt to burning mobs is increased by %1$s§b%%",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
@@ -96,6 +101,8 @@
   "effect.chromaticarsenal.thundercharged.description": "Increases movement and attack speed",
   "effect.chromaticarsenal.fractured": "Fractured",
   "effect.chromaticarsenal.fractured.description": "Max health is reduced by 10% per level",
+  "effect.chromaticarsenal.inferno": "Inferno",
+  "effect.chromaticarsenal.inferno.description": "Sets the target on fire until the effect ends, cannot be extinguished by water",
 
   "itemGroup.chromaticarsenal": "Chromatic Arsenal",
   "text.config.chromaticarsenal.title": "Chromatic Arsenal Config",
@@ -184,6 +191,11 @@
   "text.config.chromaticarsenal.option.COMMON.celestialCharmSpeedMultiplier.tooltip": "The maximum speed boost given at exactly midnight.",
   "text.config.chromaticarsenal.option.COMMON.celestialCharmDamageMultiplier": "Celestial Charm Damage Modifier",
   "text.config.chromaticarsenal.option.COMMON.celestialCharmDamageMultiplier.tooltip": "The maximum damage boost given at exactly noon.",
+
+  "text.config.chromaticarsenal.option.COMMON.infernoFlowerDuration": "Inferno Flower Effect Duration",
+  "text.config.chromaticarsenal.option.COMMON.infernoFlowerDuration.tooltip": "The duration of the Inferno effect when attacking a mob.",
+  "text.config.chromaticarsenal.option.COMMON.infernoFlowerDamageMultiplier": "Inferno Flower Damage Multiplier",
+  "text.config.chromaticarsenal.option.COMMON.infernoFlowerDamageMultiplier.tooltip": "The multiplier to damage when attacking mobs which are on fire",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 
