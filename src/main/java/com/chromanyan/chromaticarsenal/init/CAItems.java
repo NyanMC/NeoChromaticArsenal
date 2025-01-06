@@ -2,6 +2,7 @@ package com.chromanyan.chromaticarsenal.init;
 
 import com.chromanyan.chromaticarsenal.ChromaticArsenal;
 import com.chromanyan.chromaticarsenal.item.*;
+import com.chromanyan.chromaticarsenal.item.challengeaccessories.AscendedStarAccessory;
 import com.chromanyan.chromaticarsenal.item.food.MagicGarlicBreadItem;
 import com.chromanyan.chromaticarsenal.item.superaccessories.*;
 import net.minecraft.world.item.Item;
@@ -35,4 +36,6 @@ public class CAItems {
     public static final DeferredItem<CelestialCharmAccessory> CELESTIAL_CHARM = ITEMS.register("super_shadow_treads", CelestialCharmAccessory::new);
     public static final DeferredItem<InfernoFlowerAccessory> INFERNO_FLOWER = ITEMS.register("super_friendly_fire_flower", InfernoFlowerAccessory::new);
     public static final DeferredItem<PrismaticCrystalAccessory> PRISMATIC_CRYSTAL = ITEMS.register("super_lunar_crystal", PrismaticCrystalAccessory::new);
+
+    public static final DeferredItem<AscendedStarAccessory> ASCENDED_STAR = ITEMS.register("ascended_star", AscendedStarAccessory::new);
 }

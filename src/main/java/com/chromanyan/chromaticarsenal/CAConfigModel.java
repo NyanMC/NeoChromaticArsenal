@@ -119,6 +119,15 @@ public class CAConfigModel {
         public double prismaticCrystalVoidBounceMultiplier = 2;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public float prismaticCrystalVoidBounceDamage = 4;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int ascendedStarSlots = 1;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int ascendedStarFortune = 1;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int ascendedStarLooting = 1;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public float ascendedStarDamage = 3;
     }
 
     public static class ClientOptions {

@@ -31,6 +31,8 @@ credits="Z-Tunic/sonicx8000, Twi1ightStar, onno, u/absolutely_aroace on Reddit, 
 # A text field displayed in the mod UI
 authors = "${mod_authors}" #optional
 
+enumExtensions="META-INF/enumextensions.json"
+
 # The description text for the mod (multi line!) (#mandatory)
 description = '''${mod_description}'''
 

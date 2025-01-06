@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "CHROMATICARSENAL_CHALLENGE",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/chromanyan/chromaticarsenal/init/CARarities",
+        "field": "CHALLENGE_ENUM_PROXY"
+      }
+    }
+  ]
+}

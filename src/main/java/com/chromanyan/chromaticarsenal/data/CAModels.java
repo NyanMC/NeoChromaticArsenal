@@ -45,7 +45,7 @@ public class CAModels extends ItemModelProvider {
         basicModel("thunderguard");
 
         // challenge curios
-        //basicModel("ascended_star");
+        basicModel("ascended_star");
         //basicModel("world_anchor");
         //basicModel("cursed_totem");
 
