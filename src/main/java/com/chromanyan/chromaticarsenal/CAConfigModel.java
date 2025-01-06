@@ -112,6 +112,13 @@ public class CAConfigModel {
         public int infernoFlowerDuration = 100;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public float infernoFlowerDamageMultiplier = 1.1f;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public double prismaticCrystalGravityModifier = -0.5;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public double prismaticCrystalVoidBounceMultiplier = 2;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public float prismaticCrystalVoidBounceDamage = 4;
     }
 
     public static class ClientOptions {

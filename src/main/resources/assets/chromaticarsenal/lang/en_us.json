@@ -74,6 +74,7 @@
   "item.chromaticarsenal.super_glass_shield": "Shield of Undying",
   "tooltip.chromaticarsenal.super_glass_shield.1": "§6Delays death by %1$s§6 seconds",
   "tooltip.chromaticarsenal.super_glass_shield.2": "§cCauses blindness, does not work against invulnerability-bypassing damage",
+  "_comment.death.attack.death_clock": "Reference to Undertale, where Determination is a substance that can delay or prevent death, with...unfortunate side effects.",
   "death.attack.death_clock": "%1$s discovered the true power of \"Determination\"",
   "death.attack.death_clock.player": "%1$s ran out of time while fighting %2$s",
 
@@ -87,6 +88,10 @@
   "tooltip.chromaticarsenal.super_friendly_fire_flower.1": "§2Grants permanent Fire Resistance",
   "tooltip.chromaticarsenal.super_friendly_fire_flower.2": "§6Melee attacks engulf the target in flames which cannot be extinguished",
   "tooltip.chromaticarsenal.super_friendly_fire_flower.3": "§6Damage dealt to burning mobs is increased by %1$s§b%%",
+
+  "item.chromaticarsenal.super_lunar_crystal": "Prismatic Crystal",
+  "tooltip.chromaticarsenal.super_lunar_crystal.1": "§2Grants immunity to fall damage and Levitation",
+  "tooltip.chromaticarsenal.super_lunar_crystal.2": "§6Allows for bouncing out of the void, taking %1$s§6 damage in the process",
 
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
@@ -196,6 +201,13 @@
   "text.config.chromaticarsenal.option.COMMON.infernoFlowerDuration.tooltip": "The duration of the Inferno effect when attacking a mob.",
   "text.config.chromaticarsenal.option.COMMON.infernoFlowerDamageMultiplier": "Inferno Flower Damage Multiplier",
   "text.config.chromaticarsenal.option.COMMON.infernoFlowerDamageMultiplier.tooltip": "The multiplier to damage when attacking mobs which are on fire",
+
+  "text.config.chromaticarsenal.option.COMMON.prismaticCrystalGravityModifier": "Prismatic Crystal Gravity Modifier",
+  "text.config.chromaticarsenal.option.COMMON.prismaticCrystalGravityModifier.tooltip": "This is a \"multiply total\" attribute, -0.5 is equal to -50%%. You shouldn't set this to -1 or below.",
+  "text.config.chromaticarsenal.option.COMMON.prismaticCrystalVoidBounceMultiplier": "Prismatic Crystal Void Bounce Multiplier",
+  "text.config.chromaticarsenal.option.COMMON.prismaticCrystalVoidBounceMultiplier.tooltip": "A multiplier to the force given when bouncing out of the void.",
+  "text.config.chromaticarsenal.option.COMMON.prismaticCrystalVoidBounceDamage": "Prismatic Crystal Void Bounce Damage",
+  "text.config.chromaticarsenal.option.COMMON.prismaticCrystalVoidBounceDamage.tooltip": "The void damage dealt when bouncing out of the void.",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 

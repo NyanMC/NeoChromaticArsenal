@@ -34,4 +34,5 @@ public class CAItems {
     public static final DeferredItem<DispellingCrystalAccessory> DISPELLING_CRYSTAL = ITEMS.register("super_ward_crystal", DispellingCrystalAccessory::new);
     public static final DeferredItem<CelestialCharmAccessory> CELESTIAL_CHARM = ITEMS.register("super_shadow_treads", CelestialCharmAccessory::new);
     public static final DeferredItem<InfernoFlowerAccessory> INFERNO_FLOWER = ITEMS.register("super_friendly_fire_flower", InfernoFlowerAccessory::new);
+    public static final DeferredItem<PrismaticCrystalAccessory> PRISMATIC_CRYSTAL = ITEMS.register("super_lunar_crystal", PrismaticCrystalAccessory::new);
 }

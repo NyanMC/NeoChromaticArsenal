@@ -1,0 +1,10 @@
+{
+  "spring": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "chromaticarsenal:spring"
+      }
+    ]
+  }
+}
