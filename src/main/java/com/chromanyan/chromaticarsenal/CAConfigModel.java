@@ -128,6 +128,9 @@ public class CAConfigModel {
         public int ascendedStarLooting = 1;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public float ascendedStarDamage = 3;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public double worldAnchorArmor = 4;
     }
 
     public static class ClientOptions {

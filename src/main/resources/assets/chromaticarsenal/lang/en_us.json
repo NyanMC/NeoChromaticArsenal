@@ -99,6 +99,9 @@
   "death.attack.ascended": "%1$s ascended to a higher plane of reality",
   "death.attack.ascended.player": "%1$s ascended to a higher plane of reality while fighting %2$s",
 
+  "item.chromaticarsenal.world_anchor": "World Anchor",
+  "tooltip.chromaticarsenal.world_anchor.1": "§6The effects of this curio become more severe the further you are from the bottom of the world",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
@@ -220,6 +223,8 @@
   "text.config.chromaticarsenal.option.COMMON.ascendedStarFortune": "Ascended Star Fortune",
   "text.config.chromaticarsenal.option.COMMON.ascendedStarLooting": "Ascended Star Looting",
   "text.config.chromaticarsenal.option.COMMON.ascendedStarDamage": "Ascended Star Damage Multiplier",
+
+  "text.config.chromaticarsenal.option.COMMON.worldAnchorArmor": "World Anchor Armor",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 
