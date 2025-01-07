@@ -107,6 +107,11 @@
   "tooltip.chromaticarsenal.cursed_totem.2": "§cMobs which revive this way have %1$s§b%%§c reduced maximum health",
   "tooltip.chromaticarsenal.cursed_totem.3": "§6Grants %1$s§6 looting level(s)",
 
+  "item.chromaticarsenal.gravity_stone": "Gravity Stone",
+  "tooltip.chromaticarsenal.gravity_stone.1": "§6Prevents gravity from being reduced below the base value",
+  "tooltip.chromaticarsenal.gravity_stone.2": "§6Prevents the floatiness from Slow Falling (the effect will still negate fall damage)",
+  "tooltip.chromaticarsenal.gravity_stone.3": "§cDoes not grant immunity to Levitation",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",

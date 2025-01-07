@@ -7,6 +7,7 @@ import com.chromanyan.chromaticarsenal.item.challengeaccessories.CursedTotemAcce
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.WorldAnchorAccessory;
 import com.chromanyan.chromaticarsenal.item.food.MagicGarlicBreadItem;
 import com.chromanyan.chromaticarsenal.item.superaccessories.*;
+import com.chromanyan.chromaticarsenal.item.utilityaccessories.GravityStoneAccessory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -42,4 +43,6 @@ public class CAItems {
     public static final DeferredItem<AscendedStarAccessory> ASCENDED_STAR = ITEMS.register("ascended_star", AscendedStarAccessory::new);
     public static final DeferredItem<WorldAnchorAccessory> WORLD_ANCHOR = ITEMS.register("world_anchor", WorldAnchorAccessory::new);
     public static final DeferredItem<CursedTotemAccessory> CURSED_TOTEM = ITEMS.register("cursed_totem", CursedTotemAccessory::new);
+
+    public static final DeferredItem<GravityStoneAccessory> GRAVITY_STONE = ITEMS.register("gravity_stone", GravityStoneAccessory::new);
 }

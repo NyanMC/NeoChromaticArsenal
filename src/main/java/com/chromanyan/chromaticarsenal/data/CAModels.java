@@ -50,7 +50,7 @@ public class CAModels extends ItemModelProvider {
         basicModel("cursed_totem");
 
         // utility curios
-        //basicModel("gravity_stone");
+        basicModel("gravity_stone");
         //basicModel("vertical_stasis_stone");
         //basicModel("anonymity_umbrella");
 

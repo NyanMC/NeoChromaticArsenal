@@ -10,10 +10,13 @@ import io.wispforest.accessories.api.AccessoriesCapability;
 import io.wispforest.accessories.api.slot.SlotEntryReference;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
@@ -56,5 +59,13 @@ public abstract class LivingEntityMixin {
         if (ChromaticArsenal.CONFIG.COMMON.momentumStoneExtremelyUnbalancedMode()) return newFriction;
 
         return Math.min(newFriction, BLUE_ICE_FRICTION); // high levels of friction are buggy
+    }
+
+    @ModifyVariable(method = "travel", at = @At("STORE"), ordinal = 0)
+    private double gravity(double d0) {
+        LivingEntity trueThis = (LivingEntity)(Object) this;
+        AttributeInstance gravity = trueThis.getAttribute(Attributes.GRAVITY);
+        double baseGravity = gravity != null ? gravity.getBaseValue() : 0.08;
+        return ChromaAccessoryHelper.isAccessoryEquipped(trueThis, CAItems.GRAVITY_STONE.get()) ? Math.max(baseGravity, d0) : d0;
     }
 }
