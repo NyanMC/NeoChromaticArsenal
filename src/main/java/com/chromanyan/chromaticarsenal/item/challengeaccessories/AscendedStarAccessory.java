@@ -67,12 +67,12 @@ public class AscendedStarAccessory extends ChromaAccessory implements LootingAdj
 
     @Override
     public int getLootingAdjustment(ItemStack stack, SlotReference reference, LivingEntity target, LootContext context, DamageSource damageSource, int currentLevel) {
-        return currentLevel + ChromaticArsenal.CONFIG.COMMON.ascendedStarLooting();
+        return ChromaticArsenal.CONFIG.COMMON.ascendedStarLooting();
     }
 
     @Override
     public int getFortuneAdjustment(ItemStack stack, SlotReference reference, LootContext context, int currentLevel) {
-        return currentLevel + ChromaticArsenal.CONFIG.COMMON.ascendedStarFortune();
+        return ChromaticArsenal.CONFIG.COMMON.ascendedStarFortune();
     }
 
     @Override

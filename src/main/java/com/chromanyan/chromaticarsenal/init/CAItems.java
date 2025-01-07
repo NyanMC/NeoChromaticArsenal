@@ -3,6 +3,7 @@ package com.chromanyan.chromaticarsenal.init;
 import com.chromanyan.chromaticarsenal.ChromaticArsenal;
 import com.chromanyan.chromaticarsenal.item.*;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.AscendedStarAccessory;
+import com.chromanyan.chromaticarsenal.item.challengeaccessories.CursedTotemAccessory;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.WorldAnchorAccessory;
 import com.chromanyan.chromaticarsenal.item.food.MagicGarlicBreadItem;
 import com.chromanyan.chromaticarsenal.item.superaccessories.*;
@@ -40,4 +41,5 @@ public class CAItems {
 
     public static final DeferredItem<AscendedStarAccessory> ASCENDED_STAR = ITEMS.register("ascended_star", AscendedStarAccessory::new);
     public static final DeferredItem<WorldAnchorAccessory> WORLD_ANCHOR = ITEMS.register("world_anchor", WorldAnchorAccessory::new);
+    public static final DeferredItem<CursedTotemAccessory> CURSED_TOTEM = ITEMS.register("cursed_totem", CursedTotemAccessory::new);
 }

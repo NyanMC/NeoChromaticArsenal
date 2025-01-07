@@ -131,6 +131,11 @@ public class CAConfigModel {
 
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public double worldAnchorArmor = 4;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int cursedTotemFracturedAmplifier = 4;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int cursedTotemLootingBonus = 2;
     }
 
     public static class ClientOptions {

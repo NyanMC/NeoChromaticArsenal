@@ -11,6 +11,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -58,6 +59,7 @@ public class DispellingCrystalAccessory extends SuperAccessory {
     public static void effectAdded(MobEffectEvent.Added event) {
         if (!ChromaAccessoryHelper.isAccessoryEquipped(event.getEntity(), CAItems.DISPELLING_CRYSTAL.get())) return;
         if (ConfigHelper.effectInBlacklist(ChromaticArsenal.CONFIG.COMMON.dispellingCrystalEffectBlacklist(), event.getEffectInstance().getEffect().value())) return;
+        if (event.getEffectInstance().getDuration() == MobEffectInstance.INFINITE_DURATION) return;
         // eat your heart out minecraft. i don't give a damn if you don't want me accessing this
         event.getEffectInstance().duration = (int) (event.getEffectInstance().duration * ChromaticArsenal.CONFIG.COMMON.dispellingCrystalDurationMultiplier());
     }

@@ -102,6 +102,11 @@
   "item.chromaticarsenal.world_anchor": "World Anchor",
   "tooltip.chromaticarsenal.world_anchor.1": "§6The effects of this curio become more severe the further you are from the bottom of the world",
 
+  "item.chromaticarsenal.cursed_totem": "Totem of Necromancy",
+  "tooltip.chromaticarsenal.cursed_totem.1": "§cAttacked mobs are given the ability to revive once",
+  "tooltip.chromaticarsenal.cursed_totem.2": "§cMobs which revive this way have %1$s§b%%§c reduced maximum health",
+  "tooltip.chromaticarsenal.cursed_totem.3": "§6Grants %1$s§6 looting level(s)",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
@@ -220,11 +225,14 @@
   "text.config.chromaticarsenal.option.COMMON.prismaticCrystalVoidBounceDamage.tooltip": "The void damage dealt when bouncing out of the void.",
 
   "text.config.chromaticarsenal.option.COMMON.ascendedStarSlots": "Ascended Star Slots",
-  "text.config.chromaticarsenal.option.COMMON.ascendedStarFortune": "Ascended Star Fortune",
-  "text.config.chromaticarsenal.option.COMMON.ascendedStarLooting": "Ascended Star Looting",
+  "text.config.chromaticarsenal.option.COMMON.ascendedStarFortune": "Ascended Star Fortune Bonus",
+  "text.config.chromaticarsenal.option.COMMON.ascendedStarLooting": "Ascended Star Looting Bonus",
   "text.config.chromaticarsenal.option.COMMON.ascendedStarDamage": "Ascended Star Damage Multiplier",
 
   "text.config.chromaticarsenal.option.COMMON.worldAnchorArmor": "World Anchor Armor",
+
+  "text.config.chromaticarsenal.option.COMMON.cursedTotemFracturedAmplifier": "Cursed Totem Fractured Amplifier",
+  "text.config.chromaticarsenal.option.COMMON.cursedTotemLootingBonus": "Cursed Totem Looting Bonus",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 
