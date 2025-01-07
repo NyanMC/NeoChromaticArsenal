@@ -65,12 +65,8 @@ public class CAModels extends ItemModelProvider {
         // other stuff
         basicModel("magic_garlic_bread");
         //basicModel("cosmicola");
-        //basicModel("chroma_salvager");
-        //basicModel("viewer_item");
 
         // miscellaneous
         //basicModel("super_glow_ring_active");
-        //basicModel("ca_book");
-        //basicModel("lore_book");
     }
 }
