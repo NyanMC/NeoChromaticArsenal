@@ -7,6 +7,7 @@ import com.chromanyan.chromaticarsenal.item.challengeaccessories.CursedTotemAcce
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.WorldAnchorAccessory;
 import com.chromanyan.chromaticarsenal.item.food.MagicGarlicBreadItem;
 import com.chromanyan.chromaticarsenal.item.superaccessories.*;
+import com.chromanyan.chromaticarsenal.item.utilityaccessories.AnonymityUmbrellaAccessory;
 import com.chromanyan.chromaticarsenal.item.utilityaccessories.GravityStoneAccessory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -45,4 +46,5 @@ public class CAItems {
     public static final DeferredItem<CursedTotemAccessory> CURSED_TOTEM = ITEMS.register("cursed_totem", CursedTotemAccessory::new);
 
     public static final DeferredItem<GravityStoneAccessory> GRAVITY_STONE = ITEMS.register("gravity_stone", GravityStoneAccessory::new);
+    public static final DeferredItem<AnonymityUmbrellaAccessory> ANONYMITY_UMBRELLA = ITEMS.register("anonymity_umbrella", AnonymityUmbrellaAccessory::new);
 }

@@ -140,5 +140,6 @@ public class CAConfigModel {
 
     public static class ClientOptions {
         public int tooltipDecimalThreshold = 10;
+        public boolean anonymityOptOut = false;
     }
 }

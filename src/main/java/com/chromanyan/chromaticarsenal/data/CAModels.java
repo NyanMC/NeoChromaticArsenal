@@ -52,7 +52,7 @@ public class CAModels extends ItemModelProvider {
         // utility curios
         basicModel("gravity_stone");
         //basicModel("vertical_stasis_stone");
-        //basicModel("anonymity_umbrella");
+        basicModel("anonymity_umbrella");
 
         // basic curios
         //basicModel("amethyst_ring");

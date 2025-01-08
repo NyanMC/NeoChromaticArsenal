@@ -112,6 +112,9 @@
   "tooltip.chromaticarsenal.gravity_stone.2": "§6Prevents the floatiness from Slow Falling (the effect will still negate fall damage)",
   "tooltip.chromaticarsenal.gravity_stone.3": "§cDoes not grant immunity to Levitation",
 
+  "item.chromaticarsenal.anonymity_umbrella": "Anonymity Umbrella",
+  "tooltip.chromaticarsenal.anonymity_umbrella.1": "§6Conceals the wearer's skin",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
@@ -242,5 +245,7 @@
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 
   "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold": "Tooltip Decimal Threshold",
-  "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold.tooltip": "Whenever ticks are converted to seconds in a tooltip, the decimal is kept if the resulting amount of seconds is under this value."
+  "text.config.chromaticarsenal.option.CLIENT.tooltipDecimalThreshold.tooltip": "Whenever ticks are converted to seconds in a tooltip, the decimal is kept if the resulting amount of seconds is under this value.",
+  "text.config.chromaticarsenal.option.CLIENT.anonymityOptOut": "Anonymity Umbrella - Opt Out",
+  "text.config.chromaticarsenal.option.CLIENT.anonymityOptOut.tooltip": "Prevents the Anonymity Umbrella from cloaking the wearer's skin. It will still hide their name tag."
 }

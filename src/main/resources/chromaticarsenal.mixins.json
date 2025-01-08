@@ -10,6 +10,7 @@
     "PlayerMixin"
   ],
   "client": [
+    "AbstractClientPlayerMixin",
     "LocalPlayerMixin"
   ],
   "injectors": {
