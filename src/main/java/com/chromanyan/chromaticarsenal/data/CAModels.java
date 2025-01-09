@@ -27,8 +27,6 @@ public class CAModels extends ItemModelProvider {
         // crafting materials
         basicModel("chroma_shard");
         basicModel("ascension_essence");
-        //basicModel("champion_catalyst");
-        //basicModel("chromatic_upgrade_smithing_template");
 
         // regular chromatic curios
         basicModelWithSuper("golden_heart");

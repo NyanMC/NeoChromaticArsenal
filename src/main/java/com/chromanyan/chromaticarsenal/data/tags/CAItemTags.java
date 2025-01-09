@@ -24,8 +24,8 @@ public class CAItemTags extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
-        //copy(CATags.Blocks.STORAGE_BLOCKS_CHROMA, CATags.Items.STORAGE_BLOCKS_CHROMA);
-        //copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
+        copy(CATags.Blocks.STORAGE_BLOCKS_CHROMA, CATags.Items.STORAGE_BLOCKS_CHROMA);
+        copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
 
         tag(CATags.Items.GEMS_CHROMA).add(CAItems.CHROMA_SHARD.get());
         tag(Tags.Items.GEMS).add(CAItems.CHROMA_SHARD.get());
