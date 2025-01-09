@@ -115,6 +115,13 @@
   "item.chromaticarsenal.anonymity_umbrella": "Anonymity Umbrella",
   "tooltip.chromaticarsenal.anonymity_umbrella.1": "§6Conceals the wearer's skin",
 
+
+  "item.chromaticarsenal.harpy_feather": "Harpy Feather",
+  "item.chromaticarsenal.super_harpy_feather": "Polychromatic Feather",
+  "tooltip.chromaticarsenal.harpy_feather.1": "§6Upon use, performs a midair jump",
+  "tooltip.chromaticarsenal.harpy_feather.2": "§6Can be used up to %1$s§6 times before landing",
+  "tooltip.chromaticarsenal.harpy_feather.3": "§cCannot be used while sneaking",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
@@ -241,6 +248,11 @@
 
   "text.config.chromaticarsenal.option.COMMON.cursedTotemFracturedAmplifier": "Cursed Totem Fractured Amplifier",
   "text.config.chromaticarsenal.option.COMMON.cursedTotemLootingBonus": "Cursed Totem Looting Bonus",
+
+  "text.config.chromaticarsenal.option.COMMON.harpyFeatherMaxJumps": "Harpy Feather Max Jumps",
+  "text.config.chromaticarsenal.option.COMMON.harpyFeatherMaxJumps.tooltip": "The maximum number of jumps able to be performed using the Harpy Feather.",
+  "text.config.chromaticarsenal.option.COMMON.superHarpyFeatherMaxJumps": "Polychromatic Feather Max Jumps",
+  "text.config.chromaticarsenal.option.COMMON.superHarpyFeatherMaxJumps.tooltip": "The maximum number of jumps able to be performed using the Polychromatic Feather.",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 

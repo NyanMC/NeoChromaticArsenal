@@ -136,6 +136,13 @@ public class CAConfigModel {
         public int cursedTotemFracturedAmplifier = 4;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public int cursedTotemLootingBonus = 2;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        @RestartRequired
+        public int harpyFeatherMaxJumps = 1;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        @RestartRequired
+        public int superHarpyFeatherMaxJumps = 3;
     }
 
     public static class ClientOptions {

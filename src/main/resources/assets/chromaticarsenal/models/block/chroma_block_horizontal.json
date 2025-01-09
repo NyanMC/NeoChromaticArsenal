@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column_horizontal",
+  "textures": {
+    "end": "chromaticarsenal:block/chroma_block_front",
+    "side": "chromaticarsenal:block/chroma_block_side"
+  }
+}

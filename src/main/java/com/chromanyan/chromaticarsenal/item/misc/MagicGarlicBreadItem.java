@@ -1,4 +1,4 @@
-package com.chromanyan.chromaticarsenal.item.food;
+package com.chromanyan.chromaticarsenal.item.misc;
 
 import com.chromanyan.chromaticarsenal.ChromaticArsenal;
 import com.chromanyan.chromaticarsenal.init.CAItems;

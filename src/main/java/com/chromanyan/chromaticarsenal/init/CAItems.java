@@ -5,7 +5,8 @@ import com.chromanyan.chromaticarsenal.item.*;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.AscendedStarAccessory;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.CursedTotemAccessory;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.WorldAnchorAccessory;
-import com.chromanyan.chromaticarsenal.item.food.MagicGarlicBreadItem;
+import com.chromanyan.chromaticarsenal.item.misc.HarpyFeatherItem;
+import com.chromanyan.chromaticarsenal.item.misc.MagicGarlicBreadItem;
 import com.chromanyan.chromaticarsenal.item.superaccessories.*;
 import com.chromanyan.chromaticarsenal.item.utilityaccessories.AnonymityUmbrellaAccessory;
 import com.chromanyan.chromaticarsenal.item.utilityaccessories.GravityStoneAccessory;
@@ -18,7 +19,7 @@ public class CAItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ChromaticArsenal.MODID);
 
     public static final DeferredItem<Item> CHROMA_SHARD = ITEMS.registerSimpleItem("chroma_shard", new Item.Properties().rarity(Rarity.UNCOMMON));
-    public static final DeferredItem<Item> ASCENSION_ESSENCE = ITEMS.registerSimpleItem("ascension_essence", new Item.Properties().rarity(Rarity.RARE));
+    public static final DeferredItem<Item> ASCENSION_ESSENCE = ITEMS.registerSimpleItem("ascension_essence", new Item.Properties().rarity(Rarity.EPIC));
     public static final DeferredItem<MagicGarlicBreadItem> MAGIC_GARLIC_BREAD = ITEMS.register("magic_garlic_bread", MagicGarlicBreadItem::new);
 
     public static final DeferredItem<GoldenHeartAccessory> GOLDEN_HEART = ITEMS.register("golden_heart", GoldenHeartAccessory::new);
@@ -47,4 +48,7 @@ public class CAItems {
 
     public static final DeferredItem<GravityStoneAccessory> GRAVITY_STONE = ITEMS.register("gravity_stone", GravityStoneAccessory::new);
     public static final DeferredItem<AnonymityUmbrellaAccessory> ANONYMITY_UMBRELLA = ITEMS.register("anonymity_umbrella", AnonymityUmbrellaAccessory::new);
+
+    public static final DeferredItem<HarpyFeatherItem> HARPY_FEATHER = ITEMS.register("harpy_feather", () -> new HarpyFeatherItem(Rarity.UNCOMMON, ChromaticArsenal.CONFIG.COMMON.harpyFeatherMaxJumps()));
+    public static final DeferredItem<HarpyFeatherItem> POLYCHROMATIC_FEATHER = ITEMS.register("super_harpy_feather", () -> new HarpyFeatherItem(Rarity.EPIC, ChromaticArsenal.CONFIG.COMMON.superHarpyFeatherMaxJumps()));
 }

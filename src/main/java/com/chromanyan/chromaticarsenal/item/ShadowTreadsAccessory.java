@@ -43,6 +43,7 @@ public class ShadowTreadsAccessory extends ChromaAccessory {
     }
 
     @Override
+    @OnlyIn(Dist.CLIENT)
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, list, tooltipFlag);
 
