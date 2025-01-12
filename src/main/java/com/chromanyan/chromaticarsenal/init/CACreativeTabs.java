@@ -17,6 +17,9 @@ public class CACreativeTabs {
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.chromaticarsenal"))
                     .icon(() -> new ItemStack(CAItems.CHROMA_SHARD.get()))
-                    .displayItems(((itemDisplayParameters, output) -> CAItems.ITEMS.getEntries().forEach((item) -> output.accept(item.get()))))
+                    .displayItems(((itemDisplayParameters, output) -> CAItems.ITEMS.getEntries().forEach((item) -> {
+                        if (item.is(CATags.Items.SECRET)) return;
+                        output.accept(item.get());
+                    })))
                     .build());
 }

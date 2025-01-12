@@ -80,7 +80,9 @@ public class ChromaticArsenal {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ShadowTreadsAccessory.clientInit();
+            // consider moving this renderer to its own file, especially if i use it more in the future
             AccessoriesRendererRegistry.registerRenderer(CAItems.BLAHAJ.get(), BlahajAccessory.BlahajRenderer::new);
+            AccessoriesRendererRegistry.registerRenderer(CAItems.CHROMANYAN.get(), BlahajAccessory.BlahajRenderer::new);
         }
     }
 

@@ -21,6 +21,8 @@ public class CATags {
         public static final TagKey<Item> STORAGE_BLOCKS_CHROMA = commonTag("storage_blocks/chroma");
 
         public static final TagKey<Item> DUSTS_ASCENSION = commonTag("dusts/ascension");
+
+        public static final TagKey<Item> SECRET = ItemTags.create(ChromaticArsenal.of("secret"));
     }
 
     public static class Blocks {

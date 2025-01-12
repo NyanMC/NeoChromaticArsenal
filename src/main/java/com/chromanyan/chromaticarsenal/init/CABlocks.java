@@ -2,6 +2,7 @@ package com.chromanyan.chromaticarsenal.init;
 
 import com.chromanyan.chromaticarsenal.ChromaticArsenal;
 import com.chromanyan.chromaticarsenal.block.BlahajBlock;
+import com.chromanyan.chromaticarsenal.block.ChromaNyanBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -25,6 +26,7 @@ public class CABlocks {
     );
 
     public static final DeferredBlock<BlahajBlock> BLAHAJ = BLOCKS.register("blahaj", () -> new BlahajBlock());
+    public static final DeferredBlock<ChromaNyanBlock> CHROMANYAN = BLOCKS.register("chromanyan_plush", ChromaNyanBlock::new);
 
     @SuppressWarnings("unused")
     public static boolean never(BlockState p_50806_, BlockGetter p_50807_, BlockPos p_50808_) {

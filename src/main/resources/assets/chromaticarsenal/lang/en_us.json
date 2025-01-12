@@ -120,9 +120,12 @@
   "tooltip.chromaticarsenal.vertical_stasis_stone.1": "§6Negates the effects of gravity while sneaking",
   "tooltip.chromaticarsenal.vertical_stasis_stone.2": "§6While in effect, sneaking won't prevent falling off ledges",
 
+  "_comment.block.chromaticarsenal.blahaj": "Based on the IKEA shark plush of the same name.",
   "block.chromaticarsenal.blahaj": "Blåhaj",
   "tooltip.chromaticarsenal.blahaj.1": "§6Prevents Phantoms from targeting or spawning near the wearer",
   "tooltip.chromaticarsenal.blahaj.2": "§6Prevents restlessness from nearby monsters",
+
+  "block.chromaticarsenal.chromanyan_plush": "ChromaNyan Plush",
 
   "item.chromaticarsenal.harpy_feather": "Harpy Feather",
   "item.chromaticarsenal.super_harpy_feather": "Polychromatic Feather",
@@ -137,6 +140,8 @@
   "tooltip.chromaticarsenal.cursed": "§cOnce equipped, unequipping may prove to be fatal.",
   "tooltip.chromaticarsenal.can_place": "Can be placed",
   "tooltip.chromaticarsenal.vanity": "Vanity Item",
+  "_comment.tooltip.chromaticarsenal.impersonation": "Reference to the tooltip used by Terraria's developer items.",
+  "tooltip.chromaticarsenal.impersonation": "§o\"Great for impersonating devs!\"",
   "accessories.slot.super_accessory": "Super Accessory",
   "super_accessory": "Super Accessory",
 

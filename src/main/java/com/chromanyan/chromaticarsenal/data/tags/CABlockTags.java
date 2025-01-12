@@ -27,6 +27,6 @@ public class CABlockTags extends net.neoforged.neoforge.common.data.BlockTagsPro
         tag(CATags.Blocks.STORAGE_BLOCKS_CHROMA).add(CABlocks.CHROMA_BLOCK.get());
         tag(Tags.Blocks.STORAGE_BLOCKS).add(CABlocks.CHROMA_BLOCK.get());
 
-        //tag(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(CABlocks.BLAHAJ.get(), CABlocks.CHROMANYAN.get());
+        tag(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(CABlocks.BLAHAJ.get(), CABlocks.CHROMANYAN.get());
     }
 }

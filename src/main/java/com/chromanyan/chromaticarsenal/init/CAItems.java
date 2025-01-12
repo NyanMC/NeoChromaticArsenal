@@ -8,10 +8,7 @@ import com.chromanyan.chromaticarsenal.item.challengeaccessories.WorldAnchorAcce
 import com.chromanyan.chromaticarsenal.item.misc.HarpyFeatherItem;
 import com.chromanyan.chromaticarsenal.item.misc.MagicGarlicBreadItem;
 import com.chromanyan.chromaticarsenal.item.superaccessories.*;
-import com.chromanyan.chromaticarsenal.item.utilityaccessories.AnonymityUmbrellaAccessory;
-import com.chromanyan.chromaticarsenal.item.utilityaccessories.BlahajAccessory;
-import com.chromanyan.chromaticarsenal.item.utilityaccessories.GravityStoneAccessory;
-import com.chromanyan.chromaticarsenal.item.utilityaccessories.VerticalStasisAccessory;
+import com.chromanyan.chromaticarsenal.item.utilityaccessories.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -57,4 +54,5 @@ public class CAItems {
     public static final DeferredItem<AnonymityUmbrellaAccessory> ANONYMITY_UMBRELLA = ITEMS.register("anonymity_umbrella", AnonymityUmbrellaAccessory::new);
     public static final DeferredItem<VerticalStasisAccessory> VERTICAL_STASIS = ITEMS.register("vertical_stasis_stone", VerticalStasisAccessory::new);
     public static final DeferredItem<BlahajAccessory> BLAHAJ = ITEMS.register("blahaj", BlahajAccessory::new);
+    public static final DeferredItem<ChromaNyanAccessory> CHROMANYAN = ITEMS.register("chromanyan_plush", ChromaNyanAccessory::new);
 }
