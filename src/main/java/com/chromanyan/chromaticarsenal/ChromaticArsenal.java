@@ -8,7 +8,9 @@ import com.chromanyan.chromaticarsenal.init.CACreativeTabs;
 import com.chromanyan.chromaticarsenal.init.CAEffects;
 import com.chromanyan.chromaticarsenal.init.CAItems;
 import com.chromanyan.chromaticarsenal.item.ShadowTreadsAccessory;
+import com.chromanyan.chromaticarsenal.item.utilityaccessories.BlahajAccessory;
 import com.mojang.logging.LogUtils;
+import io.wispforest.accessories.api.client.AccessoriesRendererRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -78,6 +80,7 @@ public class ChromaticArsenal {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ShadowTreadsAccessory.clientInit();
+            AccessoriesRendererRegistry.registerRenderer(CAItems.BLAHAJ.get(), BlahajAccessory.BlahajRenderer::new);
         }
     }
 

@@ -1,6 +1,7 @@
 package com.chromanyan.chromaticarsenal.init;
 
 import com.chromanyan.chromaticarsenal.ChromaticArsenal;
+import com.chromanyan.chromaticarsenal.block.BlahajBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -22,6 +23,8 @@ public class CABlocks {
                     .sound(SoundType.METAL)
                     .lightLevel((state) -> 15))
     );
+
+    public static final DeferredBlock<BlahajBlock> BLAHAJ = BLOCKS.register("blahaj", () -> new BlahajBlock());
 
     @SuppressWarnings("unused")
     public static boolean never(BlockState p_50806_, BlockGetter p_50807_, BlockPos p_50808_) {

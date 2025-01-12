@@ -120,6 +120,10 @@
   "tooltip.chromaticarsenal.vertical_stasis_stone.1": "§6Negates the effects of gravity while sneaking",
   "tooltip.chromaticarsenal.vertical_stasis_stone.2": "§6While in effect, sneaking won't prevent falling off ledges",
 
+  "block.chromaticarsenal.blahaj": "Blåhaj",
+  "tooltip.chromaticarsenal.blahaj.1": "§6Prevents Phantoms from targeting or spawning near the wearer",
+  "tooltip.chromaticarsenal.blahaj.2": "§6Prevents restlessness from nearby monsters",
+
   "item.chromaticarsenal.harpy_feather": "Harpy Feather",
   "item.chromaticarsenal.super_harpy_feather": "Polychromatic Feather",
   "tooltip.chromaticarsenal.harpy_feather.1": "§6Upon use, performs a midair jump",
@@ -131,6 +135,8 @@
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
   "tooltip.chromaticarsenal.incompatibilities": "Cannot be equipped with: %1$s",
   "tooltip.chromaticarsenal.cursed": "§cOnce equipped, unequipping may prove to be fatal.",
+  "tooltip.chromaticarsenal.can_place": "Can be placed",
+  "tooltip.chromaticarsenal.vanity": "Vanity Item",
   "accessories.slot.super_accessory": "Super Accessory",
   "super_accessory": "Super Accessory",
 
