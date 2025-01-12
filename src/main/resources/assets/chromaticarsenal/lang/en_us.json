@@ -116,6 +116,9 @@
   "item.chromaticarsenal.anonymity_umbrella": "Anonymity Umbrella",
   "tooltip.chromaticarsenal.anonymity_umbrella.1": "§6Conceals the wearer's skin",
 
+  "item.chromaticarsenal.vertical_stasis_stone": "Stone of Vertical Stasis",
+  "tooltip.chromaticarsenal.vertical_stasis_stone.1": "§6Negates the effects of gravity while sneaking",
+  "tooltip.chromaticarsenal.vertical_stasis_stone.2": "§6While in effect, sneaking won't prevent falling off ledges",
 
   "item.chromaticarsenal.harpy_feather": "Harpy Feather",
   "item.chromaticarsenal.super_harpy_feather": "Polychromatic Feather",

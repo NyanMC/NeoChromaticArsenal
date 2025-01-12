@@ -1,7 +1,9 @@
 package com.chromanyan.chromaticarsenal.mixin;
 
 import com.chromanyan.chromaticarsenal.init.CAItems;
+import com.chromanyan.chromaticarsenal.item.utilityaccessories.VerticalStasisAccessory;
 import com.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.world.entity.player.Player;
@@ -18,4 +20,13 @@ public class PlayerMixin {
         }
     }
 
+    @ModifyReturnValue(method = "isStayingOnGroundSurface", at = @At("RETURN"))
+    private boolean isStayingOnGroundSurface(boolean original) {
+        Player trueThis = (Player)(Object)this;
+
+        if (VerticalStasisAccessory.isVerticalStasisActive(trueThis)) {
+            return false;
+        }
+        return original;
+    }
 }
