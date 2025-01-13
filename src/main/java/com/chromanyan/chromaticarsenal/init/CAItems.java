@@ -2,6 +2,9 @@ package com.chromanyan.chromaticarsenal.init;
 
 import com.chromanyan.chromaticarsenal.ChromaticArsenal;
 import com.chromanyan.chromaticarsenal.item.*;
+import com.chromanyan.chromaticarsenal.item.basicaccessories.AmethystRingAccessory;
+import com.chromanyan.chromaticarsenal.item.basicaccessories.CopperRingAccessory;
+import com.chromanyan.chromaticarsenal.item.basicaccessories.VitalStoneAccessory;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.AscendedStarAccessory;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.CursedTotemAccessory;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.WorldAnchorAccessory;
@@ -56,4 +59,8 @@ public class CAItems {
     public static final DeferredItem<VerticalStasisAccessory> VERTICAL_STASIS = ITEMS.register("vertical_stasis_stone", VerticalStasisAccessory::new);
     public static final DeferredItem<BlahajAccessory> BLAHAJ = ITEMS.register("blahaj", BlahajAccessory::new);
     public static final DeferredItem<ChromaNyanAccessory> CHROMANYAN = ITEMS.register("chromanyan_plush", ChromaNyanAccessory::new);
+
+    public static final DeferredItem<CopperRingAccessory> COPPER_RING = ITEMS.register("copper_ring", CopperRingAccessory::new);
+    public static final DeferredItem<AmethystRingAccessory> AMETHYST_RING = ITEMS.register("amethyst_ring", AmethystRingAccessory::new);
+    public static final DeferredItem<VitalStoneAccessory> VITAL_STONE = ITEMS.register("vital_stone", VitalStoneAccessory::new);
 }

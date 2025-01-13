@@ -6,6 +6,7 @@
   "refmap": "chromaticarsenal.refmap.json",
   "mixins": [
     "EntityMixin",
+    "ItemStackMixin",
     "LivingEntityMixin",
     "PlayerMixin"
   ],

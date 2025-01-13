@@ -148,6 +148,14 @@ public class CAConfigModel {
         public int illuminatedSoulGlowingDuration = 1200;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public float illuminatedSoulUndeadMultiplier = 1.2f;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        @RangeConstraint(min = 0, max = 1)
+        public double copperRingUnbreakingChance = 0.1;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int amethystRingReachModifier = 1;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int vitalStoneFrequency = 60;
     }
 
     public static class ClientOptions {

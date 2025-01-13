@@ -133,6 +133,12 @@
   "tooltip.chromaticarsenal.harpy_feather.2": "§6Can be used up to %1$s§6 times before landing",
   "tooltip.chromaticarsenal.harpy_feather.3": "§cCannot be used while sneaking",
 
+  "item.chromaticarsenal.amethyst_ring": "Amethyst Ring",
+  "item.chromaticarsenal.copper_ring": "Copper Ring",
+  "tooltip.chromaticarsenal.copper_ring.1": "§6%1$s§b%%§6 chance to not lose durability when using a breakable item",
+  "item.chromaticarsenal.vital_stone": "Vital Stone",
+  "tooltip.chromaticarsenal.vital_stone.1": "§6Regenerates 1 health every %1$s§6 second(s)",
+
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
@@ -277,6 +283,10 @@
   "text.config.chromaticarsenal.option.COMMON.illuminatedSoulGlowingDuration": "Ring of Illuminated Soul Glowing Duration",
   "text.config.chromaticarsenal.option.COMMON.illuminatedSoulUndeadMultiplier": "Ring of Illuminated Soul Undead Damage Multiplier",
   "text.config.chromaticarsenal.option.COMMON.illuminatedSoulUndeadMultiplier.tooltip": "The multiplier given to damage against mobs vulnerable to smite.",
+
+  "text.config.chromaticarsenal.option.COMMON.copperRingUnbreakingChance": "Copper Ring Unbreaking Chance",
+  "text.config.chromaticarsenal.option.COMMON.amethystRingReachModifier": "Amethyst Ring Reach Modifier",
+  "text.config.chromaticarsenal.option.COMMON.vitalStoneFrequency": "Vital Stone Frequency",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 

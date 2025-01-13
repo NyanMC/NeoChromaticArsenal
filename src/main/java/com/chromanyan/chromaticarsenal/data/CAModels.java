@@ -53,9 +53,9 @@ public class CAModels extends ItemModelProvider {
         basicModel("anonymity_umbrella");
 
         // basic curios
-        //basicModel("amethyst_ring");
-        //basicModel("copper_ring");
-        //basicModel("vital_stone");
+        basicModel("amethyst_ring");
+        basicModel("copper_ring");
+        basicModel("vital_stone");
 
         // compatibility
         //basicModel("omni_ring");
