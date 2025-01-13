@@ -7,6 +7,7 @@ import com.chromanyan.chromaticarsenal.item.basicaccessories.CopperRingAccessory
 import com.chromanyan.chromaticarsenal.item.basicaccessories.VitalStoneAccessory;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.AscendedStarAccessory;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.CursedTotemAccessory;
+import com.chromanyan.chromaticarsenal.item.challengeaccessories.LunaFlowerAccessory;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.WorldAnchorAccessory;
 import com.chromanyan.chromaticarsenal.item.misc.HarpyFeatherItem;
 import com.chromanyan.chromaticarsenal.item.misc.MagicGarlicBreadItem;
@@ -53,6 +54,7 @@ public class CAItems {
     public static final DeferredItem<AscendedStarAccessory> ASCENDED_STAR = ITEMS.register("ascended_star", AscendedStarAccessory::new);
     public static final DeferredItem<WorldAnchorAccessory> WORLD_ANCHOR = ITEMS.register("world_anchor", WorldAnchorAccessory::new);
     public static final DeferredItem<CursedTotemAccessory> CURSED_TOTEM = ITEMS.register("cursed_totem", CursedTotemAccessory::new);
+    public static final DeferredItem<LunaFlowerAccessory> LUNA_FLOWER = ITEMS.register("luna_flower", LunaFlowerAccessory::new);
 
     public static final DeferredItem<GravityStoneAccessory> GRAVITY_STONE = ITEMS.register("gravity_stone", GravityStoneAccessory::new);
     public static final DeferredItem<AnonymityUmbrellaAccessory> ANONYMITY_UMBRELLA = ITEMS.register("anonymity_umbrella", AnonymityUmbrellaAccessory::new);

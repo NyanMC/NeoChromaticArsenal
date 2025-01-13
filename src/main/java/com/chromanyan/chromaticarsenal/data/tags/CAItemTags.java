@@ -36,7 +36,7 @@ public class CAItemTags extends ItemTagsProvider {
         tag(CATags.Items.DUSTS_ASCENSION).add(CAItems.ASCENSION_ESSENCE.get());
         tag(Tags.Items.DUSTS).add(CAItems.ASCENSION_ESSENCE.get());
 
-        tag(CATags.Items.SECRET).add(CAItems.CHROMANYAN.get());
+        tag(CATags.Items.SECRET).add(CAItems.CHROMANYAN.get(), CAItems.LUNA_FLOWER.get());
         tag(Tags.Items.HIDDEN_FROM_RECIPE_VIEWERS).addTag(CATags.Items.SECRET);
     }
 }
