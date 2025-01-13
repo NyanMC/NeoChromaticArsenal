@@ -3,10 +3,7 @@ package com.chromanyan.chromaticarsenal;
 import com.chromanyan.chromaticarsenal.data.CAModels;
 import com.chromanyan.chromaticarsenal.data.tags.CABlockTags;
 import com.chromanyan.chromaticarsenal.data.tags.CAItemTags;
-import com.chromanyan.chromaticarsenal.init.CABlocks;
-import com.chromanyan.chromaticarsenal.init.CACreativeTabs;
-import com.chromanyan.chromaticarsenal.init.CAEffects;
-import com.chromanyan.chromaticarsenal.init.CAItems;
+import com.chromanyan.chromaticarsenal.init.*;
 import com.chromanyan.chromaticarsenal.item.ShadowTreadsAccessory;
 import com.chromanyan.chromaticarsenal.item.superaccessories.IlluminatedSoulAccessory;
 import com.chromanyan.chromaticarsenal.item.utilityaccessories.BlahajAccessory;
@@ -45,6 +42,7 @@ public class ChromaticArsenal {
 
         NeoForge.EVENT_BUS.register(this);
 
+        CAAttachments.ATTACHMENT_TYPES.register(modEventBus);
         CAEffects.MOB_EFFECTS.register(modEventBus);
         CABlocks.BLOCKS.register(modEventBus);
         CAItems.ITEMS.register(modEventBus);

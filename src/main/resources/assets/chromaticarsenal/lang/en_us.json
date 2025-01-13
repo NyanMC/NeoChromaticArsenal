@@ -149,6 +149,8 @@
   "tooltip.chromaticarsenal.vital_stone.1": "§6Regenerates 1 health every %1$s§6 second(s)",
 
   "item.chromaticarsenal.magic_garlic_bread": "Magic Garlic Bread",
+  "item.chromaticarsenal.cosmicola": "Cosmicola",
+  "tooltip.chromaticarsenal.cosmicola.1": "§6Permanently increases Charm slots by 1 (single use)",
 
   "tooltip.chromaticarsenal.shift": "§5Hold §dShift §5for details",
   "tooltip.chromaticarsenal.incompatibilities": "Cannot be equipped with: %1$s",

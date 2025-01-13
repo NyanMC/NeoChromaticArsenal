@@ -9,6 +9,7 @@ import com.chromanyan.chromaticarsenal.item.challengeaccessories.AscendedStarAcc
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.CursedTotemAccessory;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.LunaFlowerAccessory;
 import com.chromanyan.chromaticarsenal.item.challengeaccessories.WorldAnchorAccessory;
+import com.chromanyan.chromaticarsenal.item.misc.CosmicolaItem;
 import com.chromanyan.chromaticarsenal.item.misc.HarpyFeatherItem;
 import com.chromanyan.chromaticarsenal.item.misc.MagicGarlicBreadItem;
 import com.chromanyan.chromaticarsenal.item.superaccessories.*;
@@ -27,6 +28,7 @@ public class CAItems {
     public static final DeferredItem<BlockItem> CHROMA_BLOCK = ITEMS.registerSimpleBlockItem(CABlocks.CHROMA_BLOCK, new Item.Properties().rarity(Rarity.UNCOMMON));
 
     public static final DeferredItem<MagicGarlicBreadItem> MAGIC_GARLIC_BREAD = ITEMS.register("magic_garlic_bread", MagicGarlicBreadItem::new);
+    public static final DeferredItem<CosmicolaItem> COSMICOLA = ITEMS.register("cosmicola", CosmicolaItem::new);
     public static final DeferredItem<HarpyFeatherItem> HARPY_FEATHER = ITEMS.register("harpy_feather", () -> new HarpyFeatherItem(Rarity.UNCOMMON, ChromaticArsenal.CONFIG.COMMON.harpyFeatherMaxJumps()));
     public static final DeferredItem<HarpyFeatherItem> POLYCHROMATIC_FEATHER = ITEMS.register("super_harpy_feather", () -> new HarpyFeatherItem(Rarity.EPIC, ChromaticArsenal.CONFIG.COMMON.superHarpyFeatherMaxJumps()));
 
