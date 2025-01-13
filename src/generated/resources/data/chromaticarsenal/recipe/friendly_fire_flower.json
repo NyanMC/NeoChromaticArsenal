@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_powder"
+    },
+    "C": {
+      "tag": "c:gems/chroma"
+    },
+    "N": {
+      "tag": "c:ingots/netherite"
+    },
+    "O": {
+      "item": "minecraft:orange_tulip"
+    }
+  },
+  "pattern": [
+    " O ",
+    "BCB",
+    " N "
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:friendly_fire_flower"
+  }
+}

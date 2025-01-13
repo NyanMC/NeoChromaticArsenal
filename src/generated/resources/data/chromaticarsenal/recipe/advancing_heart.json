@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:dragon_breath"
+    },
+    "G": {
+      "item": "chromaticarsenal:golden_heart"
+    }
+  },
+  "pattern": [
+    "BGB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:advancing_heart"
+  }
+}

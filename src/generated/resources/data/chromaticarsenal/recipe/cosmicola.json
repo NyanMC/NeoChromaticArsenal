@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:dusts/ascension"
+    },
+    "C": {
+      "item": "minecraft:chorus_fruit"
+    },
+    "I": {
+      "tag": "c:ingots/iron"
+    }
+  },
+  "pattern": [
+    "ICI",
+    "IAI",
+    "ICI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:cosmicola"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "c:gems/amethyst"
+    },
+    "B": {
+      "item": "minecraft:blaze_powder"
+    },
+    "C": {
+      "tag": "c:gems/chroma"
+    },
+    "F": {
+      "item": "minecraft:fermented_spider_eye"
+    }
+  },
+  "pattern": [
+    "FAF",
+    "ACA",
+    "BAB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:ward_crystal"
+  }
+}

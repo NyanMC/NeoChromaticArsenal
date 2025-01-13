@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "tag": "c:gems/chroma"
+    },
+    "F": {
+      "tag": "c:feathers"
+    },
+    "G": {
+      "tag": "c:ingots/gold"
+    }
+  },
+  "pattern": [
+    "F",
+    "C",
+    "G"
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:harpy_feather"
+  }
+}

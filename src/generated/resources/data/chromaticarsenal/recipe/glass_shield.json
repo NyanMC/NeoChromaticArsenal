@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "tag": "c:gems/chroma"
+    },
+    "G": {
+      "tag": "c:glass_blocks"
+    }
+  },
+  "pattern": [
+    "GCG",
+    "GGG",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:glass_shield"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "chromaticarsenal:harpy_feather"
+    },
+    {
+      "tag": "c:dusts/ascension"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:super_harpy_feather"
+  }
+}

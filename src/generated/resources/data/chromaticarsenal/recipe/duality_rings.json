@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "tag": "c:dyes/black"
+    },
+    "C": {
+      "tag": "c:gems/chroma"
+    },
+    "R": {
+      "item": "chromaticarsenal:amethyst_ring"
+    },
+    "W": {
+      "tag": "c:dyes/white"
+    }
+  },
+  "pattern": [
+    "W  ",
+    "RCR",
+    "  B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:duality_rings"
+  }
+}

@@ -1,6 +1,7 @@
 package com.chromanyan.chromaticarsenal;
 
 import com.chromanyan.chromaticarsenal.data.CAModels;
+import com.chromanyan.chromaticarsenal.data.CARecipes;
 import com.chromanyan.chromaticarsenal.data.tags.CABlockTags;
 import com.chromanyan.chromaticarsenal.data.tags.CAItemTags;
 import com.chromanyan.chromaticarsenal.init.*;
@@ -70,6 +71,7 @@ public class ChromaticArsenal {
             CABlockTags blockTags = new CABlockTags(output, lookupProvider, efh);
             gen.addProvider(true, blockTags);
             gen.addProvider(true, new CAItemTags(output, lookupProvider, blockTags.contentsGetter(), efh));
+            gen.addProvider(true, new CARecipes(output, lookupProvider));
         }
     }
 

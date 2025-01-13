@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "tag": "c:gems/chroma"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "chromaticarsenal:magic_garlic_bread"
+  }
+}

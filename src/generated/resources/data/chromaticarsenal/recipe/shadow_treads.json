@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "tag": "c:gems/chroma"
+    },
+    "E": {
+      "item": "minecraft:echo_shard"
+    },
+    "L": {
+      "item": "minecraft:leather_boots"
+    }
+  },
+  "pattern": [
+    "ELE",
+    " C "
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:shadow_treads"
+  }
+}
