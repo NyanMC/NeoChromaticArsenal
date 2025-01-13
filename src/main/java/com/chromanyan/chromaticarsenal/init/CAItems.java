@@ -45,6 +45,7 @@ public class CAItems {
     public static final DeferredItem<CelestialCharmAccessory> CELESTIAL_CHARM = ITEMS.register("super_shadow_treads", CelestialCharmAccessory::new);
     public static final DeferredItem<InfernoFlowerAccessory> INFERNO_FLOWER = ITEMS.register("super_friendly_fire_flower", InfernoFlowerAccessory::new);
     public static final DeferredItem<PrismaticCrystalAccessory> PRISMATIC_CRYSTAL = ITEMS.register("super_lunar_crystal", PrismaticCrystalAccessory::new);
+    public static final DeferredItem<IlluminatedSoulAccessory> ILLUMINATED_SOUL = ITEMS.register("super_glow_ring", IlluminatedSoulAccessory::new);
 
     public static final DeferredItem<AscendedStarAccessory> ASCENDED_STAR = ITEMS.register("ascended_star", AscendedStarAccessory::new);
     public static final DeferredItem<WorldAnchorAccessory> WORLD_ANCHOR = ITEMS.register("world_anchor", WorldAnchorAccessory::new);

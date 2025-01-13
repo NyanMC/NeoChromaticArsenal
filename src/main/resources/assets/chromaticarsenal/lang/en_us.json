@@ -254,6 +254,11 @@
   "text.config.chromaticarsenal.option.COMMON.prismaticCrystalVoidBounceDamage": "Prismatic Crystal Void Bounce Damage",
   "text.config.chromaticarsenal.option.COMMON.prismaticCrystalVoidBounceDamage.tooltip": "The void damage dealt when bouncing out of the void.",
 
+  "item.chromaticarsenal.super_glow_ring": "Ring of Illuminated Soul",
+  "tooltip.chromaticarsenal.super_glow_ring.1": "§2Grants Night Vision, Glowing, and immunity to Blindness and Darkness",
+  "tooltip.chromaticarsenal.super_glow_ring.2": "§6Attacking a mob inflicts Glowing for %1$s§6 seconds",
+  "tooltip.chromaticarsenal.super_glow_ring.3": "§6Increases damage dealt to smite-vulnerable mobs by %1$s§b%%",
+
   "text.config.chromaticarsenal.option.COMMON.ascendedStarSlots": "Ascended Star Slots",
   "text.config.chromaticarsenal.option.COMMON.ascendedStarFortune": "Ascended Star Fortune Bonus",
   "text.config.chromaticarsenal.option.COMMON.ascendedStarLooting": "Ascended Star Looting Bonus",
@@ -268,6 +273,10 @@
   "text.config.chromaticarsenal.option.COMMON.harpyFeatherMaxJumps.tooltip": "The maximum number of jumps able to be performed using the Harpy Feather.",
   "text.config.chromaticarsenal.option.COMMON.superHarpyFeatherMaxJumps": "Polychromatic Feather Max Jumps",
   "text.config.chromaticarsenal.option.COMMON.superHarpyFeatherMaxJumps.tooltip": "The maximum number of jumps able to be performed using the Polychromatic Feather.",
+
+  "text.config.chromaticarsenal.option.COMMON.illuminatedSoulGlowingDuration": "Ring of Illuminated Soul Glowing Duration",
+  "text.config.chromaticarsenal.option.COMMON.illuminatedSoulUndeadMultiplier": "Ring of Illuminated Soul Undead Damage Multiplier",
+  "text.config.chromaticarsenal.option.COMMON.illuminatedSoulUndeadMultiplier.tooltip": "The multiplier given to damage against mobs vulnerable to smite.",
 
   "text.config.chromaticarsenal.category.CLIENT": "Client Settings",
 

@@ -8,6 +8,7 @@ import com.chromanyan.chromaticarsenal.init.CACreativeTabs;
 import com.chromanyan.chromaticarsenal.init.CAEffects;
 import com.chromanyan.chromaticarsenal.init.CAItems;
 import com.chromanyan.chromaticarsenal.item.ShadowTreadsAccessory;
+import com.chromanyan.chromaticarsenal.item.superaccessories.IlluminatedSoulAccessory;
 import com.chromanyan.chromaticarsenal.item.utilityaccessories.BlahajAccessory;
 import com.mojang.logging.LogUtils;
 import io.wispforest.accessories.api.client.AccessoriesRendererRegistry;
@@ -83,6 +84,8 @@ public class ChromaticArsenal {
             // consider moving this renderer to its own file, especially if i use it more in the future
             AccessoriesRendererRegistry.registerRenderer(CAItems.BLAHAJ.get(), BlahajAccessory.BlahajRenderer::new);
             AccessoriesRendererRegistry.registerRenderer(CAItems.CHROMANYAN.get(), BlahajAccessory.BlahajRenderer::new);
+
+            IlluminatedSoulAccessory.registerVariants();
         }
     }
 

@@ -65,6 +65,6 @@ public class CAModels extends ItemModelProvider {
         //basicModel("cosmicola");
 
         // miscellaneous
-        //basicModel("super_glow_ring_active");
+        basicModel("super_glow_ring_active");
     }
 }

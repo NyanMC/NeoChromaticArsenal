@@ -43,6 +43,11 @@ public class SuperAccessory extends ChromaAccessory {
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
         StringBuilder incompatibilityString = new StringBuilder();
 
+        if (incompatibilities.isEmpty()) {
+            super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+            return;
+        }
+
         for (int i = 0; i < incompatibilities.size(); i++) {
             Item item = incompatibilities.get(i).get();
             incompatibilityString.append(item.getName(new ItemStack(item)).getString());

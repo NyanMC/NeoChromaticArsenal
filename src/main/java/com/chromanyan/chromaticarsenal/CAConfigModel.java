@@ -143,6 +143,11 @@ public class CAConfigModel {
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         @RestartRequired
         public int superHarpyFeatherMaxJumps = 3;
+
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int illuminatedSoulGlowingDuration = 1200;
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public float illuminatedSoulUndeadMultiplier = 1.2f;
     }
 
     public static class ClientOptions {
