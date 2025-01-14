@@ -77,8 +77,6 @@ public class GlassShieldAccessory extends ChromaAccessory {
         player.getCommandSenderWorld().playSound(null, player.blockPosition(), SoundEvents.GLASS_BREAK, SoundSource.PLAYERS, 0.5F, 1.0F);
         player.getCooldowns().addCooldown(CAItems.GLASS_SHIELD.get(), ChromaticArsenal.CONFIG.COMMON.glassShieldCooldown());
 
-        //TODO this is where we would handle statistics...if they were implemented
-
         //TODO this is where we would handle LTDAD advancement logic...if that was implemented
 
         event.setCanceled(true);
