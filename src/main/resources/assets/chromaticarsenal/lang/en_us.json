@@ -175,6 +175,11 @@
   "text.config.chromaticarsenal.title": "Chromatic Arsenal Config",
   "text.config.chromaticarsenal.category.COMMON": "Common Settings",
 
+  "text.config.chromaticarsenal.option.COMMON.lootTableInsertion": "Loot Table Insertion",
+  "text.config.chromaticarsenal.option.COMMON.lootTableInsertion.tooltip": "If this is false, Chromatic Arsenal will not add items into vanilla loot tables. Many of these items will become unobtainable.",
+  "text.config.chromaticarsenal.option.COMMON.chromaShardBlacklist": "Chroma Shard Blacklist",
+  "text.config.chromaticarsenal.option.COMMON.chromaShardBlacklist.tooltip": "Chroma Shards will not appear in chest loot tables with a path containing any of these keywords. They are hardcoded into being common trial chamber loot.",
+
   "text.config.chromaticarsenal.option.COMMON.goldenHeartDuration": "Golden Heart Duration",
   "text.config.chromaticarsenal.option.COMMON.goldenHeartDuration.tooltip": "The duration of the Absorption effect, in ticks. The effect is refreshed after this many ticks pass.",
   "text.config.chromaticarsenal.option.COMMON.goldenHeartAmplifier": "Golden Heart Amplifier",

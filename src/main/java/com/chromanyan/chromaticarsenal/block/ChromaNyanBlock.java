@@ -1,12 +1,26 @@
 package com.chromanyan.chromaticarsenal.block;
 
 import com.chromanyan.chromaticarsenal.init.CABlocks;
+import com.chromanyan.chromaticarsenal.init.CAItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.util.ParticleUtils;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -40,5 +54,25 @@ public class ChromaNyanBlock extends BlahajBlock {
             case EAST -> EAST_AABB;
             default -> DEFAULT_AABB;
         };
+    }
+
+    @Override
+    protected @NotNull ItemInteractionResult useItemOn(@NotNull ItemStack stack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hitResult) {
+        if (!stack.is(CAItems.CHROMA_SHARD)) return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
+
+        if (level.isClientSide()) {
+            ParticleUtils.spawnParticleInBlock(level, pos, 20, new BlockParticleOption(ParticleTypes.BLOCK, CABlocks.CHROMA_BLOCK.get().defaultBlockState()));
+        } else if (!player.hasInfiniteMaterials()) {
+            stack.shrink(1);
+            ItemStack offhand = player.getItemInHand(InteractionHand.OFF_HAND);
+            if (offhand.is(ItemTags.SMALL_FLOWERS)) {
+                offhand.shrink(1);
+                level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5f, pos.getY() + 1f, pos.getZ() + 0.5f, CAItems.LUNA_FLOWER.toStack(), 0, 0.5f, 0));
+            }
+        }
+
+        level.playSound(player, pos, SoundEvents.GENERIC_EAT, SoundSource.BLOCKS);
+
+        return ItemInteractionResult.sidedSuccess(level.isClientSide);
     }
 }
