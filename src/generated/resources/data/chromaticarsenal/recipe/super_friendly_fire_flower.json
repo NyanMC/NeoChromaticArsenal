@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "c:dusts/ascension"
+    },
+    "B": {
+      "item": "minecraft:blaze_powder"
+    },
+    "F": {
+      "item": "chromaticarsenal:friendly_fire_flower"
+    },
+    "T": {
+      "item": "minecraft:torchflower"
+    }
+  },
+  "pattern": [
+    " T ",
+    "BAB",
+    " F "
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:super_friendly_fire_flower"
+  }
+}

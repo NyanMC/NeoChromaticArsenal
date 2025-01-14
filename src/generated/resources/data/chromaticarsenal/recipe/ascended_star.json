@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "c:nether_stars"
+    },
+    {
+      "tag": "c:dusts/ascension"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:ascended_star"
+  }
+}

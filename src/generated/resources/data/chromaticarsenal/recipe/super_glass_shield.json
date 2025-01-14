@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "c:dusts/ascension"
+    },
+    "S": {
+      "item": "chromaticarsenal:glass_shield"
+    },
+    "T": {
+      "tag": "c:glass_blocks/tinted"
+    }
+  },
+  "pattern": [
+    "TAT",
+    "TST",
+    " T "
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:super_glass_shield"
+  }
+}

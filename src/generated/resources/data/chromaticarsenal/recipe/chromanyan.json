@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:gems/chroma"
+    },
+    "A": {
+      "item": "minecraft:black_wool"
+    },
+    "C": {
+      "item": "minecraft:gray_wool"
+    },
+    "E": {
+      "item": "minecraft:purple_wool"
+    },
+    "M": {
+      "item": "minecraft:magenta_wool"
+    },
+    "N": {
+      "item": "minecraft:pink_wool"
+    },
+    "S": {
+      "item": "minecraft:white_wool"
+    },
+    "T": {
+      "item": "minecraft:light_blue_wool"
+    }
+  },
+  "pattern": [
+    "TNS",
+    "#M#",
+    "ACE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:chromanyan_plush"
+  }
+}

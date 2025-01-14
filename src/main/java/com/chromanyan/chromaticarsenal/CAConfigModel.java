@@ -155,7 +155,7 @@ public class CAConfigModel {
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public int amethystRingReachModifier = 1;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
-        public int vitalStoneFrequency = 60;
+        public int vitalStoneFrequency = 100;
     }
 
     public static class ClientOptions {

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "c:end_stones"
+    },
+    {
+      "tag": "c:gems/chroma"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:gravity_stone"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "c:dusts/ascension"
+    },
+    "E": {
+      "tag": "c:end_stones"
+    },
+    "L": {
+      "item": "chromaticarsenal:lunar_crystal"
+    }
+  },
+  "pattern": [
+    " A ",
+    "E E",
+    "ELE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:super_lunar_crystal"
+  }
+}

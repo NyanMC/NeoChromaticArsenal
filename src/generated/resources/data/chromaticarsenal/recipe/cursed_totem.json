@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:totem_of_undying"
+    },
+    {
+      "tag": "c:gems/chroma"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:cursed_totem"
+  }
+}

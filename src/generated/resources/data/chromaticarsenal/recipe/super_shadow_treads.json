@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "c:dusts/ascension"
+    },
+    "F": {
+      "item": "minecraft:fire_charge"
+    },
+    "S": {
+      "item": "chromaticarsenal:shadow_treads"
+    }
+  },
+  "pattern": [
+    "FSF",
+    " A "
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:super_shadow_treads"
+  }
+}

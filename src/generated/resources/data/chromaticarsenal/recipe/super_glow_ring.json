@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "c:dusts/ascension"
+    },
+    "I": {
+      "tag": "c:ingots/iron"
+    }
+  },
+  "pattern": [
+    "AI ",
+    "I I",
+    " I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:super_glow_ring"
+  }
+}

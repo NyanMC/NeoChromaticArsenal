@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "chromaticarsenal:ward_crystal"
+    },
+    {
+      "tag": "c:buckets/milk"
+    },
+    {
+      "tag": "c:dusts/ascension"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "chromaticarsenal:super_ward_crystal"
+  }
+}

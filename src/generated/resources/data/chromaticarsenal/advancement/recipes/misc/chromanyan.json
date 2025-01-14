@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chromaticarsenal:chromanyan"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "impossible_under_normal_circumstances": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:barrier"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "impossible_under_normal_circumstances"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chromaticarsenal:chromanyan"
+    ]
+  }
+}
