@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:adventure/trade",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:momentum_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.chromaticarsenal.momentum_stone.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "chromaticarsenal:momentum_stone"
+    },
+    "title": {
+      "translate": "advancement.chromaticarsenal.momentum_stone.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

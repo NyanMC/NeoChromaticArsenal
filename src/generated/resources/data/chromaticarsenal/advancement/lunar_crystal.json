@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:end/find_end_city",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:lunar_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.chromaticarsenal.lunar_crystal.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "chromaticarsenal:lunar_crystal"
+    },
+    "title": {
+      "translate": "advancement.chromaticarsenal.lunar_crystal.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "chromaticarsenal:chroma_shard",
+  "criteria": {
+    "blocked_100": {
+      "conditions": {
+        "damage": 100
+      },
+      "trigger": "chromaticarsenal:glass_shield_block"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.chromaticarsenal.block_100.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "chromaticarsenal:glass_shield"
+    },
+    "title": {
+      "translate": "advancement.chromaticarsenal.block_100.title"
+    }
+  },
+  "requirements": [
+    [
+      "blocked_100"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

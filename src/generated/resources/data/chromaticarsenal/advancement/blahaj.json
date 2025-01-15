@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:adventure/trade",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:blahaj"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.chromaticarsenal.blahaj.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "chromaticarsenal:blahaj"
+    },
+    "title": {
+      "translate": "advancement.chromaticarsenal.blahaj.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

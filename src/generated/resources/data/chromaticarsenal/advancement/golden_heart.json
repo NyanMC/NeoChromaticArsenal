@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:nether/loot_bastion",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:golden_heart"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.chromaticarsenal.golden_heart.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "chromaticarsenal:golden_heart"
+    },
+    "title": {
+      "translate": "advancement.chromaticarsenal.golden_heart.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

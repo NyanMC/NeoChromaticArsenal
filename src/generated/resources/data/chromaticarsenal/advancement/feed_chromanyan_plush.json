@@ -1,0 +1,45 @@
+{
+  "parent": "chromaticarsenal:chroma_shard",
+  "criteria": {
+    "feed_chromanyan_plush": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "chromaticarsenal:chromanyan_plush"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "chromaticarsenal:chroma_shard"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.chromaticarsenal.feed_chromanyan_plush.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "chromaticarsenal:chromanyan_plush"
+    },
+    "title": {
+      "translate": "advancement.chromaticarsenal.feed_chromanyan_plush.title"
+    }
+  },
+  "requirements": [
+    [
+      "feed_chromanyan_plush"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

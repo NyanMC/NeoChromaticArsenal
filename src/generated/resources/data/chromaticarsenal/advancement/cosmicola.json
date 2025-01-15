@@ -1,0 +1,32 @@
+{
+  "parent": "chromaticarsenal:ascension_essence",
+  "criteria": {
+    "cosmicola_consumed": {
+      "conditions": {
+        "item": {
+          "items": "chromaticarsenal:cosmicola"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.chromaticarsenal.cosmicola.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "chromaticarsenal:cosmicola"
+    },
+    "title": {
+      "translate": "advancement.chromaticarsenal.cosmicola.title"
+    }
+  },
+  "requirements": [
+    [
+      "cosmicola_consumed"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

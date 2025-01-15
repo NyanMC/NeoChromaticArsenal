@@ -1,0 +1,401 @@
+{
+  "parent": "chromaticarsenal:ascended_star",
+  "criteria": {
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:advancing_heart]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:advancing_heart"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:amethyst_ring]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:amethyst_ring"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:anonymity_umbrella]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:anonymity_umbrella"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:ascended_star]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:ascended_star"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:blahaj]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:blahaj"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:bubble_amulet]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:bubble_amulet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:copper_ring]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:copper_ring"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:cryo_ring]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:cryo_ring"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:cursed_totem]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:cursed_totem"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:duality_rings]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:duality_rings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:friendly_fire_flower]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:friendly_fire_flower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:glass_shield]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:glass_shield"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:golden_heart]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:golden_heart"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:gravity_stone]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:gravity_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:lunar_crystal]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:lunar_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:momentum_stone]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:momentum_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:shadow_treads]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:shadow_treads"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_friendly_fire_flower]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:super_friendly_fire_flower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_glass_shield]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:super_glass_shield"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_glow_ring]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:super_glow_ring"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_golden_heart]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:super_golden_heart"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_lunar_crystal]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:super_lunar_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_shadow_treads]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:super_shadow_treads"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_ward_crystal]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:super_ward_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:thunderguard]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:thunderguard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:vertical_stasis_stone]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:vertical_stasis_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:vital_stone]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:vital_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:ward_crystal]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:ward_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:world_anchor]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:world_anchor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.chromaticarsenal.arsenal_accumulated.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "chromaticarsenal:ascended_star"
+    },
+    "title": {
+      "translate": "advancement.chromaticarsenal.arsenal_accumulated.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:golden_heart]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:glass_shield]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:ward_crystal]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:shadow_treads]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:duality_rings]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:friendly_fire_flower]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:lunar_crystal]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:cryo_ring]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:bubble_amulet]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:momentum_stone]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:advancing_heart]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:thunderguard]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_golden_heart]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_glass_shield]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_ward_crystal]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_shadow_treads]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_friendly_fire_flower]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_lunar_crystal]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:super_glow_ring]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:ascended_star]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:world_anchor]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:cursed_totem]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:gravity_stone]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:vertical_stasis_stone]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:blahaj]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:anonymity_umbrella]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:copper_ring]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:amethyst_ring]}"
+    ],
+    [
+      "has_DeferredHolder{ResourceKey[minecraft:item / chromaticarsenal:vital_stone]}"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

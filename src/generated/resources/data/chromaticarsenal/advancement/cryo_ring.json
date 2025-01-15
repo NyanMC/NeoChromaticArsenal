@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:adventure/walk_on_powder_snow_with_leather_boots",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:cryo_ring"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.chromaticarsenal.cryo_ring.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "chromaticarsenal:cryo_ring"
+    },
+    "title": {
+      "translate": "advancement.chromaticarsenal.cryo_ring.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

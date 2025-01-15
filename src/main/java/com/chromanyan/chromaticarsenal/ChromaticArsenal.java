@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticarsenal;
 
+import com.chromanyan.chromaticarsenal.data.CAAdvancements;
 import com.chromanyan.chromaticarsenal.data.CAModels;
 import com.chromanyan.chromaticarsenal.data.CARecipes;
 import com.chromanyan.chromaticarsenal.data.tags.CABlockTags;
@@ -44,6 +45,7 @@ public class ChromaticArsenal {
         NeoForge.EVENT_BUS.register(this);
 
         CAAttachments.ATTACHMENT_TYPES.register(modEventBus);
+        CATriggers.TRIGGERS.register(modEventBus);
         CAEffects.MOB_EFFECTS.register(modEventBus);
         CABlocks.BLOCKS.register(modEventBus);
         CAItems.ITEMS.register(modEventBus);
@@ -72,6 +74,7 @@ public class ChromaticArsenal {
             gen.addProvider(true, blockTags);
             gen.addProvider(true, new CAItemTags(output, lookupProvider, blockTags.contentsGetter(), efh));
             gen.addProvider(true, new CARecipes(output, lookupProvider));
+            gen.addProvider(true, new CAAdvancements(output, lookupProvider, efh));
         }
     }
 

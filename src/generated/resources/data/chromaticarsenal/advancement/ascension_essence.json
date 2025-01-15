@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:adventure/revaulting",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:ascension_essence"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.chromaticarsenal.ascension_essence.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "chromaticarsenal:ascension_essence"
+    },
+    "title": {
+      "translate": "advancement.chromaticarsenal.ascension_essence.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

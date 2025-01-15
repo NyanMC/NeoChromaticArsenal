@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:adventure/salvage_sherd",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chromaticarsenal:bubble_amulet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.chromaticarsenal.bubble_amulet.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "chromaticarsenal:bubble_amulet"
+    },
+    "title": {
+      "translate": "advancement.chromaticarsenal.bubble_amulet.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -2,12 +2,14 @@ package com.chromanyan.chromaticarsenal.item;
 
 import com.chromanyan.chromaticarsenal.ChromaticArsenal;
 import com.chromanyan.chromaticarsenal.init.CAItems;
+import com.chromanyan.chromaticarsenal.init.CATriggers;
 import com.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import com.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import com.chromanyan.chromaticarsenal.util.TooltipHelper;
 import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
@@ -77,7 +79,9 @@ public class GlassShieldAccessory extends ChromaAccessory {
         player.getCommandSenderWorld().playSound(null, player.blockPosition(), SoundEvents.GLASS_BREAK, SoundSource.PLAYERS, 0.5F, 1.0F);
         player.getCooldowns().addCooldown(CAItems.GLASS_SHIELD.get(), ChromaticArsenal.CONFIG.COMMON.glassShieldCooldown());
 
-        //TODO this is where we would handle LTDAD advancement logic...if that was implemented
+        if (player instanceof ServerPlayer serverPlayer) {
+            CATriggers.GLASS_SHIELD_BLOCK.get().trigger(serverPlayer, Math.round(event.getAmount()));
+        }
 
         event.setCanceled(true);
     }
