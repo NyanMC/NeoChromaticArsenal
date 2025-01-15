@@ -73,6 +73,21 @@ type = "required"
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
+[[dependencies."${mod_id}"]]
+modId = "owo"
+type = "required"
+reason="owo-lib is a dependency of Accessories, thus I depend on it as well."
+versionRange = "[0.12.14+1.21,)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies."${mod_id}"]]
+modId = "accessories"
+type = "required"
+reason="This mod began porting to 1.21.1 during a time where Curios was absent. I switched to Accessories as a result."
+# i trust accessories to not do anything stupid
+versionRange = "[1,)"
+ordering = "NONE"
+side = "BOTH"
 
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't
