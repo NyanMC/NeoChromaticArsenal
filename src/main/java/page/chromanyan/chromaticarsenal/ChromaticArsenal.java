@@ -1,5 +1,6 @@
 package page.chromanyan.chromaticarsenal;
 
+import page.chromanyan.chromaticarsenal.client.renderer.HeadAccessoryRenderer;
 import page.chromanyan.chromaticarsenal.data.CAAdvancements;
 import page.chromanyan.chromaticarsenal.data.CAModels;
 import page.chromanyan.chromaticarsenal.data.CARecipes;
@@ -8,7 +9,6 @@ import page.chromanyan.chromaticarsenal.data.tags.CAItemTags;
 import page.chromanyan.chromaticarsenal.init.*;
 import page.chromanyan.chromaticarsenal.item.ShadowTreadsAccessory;
 import page.chromanyan.chromaticarsenal.item.superaccessories.IlluminatedSoulAccessory;
-import page.chromanyan.chromaticarsenal.item.utilityaccessories.BlahajAccessory;
 import com.mojang.logging.LogUtils;
 import io.wispforest.accessories.api.client.AccessoriesRendererRegistry;
 import net.minecraft.core.HolderLookup;
@@ -84,9 +84,8 @@ public class ChromaticArsenal {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ShadowTreadsAccessory.clientInit();
-            // consider moving this renderer to its own file, especially if i use it more in the future
-            AccessoriesRendererRegistry.registerRenderer(CAItems.BLAHAJ.get(), BlahajAccessory.BlahajRenderer::new);
-            AccessoriesRendererRegistry.registerRenderer(CAItems.CHROMANYAN.get(), BlahajAccessory.BlahajRenderer::new);
+            AccessoriesRendererRegistry.registerRenderer(CAItems.BLAHAJ.get(), HeadAccessoryRenderer::new);
+            AccessoriesRendererRegistry.registerRenderer(CAItems.CHROMANYAN.get(), HeadAccessoryRenderer::new);
 
             IlluminatedSoulAccessory.registerVariants();
         }
