@@ -221,6 +221,8 @@
 
   "text.config.chromaticarsenal.option.COMMON.glassShieldCooldown": "Glass Shield Cooldown",
   "text.config.chromaticarsenal.option.COMMON.glassShieldCooldown.tooltip": "After blocking a hit, it will take this many ticks to be able to block another.",
+  "text.config.chromaticarsenal.option.COMMON.glassShieldMaxBaseDamage": "Glass Shield Max Base Damage",
+  "text.config.chromaticarsenal.option.COMMON.glassShieldMaxBaseDamage.tooltip": "Damage greater than this value (before being reduced by armor) will be treated as an instant kill attack and will not be blocked by the Glass Shield.",
 
   "text.config.chromaticarsenal.option.COMMON.wardCrystalIncomingMultiplier": "Ward Crystal Incoming Multiplier",
   "text.config.chromaticarsenal.option.COMMON.wardCrystalIncomingMultiplier.tooltip": "Magic damage received is multiplied by this value.",

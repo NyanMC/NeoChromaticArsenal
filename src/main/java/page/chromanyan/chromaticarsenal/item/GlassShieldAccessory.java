@@ -67,7 +67,7 @@ public class GlassShieldAccessory extends ChromaAccessory {
 
     @SubscribeEvent
     public static void livingIncomingDamage(LivingIncomingDamageEvent event) {
-        if (event.getAmount() == 0 || event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)) return;
+        if (event.getAmount() == 0 || event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY) || event.getAmount() >= ChromaticArsenal.CONFIG.COMMON.glassShieldMaxBaseDamage()) return;
 
         LivingEntity entity = event.getEntity();
 

@@ -24,6 +24,8 @@ public class CAConfigModel {
         public boolean lootTableInsertion = true;
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public List<String> chromaShardBlacklist = new ArrayList<>(List.of("dispenser", "trial_chambers"));
+        @Sync(Option.SyncMode.OVERRIDE_CLIENT)
+        public int glassShieldMaxBaseDamage = 500;
 
         @Sync(Option.SyncMode.OVERRIDE_CLIENT)
         public int goldenHeartDuration = 400;
