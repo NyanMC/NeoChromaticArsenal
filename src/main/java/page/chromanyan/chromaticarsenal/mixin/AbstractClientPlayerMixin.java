@@ -1,6 +1,6 @@
 package page.chromanyan.chromaticarsenal.mixin;
 
-import page.chromanyan.chromaticarsenal.util.MixinHelper;
+import page.chromanyan.chromaticarsenal.util.ClientMixinHelper;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.client.player.AbstractClientPlayer;
@@ -14,8 +14,8 @@ public class AbstractClientPlayerMixin {
     // if the curio is equipped, replace their skin with our anonymous one
     @ModifyReturnValue(method = "getSkin", at = @At("RETURN"))
     private PlayerSkin getSkin(PlayerSkin original) {
-        if (MixinHelper.shouldCloak((AbstractClientPlayer)(Object) this)) {
-            return MixinHelper.ANON_SKIN;
+        if (ClientMixinHelper.shouldCloak((AbstractClientPlayer)(Object) this)) {
+            return ClientMixinHelper.ANON_SKIN;
         }
         return original;
     }
@@ -23,7 +23,7 @@ public class AbstractClientPlayerMixin {
     // effectively, this will mean the player won't be associated with their UUID for *anything* regarding rendering
     @ModifyReturnValue(method = "getPlayerInfo", at = @At("RETURN"))
     private PlayerInfo getPlayerInfo(PlayerInfo original) {
-        if (MixinHelper.shouldCloak((AbstractClientPlayer)(Object) this)) {
+        if (ClientMixinHelper.shouldCloak((AbstractClientPlayer)(Object) this)) {
             return null;
         }
         return original;
