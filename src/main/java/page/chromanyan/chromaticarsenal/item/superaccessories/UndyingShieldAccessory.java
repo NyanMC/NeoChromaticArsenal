@@ -1,7 +1,6 @@
 package page.chromanyan.chromaticarsenal.item.superaccessories;
 
 import page.chromanyan.chromaticarsenal.CAConfig;
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CADamageTypes;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.item.base.SuperAccessory;

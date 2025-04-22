@@ -1,7 +1,6 @@
 package page.chromanyan.chromaticarsenal.item.basicaccessories;
 
 import page.chromanyan.chromaticarsenal.CAConfig;
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
 import net.minecraft.client.gui.screens.Screen;
