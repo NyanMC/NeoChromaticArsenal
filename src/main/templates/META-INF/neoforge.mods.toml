@@ -88,8 +88,8 @@ side = "BOTH"
 [[dependencies."${mod_id}"]]
 modId = "midnightlib"
 type = "required"
-reason="If you see this message in-game, I messed up somehow."
-versionRange = "*"
+reason="Chromatic Arsenal uses MidnightLib in order to avoid dealing with the built-in config system."
+versionRange = "[1.6,)"
 ordering = "NONE"
 side = "BOTH"
 
