@@ -1,7 +1,6 @@
 package page.chromanyan.chromaticarsenal.item.base;
 
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
@@ -14,6 +13,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.registries.DeferredItem;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +39,11 @@ public class SuperAccessory extends ChromaAccessory {
     }
 
     @Override
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        return super.canEquip(slotContext, stack) && slotContext.identifier().equals("super_curio");
+    }
+
+    @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
         StringBuilder incompatibilityString = new StringBuilder();
@@ -60,9 +65,9 @@ public class SuperAccessory extends ChromaAccessory {
     }
 
     @Override
-    public void tick(ItemStack stack, SlotReference reference) {
-        super.tick(stack, reference);
-        LivingEntity livingEntity = reference.entity();
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        super.curioTick(slotContext, stack);
+        LivingEntity livingEntity = slotContext.entity();
         if (livingEntity.getCommandSenderWorld().isClientSide) return;
 
         for (DeferredItem<? extends Item> incompatibility : incompatibilities) {
@@ -74,6 +79,5 @@ public class SuperAccessory extends ChromaAccessory {
                 possiblestack.setCount(0);
             }
         }
-
     }
 }

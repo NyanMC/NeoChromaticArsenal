@@ -1,6 +1,6 @@
 package page.chromanyan.chromaticarsenal.item;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.init.CATags;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
@@ -34,8 +34,8 @@ public class WardCrystalAccessory extends ChromaAccessory {
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, list, tooltipFlag);
         if (!Screen.hasShiftDown()) return;
-        TooltipHelper.itemTooltipLine(stack, 1, list, TooltipHelper.multiplierAsPercentTooltip(ChromaticArsenal.CONFIG.COMMON.wardCrystalIncomingMultiplier()));
-        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.multiplierAsPercentTooltip(ChromaticArsenal.CONFIG.COMMON.wardCrystalOutgoingMultiplier()));
+        TooltipHelper.itemTooltipLine(stack, 1, list, TooltipHelper.multiplierAsPercentTooltip(CAConfig.wardCrystalIncomingMultiplier));
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.multiplierAsPercentTooltip(CAConfig.wardCrystalOutgoingMultiplier));
     }
 
     @SubscribeEvent
@@ -44,12 +44,12 @@ public class WardCrystalAccessory extends ChromaAccessory {
         if (event.getNewDamage() == 0 || event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)) return;
 
         if (ChromaAccessoryHelper.isAccessoryEquipped(event.getEntity(), CAItems.WARD_CRYSTAL.get())) {
-            event.setNewDamage(event.getNewDamage() * (float) ChromaticArsenal.CONFIG.COMMON.wardCrystalIncomingMultiplier());
+            event.setNewDamage(event.getNewDamage() * (float) CAConfig.wardCrystalIncomingMultiplier);
         }
 
         if (!(event.getSource().getEntity() instanceof LivingEntity livingEntity)) return;
         if (!ChromaAccessoryHelper.isAccessoryEquipped(livingEntity, CAItems.WARD_CRYSTAL.get())) return;
 
-        event.setNewDamage(event.getNewDamage() * (float) ChromaticArsenal.CONFIG.COMMON.wardCrystalOutgoingMultiplier());
+        event.setNewDamage(event.getNewDamage() * (float) CAConfig.wardCrystalOutgoingMultiplier);
     }
 }

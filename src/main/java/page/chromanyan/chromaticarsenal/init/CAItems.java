@@ -1,5 +1,6 @@
 package page.chromanyan.chromaticarsenal.init;
 
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.item.*;
 import page.chromanyan.chromaticarsenal.item.basicaccessories.AmethystRingAccessory;
@@ -29,8 +30,8 @@ public class CAItems {
 
     public static final DeferredItem<MagicGarlicBreadItem> MAGIC_GARLIC_BREAD = ITEMS.register("magic_garlic_bread", MagicGarlicBreadItem::new);
     public static final DeferredItem<CosmicolaItem> COSMICOLA = ITEMS.register("cosmicola", CosmicolaItem::new);
-    public static final DeferredItem<HarpyFeatherItem> HARPY_FEATHER = ITEMS.register("harpy_feather", () -> new HarpyFeatherItem(Rarity.UNCOMMON, ChromaticArsenal.CONFIG.COMMON.harpyFeatherMaxJumps()));
-    public static final DeferredItem<HarpyFeatherItem> POLYCHROMATIC_FEATHER = ITEMS.register("super_harpy_feather", () -> new HarpyFeatherItem(Rarity.EPIC, ChromaticArsenal.CONFIG.COMMON.superHarpyFeatherMaxJumps()));
+    public static final DeferredItem<HarpyFeatherItem> HARPY_FEATHER = ITEMS.register("harpy_feather", () -> new HarpyFeatherItem(Rarity.UNCOMMON, CAConfig.harpyFeatherMaxJumps));
+    public static final DeferredItem<HarpyFeatherItem> POLYCHROMATIC_FEATHER = ITEMS.register("super_harpy_feather", () -> new HarpyFeatherItem(Rarity.EPIC, CAConfig.superHarpyFeatherMaxJumps));
 
     public static final DeferredItem<GoldenHeartAccessory> GOLDEN_HEART = ITEMS.register("golden_heart", GoldenHeartAccessory::new);
     public static final DeferredItem<GlassShieldAccessory> GLASS_SHIELD = ITEMS.register("glass_shield", GlassShieldAccessory::new);

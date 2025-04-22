@@ -1,5 +1,6 @@
 package page.chromanyan.chromaticarsenal.event;
 
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import net.minecraft.world.entity.npc.VillagerProfession;
@@ -57,7 +58,7 @@ public class CALootEvents {
 
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void lootTableLoad(LootTableLoadEvent event) {
-        if (!ChromaticArsenal.CONFIG.COMMON.lootTableInsertion()) return;
+        if (!CAConfig.lootTableInsertion) return;
 
         switch (event.getName().getPath()) {
             case "gameplay/piglin_bartering" ->
@@ -86,7 +87,7 @@ public class CALootEvents {
         }
 
         if (event.getName().getPath().contains("chests")) {
-            for (String lootName : ChromaticArsenal.CONFIG.COMMON.chromaShardBlacklist()) {
+            for (String lootName : CAConfig.chromaShardBlacklist) {
                 if (event.getName().getPath().contains(lootName)) return;
             }
             LootPool.Builder builder = LootPool.lootPool().setRolls(UniformGenerator.between(-2, 1)).name("chroma_shards");
@@ -99,7 +100,7 @@ public class CALootEvents {
 
     @SubscribeEvent
     public static void onWandererTrades(WandererTradesEvent event) {
-        if (!ChromaticArsenal.CONFIG.COMMON.lootTableInsertion()) return;
+        if (!CAConfig.lootTableInsertion) return;
 
         event.getRareTrades().add(new BasicItemListing(
                 rand.nextInt(16, 24),

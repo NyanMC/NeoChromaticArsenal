@@ -1,6 +1,6 @@
 package page.chromanyan.chromaticarsenal.item.misc;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -31,8 +31,8 @@ public class MagicGarlicBreadItem extends Item {
         if (world.isClientSide()) return super.finishUsingItem(stack, world, player);
         if (!ChromaAccessoryHelper.isAccessoryEquipped(player, CAItems.DUALITY_RINGS.get())) return super.finishUsingItem(stack, world, player);
 
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, ChromaticArsenal.CONFIG.COMMON.dualityRingsStrengthDuration(), ChromaticArsenal.CONFIG.COMMON.dualityRingsStrengthAmplifier(), true, true), player);
-        player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, ChromaticArsenal.CONFIG.COMMON.dualityRingsHealthBoostDuration(), ChromaticArsenal.CONFIG.COMMON.dualityRingsHealthBoostAmplifier(), true, true), player);
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, CAConfig.dualityRingsStrengthDuration, CAConfig.dualityRingsStrengthAmplifier, true, true), player);
+        player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, CAConfig.dualityRingsHealthBoostDuration, CAConfig.dualityRingsHealthBoostAmplifier, true, true), player);
 
         return super.finishUsingItem(stack, world, player);
     }

@@ -1,5 +1,6 @@
 package page.chromanyan.chromaticarsenal.item.superaccessories;
 
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CADamageTypes;
 import page.chromanyan.chromaticarsenal.init.CAItems;
@@ -47,7 +48,7 @@ public class UndyingShieldAccessory extends SuperAccessory {
         super.appendHoverText(stack, context, list, tooltipFlag);
         if (!Screen.hasShiftDown()) return;
 
-        TooltipHelper.itemTooltipLine(stack, 1, list, TooltipHelper.ticksToSecondsTooltip(ChromaticArsenal.CONFIG.COMMON.undyingShieldDeathClockTicks()));
+        TooltipHelper.itemTooltipLine(stack, 1, list, TooltipHelper.ticksToSecondsTooltip(CAConfig.undyingShieldDeathClockTicks));
         TooltipHelper.itemTooltipLine(stack, 2, list);
     }
 
@@ -68,7 +69,7 @@ public class UndyingShieldAccessory extends SuperAccessory {
         event.setCanceled(true);
         entity.setHealth(1);
         persistentData.putBoolean(DELAYED_DEATH, true);
-        persistentData.putInt(DEATH_CLOCK, ChromaticArsenal.CONFIG.COMMON.undyingShieldDeathClockTicks());
+        persistentData.putInt(DEATH_CLOCK, CAConfig.undyingShieldDeathClockTicks);
         entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, MobEffectInstance.INFINITE_DURATION));
         entity.getCommandSenderWorld().playSound(null, entity.blockPosition(), SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 0.5F, 1.0F);
     }

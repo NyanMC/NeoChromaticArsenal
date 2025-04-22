@@ -1,6 +1,7 @@
 package page.chromanyan.chromaticarsenal.item.challengeaccessories;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import org.jetbrains.annotations.Nullable;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.init.CAEffects;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.init.CARarities;
@@ -8,9 +9,6 @@ import page.chromanyan.chromaticarsenal.init.CATags;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.DropRule;
-import io.wispforest.accessories.api.events.extra.v2.LootingAdjustment;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -29,11 +27,13 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.type.capability.ICurio;
 
 import java.util.List;
 
 @EventBusSubscriber
-public class CursedTotemAccessory extends ChromaAccessory implements LootingAdjustment {
+public class CursedTotemAccessory extends ChromaAccessory {
 
     private static final String CURSED_REVIVAL_STATE_LOCATION = "chromaticarsenal.cursedRevivalState";
 
@@ -49,13 +49,13 @@ public class CursedTotemAccessory extends ChromaAccessory implements LootingAdju
         if (!Screen.hasShiftDown()) return;
 
         TooltipHelper.itemTooltipLine(stack, 1, list);
-        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.percentTooltip((ChromaticArsenal.CONFIG.COMMON.cursedTotemFracturedAmplifier() + 1) * 0.1F));
-        TooltipHelper.itemTooltipLine(stack, 3, list, TooltipHelper.valueTooltip(ChromaticArsenal.CONFIG.COMMON.cursedTotemLootingBonus()));
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.percentTooltip((CAConfig.cursedTotemFracturedAmplifier + 1) * 0.1F));
+        TooltipHelper.itemTooltipLine(stack, 3, list, TooltipHelper.valueTooltip(CAConfig.cursedTotemLootingBonus));
     }
 
     @Override
-    public DropRule getDropRule(ItemStack stack, SlotReference reference, DamageSource source) {
-        return DropRule.KEEP;
+    public @NotNull ICurio.DropRule getDropRule(SlotContext slotContext, DamageSource source, boolean recentlyHit, ItemStack stack) {
+        return ICurio.DropRule.ALWAYS_KEEP;
     }
 
     @SubscribeEvent
@@ -79,12 +79,12 @@ public class CursedTotemAccessory extends ChromaAccessory implements LootingAdju
         event.setCanceled(true);
         entity.getPersistentData().putInt(CURSED_REVIVAL_STATE_LOCATION, 2);
         entity.getCommandSenderWorld().playSound(null, entity.blockPosition(), SoundEvents.IRON_GOLEM_DAMAGE, SoundSource.PLAYERS, 0.5F, 1.0F);
-        entity.addEffect(new MobEffectInstance(CAEffects.FRACTURED, MobEffectInstance.INFINITE_DURATION, ChromaticArsenal.CONFIG.COMMON.cursedTotemFracturedAmplifier(), true, false));
+        entity.addEffect(new MobEffectInstance(CAEffects.FRACTURED, MobEffectInstance.INFINITE_DURATION, CAConfig.cursedTotemFracturedAmplifier, true, false));
         entity.setHealth(entity.getMaxHealth());
     }
 
     @Override
-    public int getLootingAdjustment(ItemStack stack, SlotReference reference, LivingEntity target, LootContext context, DamageSource damageSource, int currentLevel) {
-        return ChromaticArsenal.CONFIG.COMMON.cursedTotemLootingBonus();
+    public int getLootingLevel(SlotContext slotContext, @Nullable LootContext lootContext, ItemStack stack) {
+        return CAConfig.cursedTotemLootingBonus;
     }
 }

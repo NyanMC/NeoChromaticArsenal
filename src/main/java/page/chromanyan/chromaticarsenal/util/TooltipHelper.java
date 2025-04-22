@@ -1,6 +1,6 @@
 package page.chromanyan.chromaticarsenal.util;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
@@ -36,7 +36,7 @@ public class TooltipHelper {
     }
 
     public static String ticksToSecondsTooltip(int ticks) {
-        if (ticks / 20 >= ChromaticArsenal.CONFIG.CLIENT.tooltipDecimalThreshold())
+        if (ticks / 20 >= CAConfig.tooltipDecimalThreshold)
             return valueTooltip(ticks / 20);
         else // add the decimal places to the value as they might be needed (e.g. lunar crystal)
             return valueTooltip((float) ticks / 20F);

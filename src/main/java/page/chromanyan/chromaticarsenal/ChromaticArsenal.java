@@ -1,16 +1,15 @@
 package page.chromanyan.chromaticarsenal;
 
-import page.chromanyan.chromaticarsenal.client.renderer.HeadAccessoryRenderer;
+import eu.midnightdust.lib.config.MidnightConfig;
+import page.chromanyan.chromaticarsenal.client.renderer.CuriosRenderers;
 import page.chromanyan.chromaticarsenal.data.CAAdvancements;
 import page.chromanyan.chromaticarsenal.data.CAModels;
 import page.chromanyan.chromaticarsenal.data.CARecipes;
 import page.chromanyan.chromaticarsenal.data.tags.CABlockTags;
 import page.chromanyan.chromaticarsenal.data.tags.CAItemTags;
 import page.chromanyan.chromaticarsenal.init.*;
-import page.chromanyan.chromaticarsenal.item.ShadowTreadsAccessory;
 import page.chromanyan.chromaticarsenal.item.superaccessories.IlluminatedSoulAccessory;
 import com.mojang.logging.LogUtils;
-import io.wispforest.accessories.api.client.AccessoriesRendererRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -36,11 +35,11 @@ public class ChromaticArsenal {
     public static final String MODID = "chromaticarsenal";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public static final page.chromanyan.chromaticarsenal.CAConfig CONFIG = page.chromanyan.chromaticarsenal.CAConfig.createAndLoad();
-
     public ChromaticArsenal(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::gatherData);
+
+        MidnightConfig.init("chromaticarsenal", CAConfig.class);
 
         NeoForge.EVENT_BUS.register(this);
 
@@ -83,9 +82,7 @@ public class ChromaticArsenal {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            ShadowTreadsAccessory.clientInit();
-            AccessoriesRendererRegistry.registerRenderer(CAItems.BLAHAJ.get(), HeadAccessoryRenderer::new);
-            AccessoriesRendererRegistry.registerRenderer(CAItems.CHROMANYAN.get(), HeadAccessoryRenderer::new);
+            CuriosRenderers.register();
 
             IlluminatedSoulAccessory.registerVariants();
         }

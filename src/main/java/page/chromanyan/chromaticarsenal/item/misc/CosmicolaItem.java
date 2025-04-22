@@ -3,8 +3,6 @@ package page.chromanyan.chromaticarsenal.item.misc;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CAAttachments;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import com.google.common.collect.HashMultimap;
-import io.wispforest.accessories.api.AccessoriesCapability;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -22,6 +20,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.CuriosApi;
 
 import java.util.List;
 
@@ -70,14 +69,9 @@ public class CosmicolaItem extends Item {
 
     private static void tryResyncBonusCharms(Player player) {
         int bonus = player.getData(CAAttachments.BONUS_CHARM_SLOTS);
-        AccessoriesCapability cap = AccessoriesCapability.get(player);
 
-        if (cap == null) return;
-
-        var map = HashMultimap.<String, AttributeModifier>create();
-        map.put("charm", new AttributeModifier(BONUS_CHARM_MOD, bonus, AttributeModifier.Operation.ADD_VALUE));
-
-        cap.addPersistentSlotModifiers(map);
+        CuriosApi.getCuriosInventory(player).ifPresent(inventory ->
+                inventory.addPermanentSlotModifier("charm", BONUS_CHARM_MOD, bonus, AttributeModifier.Operation.ADD_VALUE));
     }
 
     @SubscribeEvent

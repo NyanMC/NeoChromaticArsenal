@@ -1,6 +1,6 @@
 package page.chromanyan.chromaticarsenal.item;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
@@ -57,11 +57,11 @@ public class CryoRingAccessory extends ChromaAccessory {
         LivingEntity target = event.getEntity();
 
         if (target instanceof SnowGolem) {
-            target.heal(ChromaticArsenal.CONFIG.COMMON.cryoRingSnowballDamage());
+            target.heal(CAConfig.cryoRingSnowballDamage);
         } else if (target.canFreeze()) {
-            int bonusDamage = target.getType().is(EntityTypeTags.FREEZE_HURTS_EXTRA_TYPES) ? ChromaticArsenal.CONFIG.COMMON.cryoRingVulnerableSnowballDamage() : ChromaticArsenal.CONFIG.COMMON.cryoRingSnowballDamage();
+            int bonusDamage = target.getType().is(EntityTypeTags.FREEZE_HURTS_EXTRA_TYPES) ? CAConfig.cryoRingVulnerableSnowballDamage : CAConfig.cryoRingSnowballDamage;
             event.setNewDamage(event.getNewDamage() + bonusDamage);
-            target.setTicksFrozen(target.getTicksFrozen() + ChromaticArsenal.CONFIG.COMMON.cryoRingFreezeTicks());
+            target.setTicksFrozen(target.getTicksFrozen() + CAConfig.cryoRingFreezeTicks);
         }
     }
 

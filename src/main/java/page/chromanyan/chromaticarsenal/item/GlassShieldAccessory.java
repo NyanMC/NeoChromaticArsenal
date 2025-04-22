@@ -1,12 +1,11 @@
 package page.chromanyan.chromaticarsenal.item;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.init.CATriggers;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -27,6 +26,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
@@ -43,19 +43,19 @@ public class GlassShieldAccessory extends ChromaAccessory {
         super.appendHoverText(stack, context, list, tooltipFlag);
         if (!Screen.hasShiftDown()) return;
         TooltipHelper.itemTooltipLine(stack, 1, list);
-        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.ticksToSecondsTooltip(ChromaticArsenal.CONFIG.COMMON.glassShieldCooldown()));
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.ticksToSecondsTooltip(CAConfig.glassShieldCooldown));
     }
 
     @Override
     public void onDestroyed(@NotNull ItemEntity itemEntity, @NotNull DamageSource damageSource) {
-        if (!damageSource.is(DamageTypes.LIGHTNING_BOLT) || !ChromaticArsenal.CONFIG.COMMON.thunderguardDefaultRecipe()) return; //TODO config option
+        if (!damageSource.is(DamageTypes.LIGHTNING_BOLT) || !CAConfig.thunderguardDefaultRecipe) return;
         ItemEntity newEntity = new ItemEntity(itemEntity.getCommandSenderWorld(), itemEntity.getX(), itemEntity.getY(), itemEntity.getZ(), new ItemStack(CAItems.THUNDERGUARD.get()));
         itemEntity.getCommandSenderWorld().addFreshEntity(newEntity);
     }
 
     @Override
-    public void tick(ItemStack stack, SlotReference reference) {
-        if (!(reference.entity() instanceof Player player)) return;
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        if (!(slotContext.entity() instanceof Player player)) return;
         ItemCooldowns cooldowns = player.getCooldowns();
         ItemCooldowns.CooldownInstance cooldownInstance = cooldowns.cooldowns.get(CAItems.GLASS_SHIELD.get());
         if (cooldownInstance == null) return;
@@ -67,7 +67,7 @@ public class GlassShieldAccessory extends ChromaAccessory {
 
     @SubscribeEvent
     public static void livingIncomingDamage(LivingIncomingDamageEvent event) {
-        if (event.getAmount() == 0 || event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY) || event.getAmount() >= ChromaticArsenal.CONFIG.COMMON.glassShieldMaxBaseDamage()) return;
+        if (event.getAmount() == 0 || event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY) || event.getAmount() >= CAConfig.glassShieldMaxBaseDamage) return;
 
         LivingEntity entity = event.getEntity();
 
@@ -77,7 +77,7 @@ public class GlassShieldAccessory extends ChromaAccessory {
         if (player.getCooldowns().isOnCooldown(CAItems.GLASS_SHIELD.get())) return;
 
         player.getCommandSenderWorld().playSound(null, player.blockPosition(), SoundEvents.GLASS_BREAK, SoundSource.PLAYERS, 0.5F, 1.0F);
-        player.getCooldowns().addCooldown(CAItems.GLASS_SHIELD.get(), ChromaticArsenal.CONFIG.COMMON.glassShieldCooldown());
+        player.getCooldowns().addCooldown(CAItems.GLASS_SHIELD.get(), CAConfig.glassShieldCooldown);
 
         if (player instanceof ServerPlayer serverPlayer) {
             CATriggers.GLASS_SHIELD_BLOCK.get().trigger(serverPlayer, Math.round(event.getAmount()));

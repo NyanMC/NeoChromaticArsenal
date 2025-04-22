@@ -1,12 +1,15 @@
 package page.chromanyan.chromaticarsenal.item.challengeaccessories;
 
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CARarities;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.DropRule;
-import io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -21,6 +24,8 @@ import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.type.capability.ICurio;
 
 import java.util.List;
 
@@ -42,18 +47,17 @@ public class WorldAnchorAccessory extends ChromaAccessory {
     }
 
     @Override
-    public DropRule getDropRule(ItemStack stack, SlotReference reference, DamageSource source) {
-        return DropRule.KEEP;
+    public @NotNull ICurio.DropRule getDropRule(SlotContext slotContext, DamageSource source, boolean recentlyHit, ItemStack stack) {
+        return ICurio.DropRule.ALWAYS_KEEP;
     }
 
     @Override
-    public void getDynamicModifiers(ItemStack stack, SlotReference reference, AccessoryAttributeBuilder builder) {
-        LivingEntity entity = reference.entity();
+    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
+        LivingEntity entity = slotContext.entity();
 
         if (entity == null) {
             ChromaticArsenal.LOGGER.warn("entity is null");
-            super.getDynamicModifiers(stack, reference, builder);
-            return;
+            return super.getAttributeModifiers(slotContext, id, stack);
         }
 
         Level level = entity.getCommandSenderWorld();
@@ -61,11 +65,13 @@ public class WorldAnchorAccessory extends ChromaAccessory {
         int worldHeight = level.getMaxBuildHeight() - level.getMinBuildHeight();
         double gravityMod = Math.clamp(relativeY / worldHeight, 0, 1);
 
-        builder.addStackable(Attributes.GRAVITY, new AttributeModifier(ChromaticArsenal.of("world_anchor_gravity"), gravityMod, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(Attributes.MOVEMENT_SPEED, new AttributeModifier(ChromaticArsenal.of("world_anchor_speed"), -gravityMod, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(ChromaticArsenal.of("world_anchor_knockback"), gravityMod, AttributeModifier.Operation.ADD_VALUE));
-        builder.addStackable(Attributes.ARMOR, new AttributeModifier(ChromaticArsenal.of("world_anchor_armor"), ChromaticArsenal.CONFIG.COMMON.worldAnchorArmor(), AttributeModifier.Operation.ADD_VALUE));
+        Multimap<Holder<Attribute>, AttributeModifier> atts = LinkedHashMultimap.create();
 
-        super.getDynamicModifiers(stack, reference, builder);
+        atts.put(Attributes.GRAVITY, new AttributeModifier(ChromaticArsenal.of("world_anchor_gravity"), gravityMod, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(ChromaticArsenal.of("world_anchor_speed"), -gravityMod, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(ChromaticArsenal.of("world_anchor_knockback"), gravityMod, AttributeModifier.Operation.ADD_VALUE));
+        atts.put(Attributes.ARMOR, new AttributeModifier(ChromaticArsenal.of("world_anchor_armor"), CAConfig.worldAnchorArmor, AttributeModifier.Operation.ADD_VALUE));
+
+        return atts;
     }
 }

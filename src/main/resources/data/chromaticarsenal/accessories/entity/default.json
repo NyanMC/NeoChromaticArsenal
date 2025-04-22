@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "entities": [
-    "#accessories:defaulted_targets"
-  ],
-  "slots": [
-    "super_accessory"
-  ]
-}

@@ -1,11 +1,15 @@
 package page.chromanyan.chromaticarsenal.item;
 
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CAEffects;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -20,6 +24,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
@@ -47,9 +52,8 @@ public class BubbleAmuletAccessory extends ChromaAccessory {
     }
 
     @Override
-    public void tick(ItemStack stack, SlotReference reference) {
-        super.tick(stack, reference);
-        LivingEntity living = reference.entity();
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        LivingEntity living = slotContext.entity();
         if (living.getCommandSenderWorld().isClientSide) return;
 
         int airSupply = living.getAirSupply();
@@ -76,9 +80,10 @@ public class BubbleAmuletAccessory extends ChromaAccessory {
     }
 
     @Override
-    public void getDynamicModifiers(ItemStack stack, SlotReference reference, AccessoryAttributeBuilder builder) {
-        super.getDynamicModifiers(stack, reference, builder);
-        builder.addStackable(NeoForgeMod.SWIM_SPEED, new AttributeModifier(ChromaticArsenal.of("bubble_amulet_swim_speed"), ChromaticArsenal.CONFIG.COMMON.bubbleAmuletSwimSpeedModifier(), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
+        Multimap<Holder<Attribute>, AttributeModifier> atts = LinkedHashMultimap.create();
+        atts.put(NeoForgeMod.SWIM_SPEED, new AttributeModifier(ChromaticArsenal.of("bubble_amulet_swim_speed"), CAConfig.bubbleAmuletSwimSpeedModifier, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        return atts;
     }
 
     @Override

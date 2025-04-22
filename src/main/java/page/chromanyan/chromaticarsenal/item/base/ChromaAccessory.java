@@ -1,11 +1,7 @@
 package page.chromanyan.chromaticarsenal.item.base;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.AccessoriesCapability;
-import io.wispforest.accessories.api.AccessoryItem;
-import io.wispforest.accessories.api.SoundEventData;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
@@ -20,11 +16,14 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.type.capability.ICurio;
+import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 import java.util.Random;
 
-public class ChromaAccessory extends AccessoryItem {
+public class ChromaAccessory extends Item implements ICurioItem {
 
     protected static final Random rand = new Random();
 
@@ -65,25 +64,22 @@ public class ChromaAccessory extends AccessoryItem {
     }
 
     @Override
-    public boolean canEquip(ItemStack stack, SlotReference reference) {
-        AccessoriesCapability cap = AccessoriesCapability.get(reference.entity());
-        if (cap == null) return false;
-
-        return !cap.isAnotherEquipped(stack, reference, this);
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        return ChromaAccessoryHelper.getCurio(slotContext.entity(), this).isEmpty();
     }
 
     @Override
-    public @Nullable SoundEventData getEquipSound(ItemStack stack, SlotReference reference) {
-        if (equipSound == null) return null;
-
-        return new SoundEventData(equipSound, 0.5f, 1);
+    public @NotNull ICurio.SoundInfo getEquipSound(SlotContext slotContext, ItemStack stack) {
+        if (equipSound == null)
+            return ICurioItem.super.getEquipSound(slotContext, stack);
+        else
+            return new ICurio.SoundInfo(equipSound.value(), 1, 1);
     }
 
     @Override
-    public void tick(ItemStack stack, SlotReference reference) {
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (!needsDummyUpdater) return;
         // this sucks. i hate doing this. if you know of a better way to do this please feel free to PR
-        ChromaticArsenal.LOGGER.info("ticking");
         CustomData.update(DataComponents.CUSTOM_DATA, stack, (tag) -> tag.putDouble("dummy", Math.random()));
     }
 }

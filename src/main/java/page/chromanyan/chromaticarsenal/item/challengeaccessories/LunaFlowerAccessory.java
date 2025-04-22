@@ -1,11 +1,14 @@
 package page.chromanyan.chromaticarsenal.item.challengeaccessories;
 
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CARarities;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -19,6 +22,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
@@ -40,8 +44,8 @@ public class LunaFlowerAccessory extends ChromaAccessory {
     }
 
     @Override
-    public void tick(ItemStack stack, SlotReference reference) {
-        LivingEntity entity = reference.entity();
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        LivingEntity entity = slotContext.entity();
 
         if (!entity.horizontalCollision) return;
 
@@ -52,18 +56,21 @@ public class LunaFlowerAccessory extends ChromaAccessory {
     }
 
     @Override
-    public void getDynamicModifiers(ItemStack stack, SlotReference reference, AccessoryAttributeBuilder builder) {
-        super.getDynamicModifiers(stack, reference, builder);
-        builder.addStackable(Attributes.SCALE, new AttributeModifier(ChromaticArsenal.of("luna_flower_scale"), -0.75, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(Attributes.ARMOR, new AttributeModifier(ChromaticArsenal.of("luna_flower_armor"), -0.5, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(Attributes.ATTACK_DAMAGE, new AttributeModifier(ChromaticArsenal.of("luna_flower_damage"), -0.75, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(Attributes.MAX_HEALTH, new AttributeModifier(ChromaticArsenal.of("luna_flower_health"), -0.6, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(Attributes.MOVEMENT_SPEED, new AttributeModifier(ChromaticArsenal.of("luna_flower_speed"), -0.25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(NeoForgeMod.SWIM_SPEED, new AttributeModifier(ChromaticArsenal.of("luna_flower_swim_speed"), -0.25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(ChromaticArsenal.of("luna_flower_toughness"), -0.25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(Attributes.BLOCK_INTERACTION_RANGE, new AttributeModifier(ChromaticArsenal.of("luna_flower_block_reach"), -0.35, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(ChromaticArsenal.of("luna_flower_entity_reach"), -0.35, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(Attributes.JUMP_STRENGTH, new AttributeModifier(ChromaticArsenal.of("luna_flower_jump"), -0.25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(Attributes.STEP_HEIGHT, new AttributeModifier(ChromaticArsenal.of("luna_flower_step"), -0.35, AttributeModifier.Operation.ADD_VALUE));
+    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
+        Multimap<Holder<Attribute>, AttributeModifier> atts = LinkedHashMultimap.create();
+
+        atts.put(Attributes.SCALE, new AttributeModifier(ChromaticArsenal.of("luna_flower_scale"), -0.75, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(Attributes.ARMOR, new AttributeModifier(ChromaticArsenal.of("luna_flower_armor"), -0.5, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(ChromaticArsenal.of("luna_flower_damage"), -0.75, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(Attributes.MAX_HEALTH, new AttributeModifier(ChromaticArsenal.of("luna_flower_health"), -0.6, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(ChromaticArsenal.of("luna_flower_speed"), -0.25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(NeoForgeMod.SWIM_SPEED, new AttributeModifier(ChromaticArsenal.of("luna_flower_swim_speed"), -0.25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(ChromaticArsenal.of("luna_flower_toughness"), -0.25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(Attributes.BLOCK_INTERACTION_RANGE, new AttributeModifier(ChromaticArsenal.of("luna_flower_block_reach"), -0.35, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(ChromaticArsenal.of("luna_flower_entity_reach"), -0.35, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(Attributes.JUMP_STRENGTH, new AttributeModifier(ChromaticArsenal.of("luna_flower_jump"), -0.25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(Attributes.STEP_HEIGHT, new AttributeModifier(ChromaticArsenal.of("luna_flower_step"), -0.35, AttributeModifier.Operation.ADD_VALUE));
+
+        return atts;
     }
 }

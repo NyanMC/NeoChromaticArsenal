@@ -1,18 +1,18 @@
 package page.chromanyan.chromaticarsenal.item.challengeaccessories;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import org.jetbrains.annotations.Nullable;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.init.CADamageTypes;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.init.CARarities;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.DropRule;
-import io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder;
-import io.wispforest.accessories.api.attributes.SlotAttribute;
-import io.wispforest.accessories.api.events.extra.FortuneAdjustment;
-import io.wispforest.accessories.api.events.extra.v2.LootingAdjustment;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -30,11 +30,14 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.type.capability.ICurio;
 
 import java.util.List;
 
 @EventBusSubscriber
-public class AscendedStarAccessory extends ChromaAccessory implements LootingAdjustment, FortuneAdjustment {
+public class AscendedStarAccessory extends ChromaAccessory {
 
     public AscendedStarAccessory() {
         super(Rarity.valueOf(CARarities.CHALLENGE));
@@ -46,14 +49,14 @@ public class AscendedStarAccessory extends ChromaAccessory implements LootingAdj
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, list, tooltipFlag);
         if (!Screen.hasShiftDown()) return;
-        TooltipHelper.itemTooltipLine(stack, 1, list, TooltipHelper.valueTooltip(ChromaticArsenal.CONFIG.COMMON.ascendedStarFortune()), TooltipHelper.valueTooltip(ChromaticArsenal.CONFIG.COMMON.ascendedStarLooting()));
-        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.valueTooltip(ChromaticArsenal.CONFIG.COMMON.ascendedStarDamage()));
+        TooltipHelper.itemTooltipLine(stack, 1, list, TooltipHelper.valueTooltip(CAConfig.ascendedStarFortune), TooltipHelper.valueTooltip(CAConfig.ascendedStarLooting));
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.valueTooltip(CAConfig.ascendedStarDamage));
         TooltipHelper.itemTooltipLine("cursed", list);
     }
 
     @Override
-    public void onUnequip(ItemStack stack, SlotReference reference) {
-        LivingEntity entity = reference.entity();
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        LivingEntity entity = slotContext.entity();
 
         if (entity instanceof Player playerEntity) {
             if (playerEntity.isCreative()) {
@@ -64,28 +67,32 @@ public class AscendedStarAccessory extends ChromaAccessory implements LootingAdj
     }
 
     @Override
-    public DropRule getDropRule(ItemStack stack, SlotReference reference, DamageSource source) {
-        return DropRule.KEEP;
+    public @NotNull ICurio.DropRule getDropRule(SlotContext slotContext, DamageSource source, boolean recentlyHit, ItemStack stack) {
+        return ICurio.DropRule.ALWAYS_KEEP;
     }
 
     @Override
-    public int getLootingAdjustment(ItemStack stack, SlotReference reference, LivingEntity target, LootContext context, DamageSource damageSource, int currentLevel) {
-        return ChromaticArsenal.CONFIG.COMMON.ascendedStarLooting();
+    public int getLootingLevel(SlotContext slotContext, @Nullable LootContext lootContext, ItemStack stack) {
+        return CAConfig.ascendedStarLooting;
     }
 
     @Override
-    public int getFortuneAdjustment(ItemStack stack, SlotReference reference, LootContext context, int currentLevel) {
-        return ChromaticArsenal.CONFIG.COMMON.ascendedStarFortune();
+    public int getFortuneLevel(SlotContext slotContext, LootContext lootContext, ItemStack stack) {
+        return CAConfig.ascendedStarFortune;
     }
 
     @Override
-    public void getDynamicModifiers(ItemStack stack, SlotReference reference, AccessoryAttributeBuilder builder) {
-        builder.addStackable(SlotAttribute.getAttributeHolder("super_accessory"), ChromaticArsenal.of("ascended_star_slots"), ChromaticArsenal.CONFIG.COMMON.ascendedStarSlots(), AttributeModifier.Operation.ADD_VALUE);
+    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
+        Multimap<Holder<Attribute>, AttributeModifier> atts = LinkedHashMultimap.create();
+
+        CuriosApi.addSlotModifier(atts, "super_curio", id, CAConfig.ascendedStarSlots, AttributeModifier.Operation.ADD_VALUE);
+
+        return atts;
     }
 
     @SubscribeEvent
     public static void livingDamage(LivingDamageEvent.Pre event) {
         if (!ChromaAccessoryHelper.isAccessoryEquipped(event.getEntity(), CAItems.ASCENDED_STAR.get())) return;
-        event.setNewDamage(event.getNewDamage() * ChromaticArsenal.CONFIG.COMMON.ascendedStarDamage());
+        event.setNewDamage(event.getNewDamage() * CAConfig.ascendedStarDamage);
     }
 }

@@ -1,13 +1,17 @@
 package page.chromanyan.chromaticarsenal.item;
 
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
 import com.mojang.authlib.properties.PropertyMap;
-import io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
@@ -30,6 +34,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 import java.util.Optional;
@@ -47,14 +52,15 @@ public class LunarCrystalAccessory extends ChromaAccessory {
         super.appendHoverText(stack, context, list, tooltipFlag);
         if (!Screen.hasShiftDown()) return;
         TooltipHelper.itemTooltipLine(stack, 1, list);
-        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.valueTooltip(ChromaticArsenal.CONFIG.COMMON.lunarCrystalLevitationChance()), TooltipHelper.potionAmplifierTooltip(ChromaticArsenal.CONFIG.COMMON.lunarCrystalLevitationAmplifier()), TooltipHelper.ticksToSecondsTooltip(ChromaticArsenal.CONFIG.COMMON.lunarCrystalLevitationDuration()));
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.valueTooltip(CAConfig.lunarCrystalLevitationChance), TooltipHelper.potionAmplifierTooltip(CAConfig.lunarCrystalLevitationAmplifier), TooltipHelper.ticksToSecondsTooltip(CAConfig.lunarCrystalLevitationDuration));
     }
 
     @Override
-    public void getDynamicModifiers(ItemStack stack, SlotReference reference, AccessoryAttributeBuilder builder) {
-        super.getDynamicModifiers(stack, reference, builder);
-        builder.addStackable(Attributes.GRAVITY, new AttributeModifier(ChromaticArsenal.of("lunar_crystal_gravity"), ChromaticArsenal.CONFIG.COMMON.lunarCrystalGravityModifier(), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-        builder.addStackable(Attributes.SAFE_FALL_DISTANCE, new AttributeModifier(ChromaticArsenal.of("lunar_crystal_safe_fall"), ChromaticArsenal.CONFIG.COMMON.lunarCrystalSafeFallDistanceModifier(), AttributeModifier.Operation.ADD_VALUE));
+    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
+        Multimap<Holder<Attribute>, AttributeModifier> atts = LinkedHashMultimap.create();
+        atts.put(Attributes.GRAVITY, new AttributeModifier(ChromaticArsenal.of("lunar_crystal_gravity"), CAConfig.lunarCrystalGravityModifier, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        atts.put(Attributes.SAFE_FALL_DISTANCE, new AttributeModifier(ChromaticArsenal.of("lunar_crystal_safe_fall"), CAConfig.lunarCrystalSafeFallDistanceModifier, AttributeModifier.Operation.ADD_VALUE));
+        return atts;
     }
 
     @Override
@@ -89,9 +95,9 @@ public class LunarCrystalAccessory extends ChromaAccessory {
         if (!(event.getSource().getEntity() instanceof LivingEntity attacker)) return;
         if (!ChromaAccessoryHelper.isAccessoryEquipped(attacker, CAItems.LUNAR_CRYSTAL.get())) return;
 
-        int randresult = rand.nextInt(ChromaticArsenal.CONFIG.COMMON.lunarCrystalLevitationChance() - 1);
+        int randresult = rand.nextInt(CAConfig.lunarCrystalLevitationChance - 1);
         if (randresult > 0) return;
 
-        target.addEffect(new MobEffectInstance(MobEffects.LEVITATION, ChromaticArsenal.CONFIG.COMMON.lunarCrystalLevitationDuration(), ChromaticArsenal.CONFIG.COMMON.lunarCrystalLevitationAmplifier()), attacker);
+        target.addEffect(new MobEffectInstance(MobEffects.LEVITATION, CAConfig.lunarCrystalLevitationDuration, CAConfig.lunarCrystalLevitationAmplifier), attacker);
     }
 }

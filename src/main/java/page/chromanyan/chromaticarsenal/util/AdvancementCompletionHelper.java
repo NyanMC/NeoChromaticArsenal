@@ -1,6 +1,6 @@
 package page.chromanyan.chromaticarsenal.util;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementProgress;
@@ -54,7 +54,7 @@ public class AdvancementCompletionHelper {
      * @return Whether the advancement should be ignored.
      */
     public static boolean isAdvancementIgnored(AdvancementHolder advancementHolder) {
-        for (String keyword : ChromaticArsenal.CONFIG.COMMON.advancingHeartAdvancementBlacklist()) {
+        for (String keyword : CAConfig.advancingHeartAdvancementBlacklist) {
 
             if (advancementHolder.id().toString().contains(keyword)) {
                 return true;

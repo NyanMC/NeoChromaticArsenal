@@ -1,9 +1,13 @@
 package page.chromanyan.chromaticarsenal.item.basicaccessories;
 
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
-import io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -14,6 +18,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
@@ -31,9 +36,12 @@ public class AmethystRingAccessory extends ChromaAccessory {
     }
 
     @Override
-    public void getDynamicModifiers(ItemStack stack, SlotReference reference, AccessoryAttributeBuilder builder) {
-        super.getDynamicModifiers(stack, reference, builder);
-        builder.addStackable(Attributes.BLOCK_INTERACTION_RANGE, new AttributeModifier(ChromaticArsenal.of("amethyst_ring_block"), ChromaticArsenal.CONFIG.COMMON.amethystRingReachModifier(), AttributeModifier.Operation.ADD_VALUE));
-        builder.addStackable(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(ChromaticArsenal.of("amethyst_ring_entity"), ChromaticArsenal.CONFIG.COMMON.amethystRingReachModifier(), AttributeModifier.Operation.ADD_VALUE));
+    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
+        Multimap<Holder<Attribute>, AttributeModifier> atts = LinkedHashMultimap.create();
+
+        atts.put(Attributes.BLOCK_INTERACTION_RANGE, new AttributeModifier(ChromaticArsenal.of("amethyst_ring_block"), CAConfig.amethystRingReachModifier, AttributeModifier.Operation.ADD_VALUE));
+        atts.put(Attributes.BLOCK_INTERACTION_RANGE, new AttributeModifier(ChromaticArsenal.of("amethyst_ring_block"), CAConfig.amethystRingReachModifier, AttributeModifier.Operation.ADD_VALUE));
+
+        return atts;
     }
 }

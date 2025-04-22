@@ -1,11 +1,14 @@
 package page.chromanyan.chromaticarsenal.item.superaccessories;
 
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
+import net.minecraft.core.Holder;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.item.base.SuperAccessory;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +21,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
@@ -41,30 +45,30 @@ public class CelestialCharmAccessory extends SuperAccessory {
     }
 
     @Override
-    public void getDynamicModifiers(ItemStack stack, SlotReference reference, AccessoryAttributeBuilder builder) {
-        LivingEntity entity = reference.entity();
+    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
+        Multimap<Holder<Attribute>, AttributeModifier> atts = LinkedHashMultimap.create();
+        LivingEntity entity = slotContext.entity();
 
         if (entity == null) {
             ChromaticArsenal.LOGGER.warn("entity is null");
-            super.getDynamicModifiers(stack, reference, builder);
-            return;
+            return super.getAttributeModifiers(slotContext, id, stack);
         }
 
         long time = entity.getCommandSenderWorld().getDayTime() % 24000; // no see
         if (time <= 6000) {
             long compareTime = time + 6000;
-            builder.addStackable(Attributes.MOVEMENT_SPEED, new AttributeModifier(SPEED, ChromaticArsenal.CONFIG.COMMON.celestialCharmSpeedMultiplier() * (1 - ((float) compareTime / 12000F)), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-            builder.addStackable(Attributes.ATTACK_DAMAGE, new AttributeModifier(DAMAGE, ChromaticArsenal.CONFIG.COMMON.celestialCharmDamageMultiplier() * ((float) compareTime / 12000F), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            atts.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(SPEED, CAConfig.celestialCharmSpeedMultiplier * (1 - ((float) compareTime / 12000F)), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            atts.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(DAMAGE, CAConfig.celestialCharmDamageMultiplier * ((float) compareTime / 12000F), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         } else if (time <= 18000) {
             long compareTime = time - 6000;
-            builder.addStackable(Attributes.MOVEMENT_SPEED, new AttributeModifier(SPEED, ChromaticArsenal.CONFIG.COMMON.celestialCharmSpeedMultiplier() * ((float) compareTime / 12000F), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-            builder.addStackable(Attributes.ATTACK_DAMAGE, new AttributeModifier(DAMAGE, ChromaticArsenal.CONFIG.COMMON.celestialCharmDamageMultiplier() * (1 - ((float) compareTime / 12000F)), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            atts.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(SPEED, CAConfig.celestialCharmSpeedMultiplier * ((float) compareTime / 12000F), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            atts.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(DAMAGE, CAConfig.celestialCharmDamageMultiplier * (1 - ((float) compareTime / 12000F)), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         } else {
             long compareTime = time - 18000;
-            builder.addStackable(Attributes.MOVEMENT_SPEED, new AttributeModifier(SPEED, ChromaticArsenal.CONFIG.COMMON.celestialCharmSpeedMultiplier() * (1 - ((float) compareTime / 12000F)), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-            builder.addStackable(Attributes.ATTACK_DAMAGE, new AttributeModifier(DAMAGE, ChromaticArsenal.CONFIG.COMMON.celestialCharmDamageMultiplier() * ((float) compareTime / 12000F), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            atts.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(SPEED, CAConfig.celestialCharmSpeedMultiplier * (1 - ((float) compareTime / 12000F)), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            atts.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(DAMAGE, CAConfig.celestialCharmDamageMultiplier * ((float) compareTime / 12000F), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         }
 
-        super.getDynamicModifiers(stack, reference, builder);
+        return atts;
     }
 }

@@ -1,13 +1,16 @@
 package page.chromanyan.chromaticarsenal.item;
 
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder;
-import io.wispforest.accessories.api.client.AccessoriesRendererRegistry;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -26,6 +29,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.VanillaGameEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
@@ -37,11 +41,6 @@ public class ShadowTreadsAccessory extends ChromaAccessory {
         enableJankAttributeFix();
     }
 
-    @OnlyIn(Dist.CLIENT)
-    public static void clientInit() {
-        AccessoriesRendererRegistry.registerNoRenderer(CAItems.SHADOW_TREADS.get());
-    }
-
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
@@ -49,20 +48,22 @@ public class ShadowTreadsAccessory extends ChromaAccessory {
 
         if (!Screen.hasShiftDown()) return;
         TooltipHelper.itemTooltipLine(stack, 1, list);
-        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.multiplierAsPercentTooltip(ChromaticArsenal.CONFIG.COMMON.shadowTreadsSpeedModifier()), TooltipHelper.valueTooltip(ChromaticArsenal.CONFIG.COMMON.shadowTreadsMaxLightLevel()));
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.percentTooltip(CAConfig.shadowTreadsSpeedModifier), TooltipHelper.valueTooltip(CAConfig.shadowTreadsMaxLightLevel));
         TooltipHelper.itemTooltipLine(stack, 3, list);
     }
 
     @Override
-    public void getDynamicModifiers(ItemStack stack, SlotReference reference, AccessoryAttributeBuilder builder) {
-        LivingEntity livingEntity = reference.entity();
+    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
+        Multimap<Holder<Attribute>, AttributeModifier> atts = LinkedHashMultimap.create();
+        LivingEntity livingEntity = slotContext.entity();
         Level world = livingEntity.getCommandSenderWorld();
 
-        if (world.getMaxLocalRawBrightness(livingEntity.blockPosition()) <= ChromaticArsenal.CONFIG.COMMON.shadowTreadsMaxLightLevel()) {
-            builder.addStackable(Attributes.MOVEMENT_SPEED, new AttributeModifier(ChromaticArsenal.of("shadow_treads_speed"), ChromaticArsenal.CONFIG.COMMON.shadowTreadsSpeedModifier(), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        if (world.getMaxLocalRawBrightness(livingEntity.blockPosition()) <= CAConfig.shadowTreadsMaxLightLevel) {
+            atts.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(ChromaticArsenal.of("shadow_treads_speed"), CAConfig.shadowTreadsSpeedModifier, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         } else {
-            builder.addStackable(Attributes.MOVEMENT_SPEED, new AttributeModifier(ChromaticArsenal.of("shadow_treads_speed"), 0f, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            atts.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(ChromaticArsenal.of("shadow_treads_speed"), 0f, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         }
+        return atts;
     }
 
     @SubscribeEvent

@@ -1,12 +1,11 @@
 package page.chromanyan.chromaticarsenal.item.superaccessories;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.init.CAEffects;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.item.base.SuperAccessory;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -22,6 +21,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
@@ -40,14 +40,13 @@ public class InfernoFlowerAccessory extends SuperAccessory {
         if (!Screen.hasShiftDown()) return;
         TooltipHelper.itemTooltipLine(stack, 1, list);
         TooltipHelper.itemTooltipLine(stack, 2, list);
-        TooltipHelper.itemTooltipLine(stack, 3, list, TooltipHelper.multiplierAsPercentTooltip(ChromaticArsenal.CONFIG.COMMON.infernoFlowerDamageMultiplier()));
+        TooltipHelper.itemTooltipLine(stack, 3, list, TooltipHelper.multiplierAsPercentTooltip(CAConfig.infernoFlowerDamageMultiplier));
     }
 
     @Override
-    public void tick(ItemStack stack, SlotReference reference) {
-        super.tick(stack, reference);
-
-        LivingEntity living = reference.entity();
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        super.curioTick(slotContext, stack);
+        LivingEntity living = slotContext.entity();
 
         if (living.getCommandSenderWorld().isClientSide) return;
 
@@ -61,11 +60,11 @@ public class InfernoFlowerAccessory extends SuperAccessory {
         if (!ChromaAccessoryHelper.isAccessoryEquipped(attacker, CAItems.INFERNO_FLOWER.get())) return;
 
         if (!event.getSource().is(DamageTypeTags.IS_PROJECTILE)) {
-            target.addEffect(new MobEffectInstance(CAEffects.INFERNO, ChromaticArsenal.CONFIG.COMMON.infernoFlowerDuration()));
+            target.addEffect(new MobEffectInstance(CAEffects.INFERNO, CAConfig.infernoFlowerDuration));
         }
 
         if (target.isOnFire()) {
-            event.setNewDamage(event.getNewDamage() * ChromaticArsenal.CONFIG.COMMON.infernoFlowerDamageMultiplier());
+            event.setNewDamage(event.getNewDamage() * CAConfig.infernoFlowerDamageMultiplier);
         }
     }
 }

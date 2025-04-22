@@ -1,6 +1,6 @@
 package page.chromanyan.chromaticarsenal.item.superaccessories;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.init.CATags;
 import page.chromanyan.chromaticarsenal.item.base.SuperAccessory;
@@ -38,9 +38,9 @@ public class DispellingCrystalAccessory extends SuperAccessory {
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, list, tooltipFlag);
         if (!Screen.hasShiftDown()) return;
-        TooltipHelper.itemTooltipLine("ward_crystal", 1, list, TooltipHelper.multiplierAsPercentTooltip(ChromaticArsenal.CONFIG.COMMON.wardCrystalIncomingMultiplier()));
-        TooltipHelper.itemTooltipLine("ward_crystal", 2, list, TooltipHelper.multiplierAsPercentTooltip(ChromaticArsenal.CONFIG.COMMON.wardCrystalOutgoingMultiplier()));
-        TooltipHelper.itemTooltipLine(stack, 1, list, TooltipHelper.multiplierAsPercentTooltip(ChromaticArsenal.CONFIG.COMMON.dispellingCrystalDurationMultiplier()));
+        TooltipHelper.itemTooltipLine("ward_crystal", 1, list, TooltipHelper.multiplierAsPercentTooltip(CAConfig.wardCrystalIncomingMultiplier));
+        TooltipHelper.itemTooltipLine("ward_crystal", 2, list, TooltipHelper.multiplierAsPercentTooltip(CAConfig.wardCrystalOutgoingMultiplier));
+        TooltipHelper.itemTooltipLine(stack, 1, list, TooltipHelper.multiplierAsPercentTooltip(CAConfig.dispellingCrystalDurationMultiplier));
     }
 
     @SubscribeEvent
@@ -49,21 +49,21 @@ public class DispellingCrystalAccessory extends SuperAccessory {
         if (event.getNewDamage() == 0 || event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)) return;
 
         if (ChromaAccessoryHelper.isAccessoryEquipped(event.getEntity(), CAItems.DISPELLING_CRYSTAL.get())) {
-            event.setNewDamage(event.getNewDamage() * (float) ChromaticArsenal.CONFIG.COMMON.wardCrystalIncomingMultiplier());
+            event.setNewDamage(event.getNewDamage() * (float) CAConfig.wardCrystalIncomingMultiplier);
         }
 
         if (!(event.getSource().getEntity() instanceof LivingEntity livingEntity)) return;
         if (!ChromaAccessoryHelper.isAccessoryEquipped(livingEntity, CAItems.DISPELLING_CRYSTAL.get())) return;
 
-        event.setNewDamage(event.getNewDamage() * (float) ChromaticArsenal.CONFIG.COMMON.wardCrystalOutgoingMultiplier());
+        event.setNewDamage(event.getNewDamage() * (float) CAConfig.wardCrystalOutgoingMultiplier);
     }
 
     @SubscribeEvent
     public static void effectAdded(MobEffectEvent.Added event) {
         if (!ChromaAccessoryHelper.isAccessoryEquipped(event.getEntity(), CAItems.DISPELLING_CRYSTAL.get())) return;
-        if (ConfigHelper.effectInBlacklist(ChromaticArsenal.CONFIG.COMMON.dispellingCrystalEffectBlacklist(), event.getEffectInstance().getEffect().value())) return;
+        if (ConfigHelper.effectInBlacklist(CAConfig.dispellingCrystalEffectBlacklist, event.getEffectInstance().getEffect().value())) return;
         if (event.getEffectInstance().getDuration() == MobEffectInstance.INFINITE_DURATION) return;
         // eat your heart out minecraft. i don't give a damn if you don't want me accessing this
-        event.getEffectInstance().duration = (int) (event.getEffectInstance().duration * ChromaticArsenal.CONFIG.COMMON.dispellingCrystalDurationMultiplier());
+        event.getEffectInstance().duration = (int) (event.getEffectInstance().duration * CAConfig.dispellingCrystalDurationMultiplier);
     }
 }

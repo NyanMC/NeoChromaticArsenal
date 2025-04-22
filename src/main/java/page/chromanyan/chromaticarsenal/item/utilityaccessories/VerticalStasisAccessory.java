@@ -2,7 +2,6 @@ package page.chromanyan.chromaticarsenal.item.utilityaccessories;
 
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
@@ -15,6 +14,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
@@ -43,8 +43,9 @@ public class VerticalStasisAccessory extends ChromaAccessory {
     }
 
     @Override
-    public void tick(ItemStack stack, SlotReference reference) {
-        LivingEntity entity = reference.entity();
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        super.curioTick(slotContext, stack);
+        LivingEntity entity = slotContext.entity();
 
         setVerticalStasisActive(entity);
         entity.setNoGravity(isVerticalStasisActive(entity));
@@ -55,8 +56,8 @@ public class VerticalStasisAccessory extends ChromaAccessory {
     }
 
     @Override
-    public void onUnequip(ItemStack stack, SlotReference reference) {
-        LivingEntity entity = reference.entity();
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        LivingEntity entity = slotContext.entity();
         if (entity.getCommandSenderWorld().isClientSide()) return;
         entity.getPersistentData().putBoolean("active", false);
         entity.setNoGravity(false);

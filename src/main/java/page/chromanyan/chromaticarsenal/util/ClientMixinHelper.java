@@ -2,6 +2,7 @@ package page.chromanyan.chromaticarsenal.util;
 
 import net.minecraft.client.resources.PlayerSkin;
 import net.minecraft.world.entity.LivingEntity;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 
@@ -10,7 +11,7 @@ public class ClientMixinHelper {
     public static final PlayerSkin ANON_SKIN = new PlayerSkin(ChromaticArsenal.of("textures/entity/anonymous.png"), null, null, null, PlayerSkin.Model.WIDE, true);
 
     public static boolean shouldCloak(LivingEntity entity) {
-        if (ChromaticArsenal.CONFIG.CLIENT.anonymityOptOut()) return false;
+        if (CAConfig.anonymityOptOut) return false;
         return ChromaAccessoryHelper.isAccessoryEquipped(entity, CAItems.ANONYMITY_UMBRELLA.get());
     }
 }

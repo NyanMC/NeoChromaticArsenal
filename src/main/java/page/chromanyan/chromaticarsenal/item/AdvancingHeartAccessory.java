@@ -1,13 +1,17 @@
 package page.chromanyan.chromaticarsenal.item;
 
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.AdvancementCompletionHelper;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
@@ -27,6 +31,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
@@ -76,9 +81,9 @@ public class AdvancingHeartAccessory extends ChromaAccessory {
     }
 
     @Override
-    public void onEquip(ItemStack stack, SlotReference reference) {
-        if (!ChromaAccessoryHelper.isAccessoryEquipped(reference.entity(), this)) return;
-        updateNBTForStack(reference.entity(), stack);
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        if (!ChromaAccessoryHelper.isAccessoryEquipped(slotContext.entity(), this)) return;
+        updateNBTForStack(slotContext.entity(), stack);
     }
 
     @SuppressWarnings("deprecation")
@@ -87,12 +92,14 @@ public class AdvancingHeartAccessory extends ChromaAccessory {
         if (customData == null) return 0;
         float percentage = (float) customData.getUnsafe().getInt("completedAdvancements") / customData.getUnsafe().getInt("totalAdvancements");
         if (percentage == Float.POSITIVE_INFINITY) percentage = 0; // in case the item's NBT is manually edited or a weird bug happens
-        return (int) (ChromaticArsenal.CONFIG.COMMON.advancingHeartHealthModifier() * percentage / 2) * 2; // the divide and re-multiply by 2 is to ensure an even number
+        return (int) (CAConfig.advancingHeartHealthModifier * percentage / 2) * 2; // the divide and re-multiply by 2 is to ensure an even number
     }
 
     @Override
-    public void getDynamicModifiers(ItemStack stack, SlotReference reference, AccessoryAttributeBuilder builder) {
-        builder.addStackable(Attributes.MAX_HEALTH, new AttributeModifier(ChromaticArsenal.of("advancing_heart_health"), getHealthModifier(stack), AttributeModifier.Operation.ADD_VALUE));
+    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
+        Multimap<Holder<Attribute>, AttributeModifier> atts = LinkedHashMultimap.create();
+        atts.put(Attributes.MAX_HEALTH, new AttributeModifier(ChromaticArsenal.of("advancing_heart_health"), getHealthModifier(stack), AttributeModifier.Operation.ADD_VALUE));
+        return atts;
     }
 
     @SubscribeEvent

@@ -1,12 +1,11 @@
 package page.chromanyan.chromaticarsenal.item.superaccessories;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.init.CAEffects;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.item.base.SuperAccessory;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -24,6 +23,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
@@ -48,7 +48,7 @@ public class DiamondHeartAccessory extends SuperAccessory {
         if (!Screen.hasShiftDown()) return;
 
         TooltipHelper.itemTooltipLine(stack, 1, list);
-        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.valueTooltip((ChromaticArsenal.CONFIG.COMMON.diamondHeartFracturedAmplifier() + 1) * 10), TooltipHelper.ticksToSecondsTooltip(60 * 20 * ChromaticArsenal.CONFIG.COMMON.diamondHeartCooldownMinutes()));
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.valueTooltip((CAConfig.diamondHeartFracturedAmplifier + 1) * 10), TooltipHelper.ticksToSecondsTooltip(60 * 20 * CAConfig.diamondHeartCooldownMinutes));
         TooltipHelper.itemTooltipLine(stack, 3, list, TooltipHelper.ticksToSecondsTooltip(60 * 100));
     }
 
@@ -58,13 +58,13 @@ public class DiamondHeartAccessory extends SuperAccessory {
     }
 
     @Override
-    public void tick(ItemStack stack, SlotReference reference) {
-        super.tick(stack, reference);
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        super.curioTick(slotContext, stack);
 
-        LivingEntity entity = reference.entity();
+        LivingEntity entity = slotContext.entity();
         if (entity.getCommandSenderWorld().isClientSide()) return;
         if (stack.getDamageValue() == 0) return;
-        if (entity.tickCount % 20 * ChromaticArsenal.CONFIG.COMMON.diamondHeartCooldownMinutes() != 0) return;
+        if (entity.tickCount % (20 * CAConfig.diamondHeartCooldownMinutes) != 0) return;
 
         stack.setDamageValue(stack.getDamageValue() - 1);
 
@@ -85,7 +85,7 @@ public class DiamondHeartAccessory extends SuperAccessory {
 
         stack.setDamageValue(stack.getMaxDamage());
         event.setCanceled(true);
-        entity.addEffect(new MobEffectInstance(CAEffects.FRACTURED, 60 * 20 * ChromaticArsenal.CONFIG.COMMON.diamondHeartCooldownMinutes(), ChromaticArsenal.CONFIG.COMMON.diamondHeartFracturedAmplifier()), entity);
+        entity.addEffect(new MobEffectInstance(CAEffects.FRACTURED, 60 * 20 * CAConfig.diamondHeartCooldownMinutes, CAConfig.diamondHeartFracturedAmplifier), entity);
         entity.setHealth(entity.getMaxHealth());
         entity.getCommandSenderWorld().playSound(null, entity.blockPosition(), SoundEvents.IRON_GOLEM_DAMAGE, SoundSource.PLAYERS, 0.5F, 1.0F);
     }

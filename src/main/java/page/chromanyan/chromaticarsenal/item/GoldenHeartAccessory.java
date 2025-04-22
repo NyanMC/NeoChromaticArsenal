@@ -1,11 +1,8 @@
 package page.chromanyan.chromaticarsenal.item;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.events.extra.PiglinNeutralInducer;
-import io.wispforest.accessories.api.slot.SlotReference;
-import net.fabricmc.fabric.api.util.TriState;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -17,19 +14,20 @@ import net.minecraft.world.item.TooltipFlag;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 
-public class GoldenHeartAccessory extends ChromaAccessory implements PiglinNeutralInducer {
+public class GoldenHeartAccessory extends ChromaAccessory {
 
     public GoldenHeartAccessory() {
         setEquipSound(SoundEvents.ARMOR_EQUIP_GOLD);
     }
 
     @Override
-    public void onEquip(ItemStack stack, SlotReference reference) {
-        if (!reference.entity().getCommandSenderWorld().isClientSide()) {
-            reference.entity().addEffect(new MobEffectInstance(MobEffects.ABSORPTION, ChromaticArsenal.CONFIG.COMMON.goldenHeartDuration(), ChromaticArsenal.CONFIG.COMMON.goldenHeartAmplifier(), true, false), reference.entity());
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        if (!slotContext.entity().getCommandSenderWorld().isClientSide()) {
+            slotContext.entity().addEffect(new MobEffectInstance(MobEffects.ABSORPTION, CAConfig.goldenHeartDuration, CAConfig.goldenHeartAmplifier, true, false), slotContext.entity());
         }
     }
 
@@ -39,27 +37,27 @@ public class GoldenHeartAccessory extends ChromaAccessory implements PiglinNeutr
         super.appendHoverText(stack, context, list, tooltipFlag);
         if (!Screen.hasShiftDown()) return;
         TooltipHelper.itemTooltipLine(stack, 3, list);
-        TooltipHelper.itemTooltipLine(stack, 1, list, TooltipHelper.potionAmplifierTooltip(ChromaticArsenal.CONFIG.COMMON.goldenHeartAmplifier()));
-        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.ticksToSecondsTooltip(ChromaticArsenal.CONFIG.COMMON.goldenHeartDuration()));
+        TooltipHelper.itemTooltipLine(stack, 1, list, TooltipHelper.potionAmplifierTooltip(CAConfig.goldenHeartAmplifier));
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.ticksToSecondsTooltip(CAConfig.goldenHeartDuration));
     }
 
     @Override
-    public void tick(ItemStack stack, SlotReference reference) {
-        LivingEntity living = reference.entity();
-        if (!living.getCommandSenderWorld().isClientSide() && living.tickCount % ChromaticArsenal.CONFIG.COMMON.goldenHeartDuration() == 0) {
-            living.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, ChromaticArsenal.CONFIG.COMMON.goldenHeartDuration(), ChromaticArsenal.CONFIG.COMMON.goldenHeartAmplifier(), true, false), reference.entity());
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        LivingEntity living = slotContext.entity();
+        if (!living.getCommandSenderWorld().isClientSide() && living.tickCount % CAConfig.goldenHeartDuration == 0) {
+            living.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, CAConfig.goldenHeartDuration, CAConfig.goldenHeartAmplifier, true, false), slotContext.entity());
         }
     }
 
     @Override
-    public void onUnequip(ItemStack stack, SlotReference reference) {
-        LivingEntity living = reference.entity();
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        LivingEntity living = slotContext.entity();
         if (living.getCommandSenderWorld().isClientSide) return;
         living.removeEffect(MobEffects.ABSORPTION);
     }
 
     @Override
-    public TriState makePiglinsNeutral(ItemStack stack, SlotReference reference) {
-        return TriState.TRUE;
+    public boolean makesPiglinsNeutral(SlotContext slotContext, ItemStack stack) {
+        return true;
     }
 }

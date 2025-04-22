@@ -1,6 +1,6 @@
 package page.chromanyan.chromaticarsenal.item;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
@@ -35,7 +35,7 @@ public class DualityRingsAccessory extends ChromaAccessory {
 
         if (!Screen.hasShiftDown()) return;
         TooltipHelper.itemTooltipLine(stack, 1, list);
-        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.multiplierAsPercentTooltip(ChromaticArsenal.CONFIG.COMMON.dualityRingsDamageMultiplier()));
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.multiplierAsPercentTooltip(CAConfig.dualityRingsDamageMultiplier));
     }
 
     @SubscribeEvent
@@ -44,6 +44,6 @@ public class DualityRingsAccessory extends ChromaAccessory {
         if (!(event.getSource().getEntity() instanceof LivingEntity livingEntity)) return;
         if (!ChromaAccessoryHelper.isAccessoryEquipped(livingEntity, CAItems.DUALITY_RINGS.get())) return;
 
-        event.setNewDamage(event.getNewDamage() * (float) ChromaticArsenal.CONFIG.COMMON.dualityRingsDamageMultiplier());
+        event.setNewDamage(event.getNewDamage() * (float) CAConfig.dualityRingsDamageMultiplier);
     }
 }

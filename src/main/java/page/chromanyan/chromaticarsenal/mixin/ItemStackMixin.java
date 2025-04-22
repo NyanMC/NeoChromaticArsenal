@@ -1,6 +1,6 @@
 package page.chromanyan.chromaticarsenal.mixin;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import net.minecraft.server.level.ServerLevel;
@@ -22,7 +22,7 @@ public class ItemStackMixin {
         if (p_220160_ == null) return;
         if (!ChromaAccessoryHelper.isAccessoryEquipped(p_220160_, CAItems.COPPER_RING.get())) return;
 
-        if (p_220160_.getRandom().nextDouble() <= ChromaticArsenal.CONFIG.COMMON.copperRingUnbreakingChance()) {
+        if (p_220160_.getRandom().nextDouble() <= CAConfig.copperRingUnbreakingChance) {
             ci.cancel();
         }
     }

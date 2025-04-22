@@ -1,6 +1,6 @@
 package page.chromanyan.chromaticarsenal.item;
 
-import page.chromanyan.chromaticarsenal.ChromaticArsenal;
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.init.CAEffects;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.item.base.ChromaAccessory;
@@ -45,7 +45,7 @@ public class ThunderguardAccessory extends ChromaAccessory {
         if (!Screen.hasShiftDown()) return;
 
         TooltipHelper.itemTooltipLine(stack, 1, list);
-        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.valueTooltip(ChromaticArsenal.CONFIG.COMMON.thunderguardZapDamage()));
+        TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.valueTooltip(CAConfig.thunderguardZapDamage));
     }
 
     @SubscribeEvent
@@ -54,7 +54,7 @@ public class ThunderguardAccessory extends ChromaAccessory {
         if (!ChromaAccessoryHelper.isAccessoryEquipped(event.getEntity(), CAItems.THUNDERGUARD.get())) return;
 
         event.setCanceled(true);
-        event.getEntity().addEffect(new MobEffectInstance(CAEffects.THUNDERCHARGED, ChromaticArsenal.CONFIG.COMMON.thunderchargedDuration()));
+        event.getEntity().addEffect(new MobEffectInstance(CAEffects.THUNDERCHARGED, CAConfig.thunderchargedDuration));
     }
 
     @SubscribeEvent
@@ -62,7 +62,7 @@ public class ThunderguardAccessory extends ChromaAccessory {
         if (!ChromaAccessoryHelper.isAccessoryEquipped(event.getEntity(), CAItems.THUNDERGUARD.get())) return;
 
         if (event.getSource().getDirectEntity() instanceof LivingEntity livingEntity) {
-            livingEntity.hurt(livingEntity.getCommandSenderWorld().damageSources().lightningBolt(), (float) ChromaticArsenal.CONFIG.COMMON.thunderguardZapDamage());
+            livingEntity.hurt(livingEntity.getCommandSenderWorld().damageSources().lightningBolt(), (float) CAConfig.thunderguardZapDamage);
         }
     }
 

@@ -1,11 +1,11 @@
 package page.chromanyan.chromaticarsenal.item.superaccessories;
 
+import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.item.base.SuperAccessory;
 import page.chromanyan.chromaticarsenal.util.ChromaAccessoryHelper;
 import page.chromanyan.chromaticarsenal.util.TooltipHelper;
-import io.wispforest.accessories.api.slot.SlotReference;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.network.chat.Component;
@@ -23,8 +23,11 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.SlotResult;
 
 import java.util.List;
+import java.util.Optional;
 
 @EventBusSubscriber
 public class IlluminatedSoulAccessory extends SuperAccessory {
@@ -39,16 +42,16 @@ public class IlluminatedSoulAccessory extends SuperAccessory {
         super.appendHoverText(stack, context, list, tooltipFlag);
         if (!Screen.hasShiftDown()) return;
         TooltipHelper.itemTooltipLine(stack, 1, list);
-        if (ChromaticArsenal.CONFIG.COMMON.illuminatedSoulGlowingDuration() > 0)
-            TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.ticksToSecondsTooltip(ChromaticArsenal.CONFIG.COMMON.illuminatedSoulGlowingDuration()));
-        if (ChromaticArsenal.CONFIG.COMMON.illuminatedSoulUndeadMultiplier() > 1)
-            TooltipHelper.itemTooltipLine(stack, 3, list, TooltipHelper.multiplierAsPercentTooltip(ChromaticArsenal.CONFIG.COMMON.illuminatedSoulUndeadMultiplier()));
+        if (CAConfig.illuminatedSoulGlowingDuration > 0)
+            TooltipHelper.itemTooltipLine(stack, 2, list, TooltipHelper.ticksToSecondsTooltip(CAConfig.illuminatedSoulGlowingDuration));
+        if (CAConfig.illuminatedSoulUndeadMultiplier > 1)
+            TooltipHelper.itemTooltipLine(stack, 3, list, TooltipHelper.multiplierAsPercentTooltip(CAConfig.illuminatedSoulUndeadMultiplier));
     }
 
     @Override
-    public void tick(ItemStack stack, SlotReference reference) {
-        super.tick(stack, reference);
-        LivingEntity entity = reference.entity();
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        super.curioTick(slotContext, stack);
+        LivingEntity entity = slotContext.entity();
         if (!entity.getCommandSenderWorld().isClientSide) {
             entity.setGlowingTag(true);
             entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 410, 0, false, false), entity);
@@ -56,8 +59,8 @@ public class IlluminatedSoulAccessory extends SuperAccessory {
     }
 
     @Override
-    public void onUnequip(ItemStack stack, SlotReference reference) {
-        LivingEntity entity = reference.entity();
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        LivingEntity entity = slotContext.entity();
         if (entity.getCommandSenderWorld().isClientSide)
             return;
         entity.removeEffect(MobEffects.NIGHT_VISION);
@@ -78,10 +81,10 @@ public class IlluminatedSoulAccessory extends SuperAccessory {
         if (!(event.getSource().getEntity() instanceof LivingEntity attacker)) return;
         if (!ChromaAccessoryHelper.isAccessoryEquipped(attacker, CAItems.ILLUMINATED_SOUL.get())) return;
 
-        if (ChromaticArsenal.CONFIG.COMMON.illuminatedSoulGlowingDuration() > 0)
-            event.getEntity().addEffect(new MobEffectInstance(MobEffects.GLOWING, ChromaticArsenal.CONFIG.COMMON.illuminatedSoulGlowingDuration()), attacker);
+        if (CAConfig.illuminatedSoulGlowingDuration > 0)
+            event.getEntity().addEffect(new MobEffectInstance(MobEffects.GLOWING, CAConfig.illuminatedSoulGlowingDuration), attacker);
         if (event.getEntity().getType().is(EntityTypeTags.SENSITIVE_TO_SMITE))
-            event.setNewDamage(event.getNewDamage() * ChromaticArsenal.CONFIG.COMMON.illuminatedSoulUndeadMultiplier());
+            event.setNewDamage(event.getNewDamage() * CAConfig.illuminatedSoulUndeadMultiplier);
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -92,9 +95,9 @@ public class IlluminatedSoulAccessory extends SuperAccessory {
                         return 0;
                     }
 
-                    ItemStack equippedStack = ChromaAccessoryHelper.tryGetFirstEquipped(entity, CAItems.ILLUMINATED_SOUL.get());
+                    Optional<SlotResult> result = ChromaAccessoryHelper.getCurio(entity, stack.getItem());
 
-                    if (equippedStack == stack) {
+                    if (result.isPresent() && result.get().stack() != null && result.get().stack() == stack) {
                         return 1;
                     }
 
