@@ -56,6 +56,7 @@ public class ShadowTreadsAccessory extends ChromaAccessory {
     public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
         Multimap<Holder<Attribute>, AttributeModifier> atts = LinkedHashMultimap.create();
         LivingEntity livingEntity = slotContext.entity();
+        if (livingEntity == null) return super.getAttributeModifiers(slotContext, id, stack); // forgot a null check was needed here
         Level world = livingEntity.getCommandSenderWorld();
 
         if (world.getMaxLocalRawBrightness(livingEntity.blockPosition()) <= CAConfig.shadowTreadsMaxLightLevel) {
