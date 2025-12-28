@@ -3,7 +3,8 @@
     "category": "player",
     "sounds": [
       {
-        "name": "chromaticarsenal:spring"
+        "name": "chromaticarsenal:spring",
+        "attenuation_distance": 64
       }
     ]
   }

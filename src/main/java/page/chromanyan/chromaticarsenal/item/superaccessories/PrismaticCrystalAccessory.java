@@ -5,6 +5,7 @@ import com.google.common.collect.Multimap;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.player.Player;
 import page.chromanyan.chromaticarsenal.CAConfig;
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CAItems;
@@ -15,7 +16,6 @@ import page.chromanyan.chromaticarsenal.util.TooltipHelper;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -61,7 +61,11 @@ public class PrismaticCrystalAccessory extends SuperAccessory {
             living.setDeltaMovement(vec3.x, vec3.y * -CAConfig.prismaticCrystalVoidBounceMultiplier, vec3.z);
             living.hurt(living.getCommandSenderWorld().damageSources().fellOutOfWorld(), CAConfig.prismaticCrystalVoidBounceDamage);
             if (stack.getHoverName().getString().toLowerCase().contains("spring")) {
-                living.getCommandSenderWorld().playSound(null, living.blockPosition(), CASounds.SPRING, SoundSource.PLAYERS, 0.5F, 1.0F);
+                if (living instanceof Player player) {
+                    player.playSound(CASounds.SPRING, 0.5F, 1.0F);
+                } else {
+                    living.playSound(CASounds.SPRING, 0.5F, 1.0F);
+                }
             }
         }
         living.resetFallDistance();
