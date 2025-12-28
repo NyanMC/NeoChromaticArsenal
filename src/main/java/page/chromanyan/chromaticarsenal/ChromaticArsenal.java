@@ -83,8 +83,7 @@ public class ChromaticArsenal {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             CuriosRenderers.register();
-
-            IlluminatedSoulAccessory.registerVariants();
+            event.enqueueWork(IlluminatedSoulAccessory::registerVariants);
         }
     }
 
