@@ -159,7 +159,7 @@
   "_comment.tooltip.chromaticarsenal.impersonation": "Reference to the tooltip used by Terraria's developer items.",
   "tooltip.chromaticarsenal.impersonation": "§o\"Great for impersonating devs!\"",
   "curios.identifier.super_curio": "Super Curio",
-  "curios.modifiers.super_curio": "Super Curio",
+  "curios.modifiers.super_curio": "When worn as super curio:",
 
   "effect.chromaticarsenal.bubble_panic": "Bubble Panic!",
   "effect.chromaticarsenal.bubble_panic.description": "Increases swimming speed",
