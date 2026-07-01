@@ -1,0 +1,31 @@
+{
+  "parent": "chromaticarsenal:ascension_essence",
+  "criteria": {
+    "received_inferno": {
+      "conditions": {
+        "effects": {
+          "chromaticarsenal:inferno": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.chromaticarsenal.unfriendly_fire.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "chromaticarsenal:super_friendly_fire_flower"
+    },
+    "title": {
+      "translate": "advancement.chromaticarsenal.unfriendly_fire.title"
+    }
+  },
+  "requirements": [
+    [
+      "received_inferno"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
