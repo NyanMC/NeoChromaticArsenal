@@ -2,6 +2,7 @@ package page.chromanyan.chromaticarsenal.data;
 
 import page.chromanyan.chromaticarsenal.ChromaticArsenal;
 import page.chromanyan.chromaticarsenal.init.CABlocks;
+import page.chromanyan.chromaticarsenal.init.CAEffects;
 import page.chromanyan.chromaticarsenal.init.CAItems;
 import page.chromanyan.chromaticarsenal.triggers.GlassShieldBlockTrigger;
 import net.minecraft.advancements.*;
@@ -131,6 +132,21 @@ public class CAAdvancementGenerator implements AdvancementProvider.AdvancementGe
                 .rewards(AdvancementRewards.Builder.experience(100))
                 .parent(chromaShard)
                 .save(saver, ChromaticArsenal.of("block_100"), existingFileHelper);
+
+        AdvancementHolder unfriendlyFire = Advancement.Builder.advancement()
+                .addCriterion("received_inferno", EffectsChangedTrigger.TriggerInstance.hasEffects(MobEffectsPredicate.Builder.effects().and(CAEffects.INFERNO)))
+                .display(
+                        CAItems.INFERNO_FLOWER,
+                        Component.translatable("advancement.chromaticarsenal.unfriendly_fire.title"),
+                        Component.translatable("advancement.chromaticarsenal.unfriendly_fire.description"),
+                        null,
+                        AdvancementType.TASK,
+                        true,
+                        true,
+                        false
+                )
+                .parent(ascensionEssence)
+                .save(saver, ChromaticArsenal.of("unfriendly_fire"), existingFileHelper);
     }
 
     private Advancement.Builder addAccessories(Advancement.Builder advancement) {
