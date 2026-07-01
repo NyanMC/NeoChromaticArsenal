@@ -11,7 +11,7 @@ import page.chromanyan.chromaticarsenal.init.CAItems;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 @OnlyIn(Dist.CLIENT)
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(value = Dist.CLIENT)
 public class CuriosRenderers {
     public static void register() {
         CuriosRendererRegistry.register(CAItems.BLAHAJ.get(), () -> new HeadAccessoryRenderer(Minecraft.getInstance().getEntityModels().bakeLayer(HeadAccessoryRenderer.LAYER)));
