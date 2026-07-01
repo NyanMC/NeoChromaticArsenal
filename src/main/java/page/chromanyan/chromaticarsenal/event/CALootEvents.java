@@ -128,6 +128,15 @@ public class CALootEvents {
                     new ItemStack(CAItems.CHROMA_SHARD.get()),
                     new ItemStack(CAItems.MOMENTUM_STONE.get()),
                     2,
+                    20,
+                    0.2F
+            ));
+        }
+        if (event.getType() == VillagerProfession.CLERIC) {
+            event.getTrades().get(3).add(new BasicItemListing(
+                    new ItemStack(CAItems.CHROMA_SHARD.get(), 2),
+                    new ItemStack(Items.EMERALD),
+                    12,
                     16,
                     0.2F
             ));
