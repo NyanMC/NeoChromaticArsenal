@@ -47,12 +47,20 @@ public class HarpyFeatherItem extends Item {
         return data.getInt("jumps") >= maxJumps;
     }
 
+    private boolean hasJumpBeenUsed(CompoundTag data) {
+        return data.getInt("jumps") >= 1;
+    }
+
     private void resetJumps(CompoundTag data) {
         data.putInt("jumps", 0);
     }
 
     private void incrementJumps(CompoundTag data) {
         data.putInt("jumps", data.getInt("jumps") + 1);
+    }
+
+    private boolean shouldRestoreJumps(Entity entity) {
+        return entity.onGround() || entity.isInLiquid();
     }
 
     @Override
@@ -64,13 +72,14 @@ public class HarpyFeatherItem extends Item {
 
         // there are probably better ways to do this
         CompoundTag data = player.getPersistentData();
-        if (areJumpsCapped(data)) {
-            if (player.onGround() || (player.getVehicle() != null && player.getVehicle().onGround())) {
+        if (hasJumpBeenUsed(data)) {
+            if (shouldRestoreJumps(player) || (player.getVehicle() != null && shouldRestoreJumps(player.getVehicle()))) {
                 resetJumps(data);
-            } else {
-                player.getCooldowns().addCooldown(this, 60);
-                return;
             }
+        }
+        if (areJumpsCapped(data)) {
+            player.getCooldowns().addCooldown(this, 60);
+            return;
         }
         player.getCooldowns().removeCooldown(this);
     }
@@ -92,7 +101,7 @@ public class HarpyFeatherItem extends Item {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
-        if (player.isDiscrete())
+        if (player.isDiscrete() || player.isInLiquid())
             return InteractionResultHolder.pass(itemstack);
 
         doJump(level, player, player.getVehicle());
